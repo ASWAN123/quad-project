@@ -1,0 +1,168 @@
+"use client"
+import React, { useEffect, useState } from 'react'
+
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (window.scrollY / totalScroll) * 100;
+      setScrollProgress(progress);
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+      isScrolled 
+        ? 'bg-white/95 backdrop-blur-xl border-b border-amber-200/30 shadow-lg' 
+        : 'bg-transparent'
+    }`}>
+      <div className="max-w-7xl mx-auto px-6 py-4">
+        <div className="flex justify-between items-center">
+          {/* Personal Brand Logo */}
+          <div className="flex items-center space-x-3 group cursor-pointer">
+            {/* Animated Logo Mark */}
+            <div className="relative">
+              <div className="w-10 h-10 bg-linear-to-br from-amber-400 to-amber-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-500 group-hover:scale-110">
+                <span className="text-white font-bold text-lg">Q</span>
+              </div>
+              {/* Floating particles */}
+              <div className="absolute -top-1 -right-1 w-3 h-3 bg-amber-300 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
+              <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-amber-200 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse delay-300"></div>
+            </div>
+            
+            {/* Personal Brand Text */}
+            <div className="flex flex-col">
+              <span className="text-slate-800 font-light text-xl tracking-widest leading-none">QuadCamelMarrakesh</span>
+              {/* <span className="text-amber-600 text-xs tracking-widest font-medium">ADVENTURES</span> */}
+            </div>
+          </div>
+
+          {/* Desktop Menu - Personal Touch */}
+          <div className="hidden md:flex items-center space-x-10">
+            {   [
+    { name: 'EXPERIENCES', href: '/experiences', emoji: '🏜️' },
+    { name: 'GALLERY', href: '/gallery', emoji: '📸' },
+    { name: 'STORIES', href: '/stories', emoji: '📖' },
+    { name: 'CONTACT', href: '/contact-us', emoji: '💌' } // Fixed: direct link to contact page
+  ].map((item) => (
+              <a 
+                key={item.name}
+                href={`${item.href.toLowerCase()}`}
+                className="group flex items-center space-x-2 text-slate-600 hover:text-amber-600 text-sm font-light tracking-widest transition-all duration-500 hover:scale-105"
+              >
+                <span className="opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300">
+                  {item.emoji}
+                </span>
+                <span className="relative">
+                  {item.name}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-500 group-hover:w-full transition-all duration-500"></span>
+                </span>
+              </a>
+            ))}
+          </div>
+
+          {/* Personal CTA & Mobile Menu */}
+          <div className="flex items-center space-x-4">
+            {/* WhatsApp Quick Action */}
+            <a 
+              href="https://wa.me/212612345678"
+              className="hidden md:flex items-center space-x-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg group"
+            >
+              <span className="text-lg">💬</span>
+              <span className="max-w-0 overflow-hidden group-hover:max-w-32 transition-all duration-500 whitespace-nowrap">
+                Chat Now
+              </span>
+            </a>
+
+            {/* Main CTA Button */}
+            <button className="hidden md:block bg-linear-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-6 py-3 text-sm font-medium tracking-widest rounded-full transition-all duration-500 hover:scale-105 hover:shadow-xl group relative overflow-hidden">
+              <span className="relative z-10 flex items-center space-x-2">
+                <span>BOOK ADVENTURE</span>
+                <span className="transform group-hover:translate-x-1 transition-transform duration-300">→</span>
+              </span>
+              <div className="absolute inset-0 bg-linear-to-r from-white/20 to-white/10 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-full"></div>
+            </button>
+            
+            {/* Mobile Menu Button */}
+            <button 
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden w-10 h-10 rounded-full border border-slate-300 hover:border-amber-500 flex items-center justify-center text-slate-600 hover:text-amber-600 transition-all duration-300 hover:scale-110"
+            >
+              <div className={`flex flex-col space-y-1 transition-all duration-300 ${isMenuOpen ? 'rotate-90' : ''}`}>
+                <div className={`w-5 h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></div>
+                <div className={`w-5 h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></div>
+                <div className={`w-5 h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      {/* Mobile Menu - Enhanced */}
+      {isMenuOpen && (
+        <div className="md:hidden bg-white/98 backdrop-blur-2xl border-t border-amber-200/20">
+          <div className="px-6 py-6 space-y-4">
+            {[
+    { name: 'EXPERIENCES', href: '/experiences', emoji: '🏜️' },
+    { name: 'GALLERY', href: '/gallery', emoji: '📸' },
+    { name: 'STORIES', href: '/stories', emoji: '📖' },
+    { name: 'CONTACT', href: '/contact-us', emoji: '💌' }
+  ].map((item) => (
+              <a 
+                key={item.name}
+                href={`${item.href.toLowerCase()}`}
+                className="flex items-center space-x-4 p-3 rounded-2xl hover:bg-amber-50 transition-all duration-300 group"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <div className="w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center group-hover:bg-amber-500 group-hover:scale-110 transition-all duration-300">
+                  <span className="text-lg">{item.emoji}</span>
+                </div>
+                <div className="flex-1">
+                  <div className="text-slate-800 font-medium group-hover:text-amber-600 transition-colors">
+                    {item.name}
+                  </div>
+                  <div className="text-slate-500 text-sm">{item.desc}</div>
+                </div>
+                <span className="text-slate-400 group-hover:text-amber-500 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300">
+                  →
+                </span>
+              </a>
+            ))}
+            
+            {/* Mobile CTA Buttons */}
+            <div className="pt-4 border-t border-slate-200 space-y-3">
+              <a 
+                href="https://wa.me/212612345678"
+                className="flex items-center justify-center space-x-2 bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-medium transition-all duration-300"
+              >
+                <span>💬</span>
+                <span>Chat on WhatsApp</span>
+              </a>
+              <button className="w-full bg-linear-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white py-3 rounded-xl font-bold transition-all duration-300">
+                Book Your Adventure
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+      
+      {/* Personal Scroll Progress Bar */}
+      <div className="w-full h-1 bg-slate-100/50">
+        <div 
+          className="h-full bg-linear-to-r from-amber-400 via-amber-500 to-amber-600 transition-all duration-150 rounded-r-full shadow-lg"
+          style={{ width: `${scrollProgress}%` }}
+        />
+      </div>
+    </nav>
+  )
+}
+
+export default Header
