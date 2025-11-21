@@ -1,9 +1,10 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 // pages/index.js
-import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Hero from './components/Hero';
+import Link from 'next/link';
 
 export default function PremiumAdventures() {
 
@@ -55,13 +56,13 @@ export default function PremiumAdventures() {
             </span>
             <h2 className="text-5xl md:text-7xl font-light text-slate-800 mt-6 mb-8">
               Quad & Camel
-              <span className="block bg-gradient-to-r from-amber-600 to-amber-700 bg-clip-text text-transparent">Combo Experience</span>
+              <span className="block bg-linear-to-r from-amber-600 to-amber-700 bg-clip-text text-transparent">Combo Experience</span>
             </h2>
           </div>
 
           {/* Combined Experience Card */}
           <div className="max-w-4xl mx-auto">
-            <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-white to-slate-50 border border-slate-200 hover:border-amber-400 transition-all duration-700 hover:scale-105 shadow-2xl hover:shadow-3xl">
+            <div className="group relative overflow-hidden rounded-3xl bg-linear-to-br from-white to-slate-50 border border-slate-200 hover:border-amber-400 transition-all duration-700 hover:scale-105 shadow-2xl hover:shadow-3xl">
               
               {/* Image Collage Header */}
               <div className="relative h-96 rounded-t-3xl overflow-hidden">
@@ -73,7 +74,7 @@ export default function PremiumAdventures() {
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent"></div>
                 </div>
                 
                 {/* Overlay Images */}
@@ -95,7 +96,7 @@ export default function PremiumAdventures() {
                   />
                 </div>
                 
-                <div className="absolute top-6 right-6 bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-full text-sm font-medium z-20 shadow-lg">
+                <div className="absolute top-6 right-6 bg-linear-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-full text-sm font-medium z-20 shadow-lg">
                   MOST POPULAR TOUR
                 </div>
               </div>
@@ -165,12 +166,16 @@ export default function PremiumAdventures() {
                 </div>
                 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="flex-1 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white py-4 font-medium tracking-widest rounded-xl transition-all duration-300 hover:scale-105 shadow-lg">
+                  <button className="flex-1 bg-linear-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white py-4 font-medium tracking-widest rounded-xl transition-all duration-300 hover:scale-105 shadow-lg">
                     BOOK COMBO TOUR
                   </button>
-                  <button className="flex-1 border border-amber-500 text-amber-600 hover:bg-amber-500 hover:text-white py-4 font-medium tracking-widest rounded-xl transition-all duration-300">
+
+                  <Link
+                    href="/experiences"
+                    className="flex flex-1 items-center justify-center border border-amber-500 text-amber-600 hover:bg-amber-500 hover:text-white py-4 font-medium tracking-widest rounded-xl transition-all duration-300"
+                  >
                     VIEW DETAILS
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -184,8 +189,8 @@ export default function PremiumAdventures() {
               { number: '12', label: 'Years Excellence' },
               { number: '4.9', label: 'Star Rating' }
             ].map((stat, index) => (
-              <div key={index} className="group bg-gradient-to-br from-white to-slate-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-slate-200">
-                <div className="text-4xl md:text-5xl font-light bg-gradient-to-r from-amber-600 to-amber-700 bg-clip-text text-transparent mb-2 transition-all duration-300 group-hover:scale-110">
+              <div key={index} className="group bg-linear-to-br from-white to-slate-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-slate-200">
+                <div className="text-4xl md:text-5xl font-light bg-linear-to-r from-amber-600 to-amber-700 bg-clip-text text-transparent mb-2 transition-all duration-300 group-hover:scale-110">
                   {stat.number}
                 </div>
                 <div className="text-slate-600/70 text-sm tracking-widest">
@@ -198,7 +203,7 @@ export default function PremiumAdventures() {
       </section>
 
       {/* Gallery Section */}
-      <section className="py-32 bg-gradient-to-b from-slate-50 to-amber-50">
+      <section className="py-32 bg-linear-to-b from-slate-50 to-amber-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
             <span className="text-amber-600 text-sm font-light tracking-[0.3em] bg-amber-100 px-4 py-2 rounded-full border border-amber-200">
@@ -206,7 +211,7 @@ export default function PremiumAdventures() {
             </span>
             <h2 className="text-5xl md:text-7xl font-light text-slate-800 mt-6">
               Moments
-              <span className="block bg-gradient-to-r from-amber-600 to-amber-700 bg-clip-text text-transparent">Captured</span>
+              <span className="block bg-linear-to-r from-amber-600 to-amber-700 bg-clip-text text-transparent">Captured</span>
             </h2>
           </div>
 
@@ -234,7 +239,7 @@ export default function PremiumAdventures() {
 
           {/* Load More Images Button */}
           <div className="text-center mt-12">
-            <button className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-8 py-3 font-medium tracking-widest rounded-full transition-all duration-300 hover:scale-105 shadow-lg">
+            <button className="bg-linear-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-8 py-3 font-medium tracking-widest rounded-full transition-all duration-300 hover:scale-105 shadow-lg">
               VIEW MORE PHOTOS
             </button>
           </div>
@@ -250,7 +255,7 @@ export default function PremiumAdventures() {
             </span>
             <h2 className="text-5xl md:text-7xl font-light text-slate-800 mt-6 mb-8">
               Stories From
-              <span className="block bg-gradient-to-r from-amber-600 to-amber-700 bg-clip-text text-transparent">Our Adventurers</span>
+              <span className="block bg-linear-to-r from-amber-600 to-amber-700 bg-clip-text text-transparent">Our Adventurers</span>
             </h2>
           </div>
 
@@ -275,7 +280,7 @@ export default function PremiumAdventures() {
                 rating: 5
               }
             ].map((testimonial, index) => (
-              <div key={index} className="bg-gradient-to-br from-white to-slate-50 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-slate-200">
+              <div key={index} className="bg-linear-to-br from-white to-slate-50 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-slate-200">
                 <div className="flex text-amber-400 mb-4 text-lg">
                   {'★'.repeat(testimonial.rating)}
                 </div>
@@ -293,7 +298,7 @@ export default function PremiumAdventures() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 bg-gradient-to-br from-amber-500 to-amber-600 relative overflow-hidden">
+      <section className="py-32 bg-linear-to-br from-amber-500 to-amber-600 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full"></div>
