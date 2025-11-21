@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Hero = () => {
 
@@ -86,9 +87,13 @@ const Hero = () => {
                <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-full"></div>
              </button>
              
-             <button className="border border-slate-300 hover:border-amber-500 text-slate-700 hover:text-amber-700 px-6 sm:px-8 lg:px-12 py-3 lg:py-4 text-base sm:text-lg font-light tracking-widest rounded-full transition-all duration-300 hover:scale-105 bg-white/80">
-               WATCH STORY
-             </button>
+<Link
+  href="/stories"
+  className="flex items-center justify-center border border-slate-300 hover:border-amber-500 text-slate-700 hover:text-amber-700 px-6 sm:px-8 lg:px-12 py-3 lg:py-4 text-base sm:text-lg font-light tracking-widest rounded-full transition-all duration-300 hover:scale-105 bg-white/80"
+>
+  WATCH STORY
+</Link>
+
            </div>
    
           {/* Quick Stats - Fixed Layout */}

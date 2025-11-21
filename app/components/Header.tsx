@@ -1,4 +1,5 @@
 "use client"
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 
 const Header = () => {
@@ -28,10 +29,10 @@ const Header = () => {
         <div className="flex justify-between items-center">
           {/* Personal Brand Logo */}
           <div className="flex items-center space-x-3 group cursor-pointer">
-            {/* Animated Logo Mark */}
+
             <div className="relative">
               <div className="w-10 h-10 bg-linear-to-br from-amber-400 to-amber-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-500 group-hover:scale-110">
-                <span className="text-white font-bold text-lg">Q</span>
+                <Link href={"/"} className="text-white font-bold text-lg">Q</Link>
               </div>
               {/* Floating particles */}
               <div className="absolute -top-1 -right-1 w-3 h-3 bg-amber-300 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
@@ -40,20 +41,20 @@ const Header = () => {
             
             {/* Personal Brand Text */}
             <div className="flex flex-col">
-              <span className="text-slate-800 font-light text-xl tracking-widest leading-none">QuadCamelMarrakesh</span>
-              {/* <span className="text-amber-600 text-xs tracking-widest font-medium">ADVENTURES</span> */}
+              <Link href={"/"} className="text-slate-800 font-light text-xl tracking-widest leading-none">QuadCamelMarrakesh</Link>
             </div>
           </div>
 
           {/* Desktop Menu - Personal Touch */}
+
           <div className="hidden md:flex items-center space-x-10">
             {   [
     { name: 'EXPERIENCES', href: '/experiences', emoji: '🏜️' },
     { name: 'GALLERY', href: '/gallery', emoji: '📸' },
     { name: 'STORIES', href: '/stories', emoji: '📖' },
-    { name: 'CONTACT', href: '/contact-us', emoji: '💌' } // Fixed: direct link to contact page
+    { name: 'CONTACT', href: '/contact-us', emoji: '💌' }
   ].map((item) => (
-              <a 
+              <Link 
                 key={item.name}
                 href={`${item.href.toLowerCase()}`}
                 className="group flex items-center space-x-2 text-slate-600 hover:text-amber-600 text-sm font-light tracking-widest transition-all duration-500 hover:scale-105"
@@ -65,7 +66,7 @@ const Header = () => {
                   {item.name}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-500 group-hover:w-full transition-all duration-500"></span>
                 </span>
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -116,7 +117,7 @@ const Header = () => {
     { name: 'STORIES', href: '/stories', emoji: '📖' },
     { name: 'CONTACT', href: '/contact-us', emoji: '💌' }
   ].map((item) => (
-              <a 
+              <Link 
                 key={item.name}
                 href={`${item.href.toLowerCase()}`}
                 className="flex items-center space-x-4 p-3 rounded-2xl hover:bg-amber-50 transition-all duration-300 group"
@@ -134,7 +135,7 @@ const Header = () => {
                 <span className="text-slate-400 group-hover:text-amber-500 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300">
                   →
                 </span>
-              </a>
+              </Link>
             ))}
             
             {/* Mobile CTA Buttons */}

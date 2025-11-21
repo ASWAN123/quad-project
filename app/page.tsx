@@ -166,6 +166,7 @@ export default function PremiumAdventures() {
                 </div>
                 
                 <div className="flex flex-col sm:flex-row gap-4">
+                  
                   <button className="flex-1 bg-linear-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white py-4 font-medium tracking-widest rounded-xl transition-all duration-300 hover:scale-105 shadow-lg">
                     BOOK COMBO TOUR
                   </button>
@@ -176,6 +177,7 @@ export default function PremiumAdventures() {
                   >
                     VIEW DETAILS
                   </Link>
+
                 </div>
               </div>
             </div>
