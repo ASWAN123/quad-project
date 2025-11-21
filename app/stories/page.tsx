@@ -4,6 +4,37 @@ import { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 
+interface BaseStory {
+  id: number;
+  type: string;
+  title: string;
+  excerpt: string;
+  author: string;
+  location: string;
+  category: string;
+  image: string;
+  date: string;
+  rating: number;
+  highlights: string[];
+}
+
+interface VideoStory extends BaseStory {
+  type: 'video';
+  duration: string;
+}
+
+interface BlogStory extends BaseStory {
+  type: 'blog';
+  readTime: string;
+}
+
+interface PhotoStory extends BaseStory {
+  type: 'photo';
+  imageCount: number;
+}
+
+type Story = VideoStory | BlogStory | PhotoStory;
+
 export default function Stories() {
 
 
@@ -141,9 +172,9 @@ export default function Stories() {
                       <span>→</span>
                     </button>
                     <span className="text-slate-400 text-sm">
-                      {story.type === 'video' ? story.duration : 
-                       story.type === 'blog' ? story.readTime : 
-                       `${story.imageCount} photos`}
+                      {story.type === 'video' ? (story as VideoStory).duration : 
+                       story.type === 'blog' ? (story as BlogStory).readTime : 
+                       story.type === 'photo' && 'imageCount' in story ? `${story.imageCount} photos` : ''}
                     </span>
                   </div>
                 </div>
