@@ -129,7 +129,7 @@ const Header = () => {
                   <div className="text-slate-800 font-medium group-hover:text-amber-600 transition-colors">
                     {item.name}
                   </div>
-                  <div className="text-slate-500 text-sm">{item.desc}</div>
+                  {/* <div className="text-slate-500 text-sm">{item.desc}</div> */}
                 </div>
                 <span className="text-slate-400 group-hover:text-amber-500 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300">
                   →
