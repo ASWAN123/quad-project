@@ -170,7 +170,7 @@ const Hero = () => {
             {/* Quick Contact */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-3 sm:space-y-0 sm:space-x-6 pt-6 text-sm text-slate-600">
               <a 
-                href="https://wa.me/212612345678"
+                href="https://wa.me/212627349254"
                 className="flex items-center space-x-2 hover:text-green-600 transition-colors duration-300"
               >
                 <span className="text-green-600">💬</span>

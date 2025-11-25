@@ -137,7 +137,7 @@ const Header = () => {
             {/* Mobile CTA Buttons */}
             <div className="pt-4 border-t border-slate-200 space-y-3">
               <a 
-                href="https://wa.me/212612345678"
+                href="https://wa.me/212627349254"
                 className="flex items-center justify-center space-x-2 bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-medium transition-all duration-300"
               >
                 <span>💬</span>

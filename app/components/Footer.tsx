@@ -177,7 +177,7 @@ const Footer = () => {
     <div className="flex flex-col space-y-3">
       {/* WhatsApp */}
       <a
-        href="https://wa.me/212612345678"
+        href="https://wa.me/212627349254"
         className="group relative bg-linear-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white p-4 rounded-2xl shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-xl"
       >
         <div className="flex items-center space-x-2">
