@@ -1,5 +1,6 @@
 "use client"
 import Link from 'next/link';
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
 
 const Header = () => {
@@ -27,36 +28,40 @@ const Header = () => {
     }`}>
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          {/* Personal Brand Logo */}
-          <div className="flex items-center space-x-3 group cursor-pointer">
-
+          <div className="flex items-center space-x-6 group cursor-pointer">
             <div className="relative">
-              <div className="w-10 h-10 bg-linear-to-br from-amber-400 to-amber-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-500 group-hover:scale-110">
-                <Link href={"/"} className="text-white font-bold text-lg">Q</Link>
-              </div>
+              <Link href={"/"} className="block">
+                <Image 
+                  src="/logo.png" 
+                  alt="Quad Camel Marrakech - Desert Adventures" 
+                  width={80} 
+                  height={80} 
+                  className="w-15 h-15 rounded-2xl group-hover:scale-110 transition-all duration-500 shadow-lg"
+                />
+              </Link>
               {/* Floating particles */}
               <div className="absolute -top-1 -right-1 w-3 h-3 bg-amber-300 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
               <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-amber-200 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse delay-300"></div>
             </div>
             
-            {/* Personal Brand Text */}
+            {/* Brand Text */}
             <div className="flex flex-col">
               <Link href={"/"} className="text-slate-800 font-light text-xl tracking-widest leading-none">QuadCamelMarrakesh</Link>
             </div>
           </div>
 
-          {/* Desktop Menu - Personal Touch */}
-
-          <div className="hidden md:flex items-center space-x-10">
-            {   [
-    { name: 'EXPERIENCES', href: '/experiences', emoji: '🏜️' },
-    { name: 'GALLERY', href: '/gallery', emoji: '📸' },
-    { name: 'STORIES', href: '/stories', emoji: '📖' },
-    { name: 'CONTACT', href: '/contact-us', emoji: '💌' }
-  ].map((item) => (
+          {/* Desktop Menu - WITH HOME LINK ADDED */}
+          <div className="hidden md:flex items-center space-x-3 px-6">
+            {[
+              { name: 'HOME', href: '/', emoji: '🏠' }, // ADDED HOME LINK
+              { name: 'EXPERIENCES', href: '/experiences', emoji: '🏜️' },
+              { name: 'GALLERY', href: '/gallery', emoji: '📸' },
+              { name: 'STORIES', href: '/stories', emoji: '📖' },
+              { name: 'CONTACT', href: '/contact-us', emoji: '💌' }
+            ].map((item) => (
               <Link 
                 key={item.name}
-                href={`${item.href.toLowerCase()}`}
+                href={item.href}
                 className="group flex items-center space-x-2 text-slate-600 hover:text-amber-600 text-sm font-light tracking-widest transition-all duration-500 hover:scale-105"
               >
                 <span className="opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300">
@@ -70,18 +75,9 @@ const Header = () => {
             ))}
           </div>
 
-          {/* Personal CTA & Mobile Menu */}
+          {/* CTA & Mobile Menu */}
           <div className="flex items-center space-x-4">
-            {/* WhatsApp Quick Action */}
-            <a 
-              href="https://wa.me/212612345678"
-              className="hidden md:flex items-center space-x-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg group"
-            >
-              <span className="text-lg">💬</span>
-              <span className="max-w-0 overflow-hidden group-hover:max-w-32 transition-all duration-500 whitespace-nowrap">
-                Chat Now
-              </span>
-            </a>
+
 
             {/* Main CTA Button */}
             <button className="hidden md:block bg-linear-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-6 py-3 text-sm font-medium tracking-widest rounded-full transition-all duration-500 hover:scale-105 hover:shadow-xl group relative overflow-hidden">
@@ -107,19 +103,20 @@ const Header = () => {
         </div>
       </div>
       
-      {/* Mobile Menu - Enhanced */}
+      {/* Mobile Menu - WITH HOME LINK ADDED */}
       {isMenuOpen && (
         <div className="md:hidden bg-white/98 backdrop-blur-2xl border-t border-amber-200/20">
           <div className="px-6 py-6 space-y-4">
             {[
-    { name: 'EXPERIENCES', href: '/experiences', emoji: '🏜️' },
-    { name: 'GALLERY', href: '/gallery', emoji: '📸' },
-    { name: 'STORIES', href: '/stories', emoji: '📖' },
-    { name: 'CONTACT', href: '/contact-us', emoji: '💌' }
-  ].map((item) => (
+              { name: 'HOME', href: '/', emoji: '🏠' }, // ADDED HOME LINK
+              { name: 'EXPERIENCES', href: '/experiences', emoji: '🏜️' },
+              { name: 'GALLERY', href: '/gallery', emoji: '📸' },
+              { name: 'STORIES', href: '/stories', emoji: '📖' },
+              { name: 'CONTACT', href: '/contact-us', emoji: '💌' }
+            ].map((item) => (
               <Link 
                 key={item.name}
-                href={`${item.href.toLowerCase()}`}
+                href={item.href}
                 className="flex items-center space-x-4 p-3 rounded-2xl hover:bg-amber-50 transition-all duration-300 group"
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -130,7 +127,6 @@ const Header = () => {
                   <div className="text-slate-800 font-medium group-hover:text-amber-600 transition-colors">
                     {item.name}
                   </div>
-                  {/* <div className="text-slate-500 text-sm">{item.desc}</div> */}
                 </div>
                 <span className="text-slate-400 group-hover:text-amber-500 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300">
                   →
@@ -155,7 +151,7 @@ const Header = () => {
         </div>
       )}
       
-      {/* Personal Scroll Progress Bar */}
+      {/* Scroll Progress Bar */}
       <div className="w-full h-1 bg-slate-100/50">
         <div 
           className="h-full bg-linear-to-r from-amber-400 via-amber-500 to-amber-600 transition-all duration-150 rounded-r-full shadow-lg"

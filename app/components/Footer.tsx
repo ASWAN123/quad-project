@@ -50,7 +50,7 @@ const Footer = () => {
             Experiences
           </h3>
           <div className="space-y-3">
-            {['Quad Biking', 'Camel Trekking', 'Combo Tours', 'Private Groups'].map((item, index) => (
+            {['Quad Biking', 'Camel Trekking', 'Private Groups'].map((item, index) => (
               <a
                 key={index}
                 href="#"
@@ -130,25 +130,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Newsletter */}
-      <div className="space-y-6">
-        <h3 className="text-white font-semibold text-lg tracking-widest uppercase">
-          Stay Adventurous
-        </h3>
-        <p className="text-slate-300 text-sm leading-relaxed">
-          Join our newsletter for exclusive desert stories, special offers, and early access to new experiences.
-        </p>
-        <div className="flex space-x-3">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="flex-1 px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:border-amber-500 transition-colors duration-300"
-          />
-          <button className="px-6 py-3 bg-linear-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-medium rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg">
-            Subscribe
-          </button>
-        </div>
-      </div>
     </div>
 
     {/* Bottom Bar */}
