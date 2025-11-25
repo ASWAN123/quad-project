@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import { useState } from 'react';
-import Head from 'next/head';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -54,8 +53,8 @@ export default function Contact() {
     },
     {
       icon: '📞',
-      title: 'Call Karim',
-      details: '+212 612 345 678',
+      title: 'Call abdo',
+      details: '+212 6 27 349 254',
       description: 'Direct line to your guide',
       action: 'tel:+212627349254',
       color: 'from-blue-500 to-blue-600'
@@ -90,17 +89,12 @@ export default function Contact() {
   ];
 
   return (
-    <div className="min-h-screen bg-white py-24">
-      <Head>
-        <title>Let's Talk Adventure | QuadCamelMarrakesh</title>
-        <meta name="description" content="Get in touch with our local team to plan your perfect desert adventure in Agafay" />
-      </Head>
-
+    <div className="min-h-screen bg-slate-50 py-24">
       {/* Header */}
-      <div className="bg-gradient-to-b from-amber-50 to-white border-b border-amber-100">
+      <div className="bg-gradient-to-b from-amber-50/80 to-slate-50 border-b border-amber-100/50">
         <div className="max-w-6xl mx-auto px-6 py-16">
           <div className="text-center">
-            <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full border border-amber-200 mb-6">
+            <div className="inline-flex items-center space-x-2 bg-white/70 backdrop-blur-sm px-6 py-3 rounded-full border border-amber-200/80 mb-6">
               <span className="text-amber-700 text-sm font-light tracking-widest">
                 LET'S CREATE MAGIC
               </span>
@@ -111,17 +105,17 @@ export default function Contact() {
               <span className="block text-amber-700 mt-2">Starts Here</span>
             </h1>
             
-            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-amber-200/50 shadow-sm max-w-2xl mx-auto">
-              <p className="text-slate-600 text-lg leading-relaxed">
+            <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 border border-amber-200/30 max-w-2xl mx-auto">
+              <p className="text-slate-700 text-lg leading-relaxed">
                 "We don't just book tours - we create lifelong memories. Tell us your dreams, and we'll craft the perfect desert experience just for you."
               </p>
               <div className="flex items-center justify-center space-x-3 mt-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-amber-500 to-amber-700 rounded-full flex items-center justify-center text-white font-serif text-sm">
+                <div className="w-10 h-10 bg-linear-to-br from-amber-500 to-amber-700 rounded-full flex items-center justify-center text-white font-serif text-sm">
                   K
                 </div>
                 <div className="text-left">
-                  <p className="text-slate-800 font-medium text-sm">Karim & The Team</p>
-                  <p className="text-slate-500 text-xs">Your local guides in Marrakech</p>
+                  <p className="text-slate-800 font-medium text-sm">The Team</p>
+                  <p className="text-slate-600 text-xs">Your local guides in Marrakech</p>
                 </div>
               </div>
             </div>
@@ -135,16 +129,16 @@ export default function Contact() {
           {/* Personal Contact Side */}
           <div className="space-y-8 order-2 lg:order-1">
             {/* Welcome Message */}
-            <div className="bg-white rounded-3xl p-8 border border-amber-100 shadow-sm">
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-amber-100/50 shadow-sm">
               <h2 className="text-2xl font-serif text-slate-800 mb-4">We'd Love to Hear from You</h2>
-              <p className="text-slate-600 leading-relaxed mb-6">
+              <p className="text-slate-700 leading-relaxed mb-6">
                 Whether you're dreaming of quad biking thrills, peaceful camel sunsets, or a perfect combination - 
                 we're here to make it happen. As locals born and raised in Marrakech, we know the desert like our backyard.
               </p>
               
-              <div className="bg-amber-50 rounded-2xl p-6 border border-amber-200">
+              <div className="bg-amber-50/80 rounded-2xl p-6 border border-amber-200/50">
                 <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center">
+                  <div className="w-12 h-12 bg-amber-100/80 rounded-xl flex items-center justify-center">
                     <span className="text-amber-700 text-xl">💫</span>
                   </div>
                   <div>
@@ -164,10 +158,10 @@ export default function Contact() {
                   href={method.action}
                   target={method.action.startsWith('http') ? '_blank' : '_self'}
                   rel="noopener noreferrer"
-                  className="group block bg-white rounded-2xl p-6 border border-amber-100 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105"
+                  className="group block bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-amber-100/50 hover:border-amber-300/70 transition-all duration-300 hover:shadow-md"
                 >
                   <div className="flex items-center space-x-4">
-                    <div className={`w-14 h-14 bg-gradient-to-r ${method.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                    <div className={`w-14 h-14 bg-linear-to-r ${method.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-md`}>
                       <span className="text-white text-xl">{method.icon}</span>
                     </div>
                     <div className="flex-1">
@@ -175,9 +169,9 @@ export default function Contact() {
                         {method.title}
                       </h3>
                       <p className="text-slate-700 font-medium mt-1">{method.details}</p>
-                      <p className="text-slate-500 text-sm mt-1">{method.description}</p>
+                      <p className="text-slate-600 text-sm mt-1">{method.description}</p>
                     </div>
-                    <span className="text-slate-400 group-hover:text-amber-500 transform group-hover:translate-x-1 transition-all duration-300">
+                    <span className="text-slate-500 group-hover:text-amber-500 transform group-hover:translate-x-1 transition-all duration-300">
                       →
                     </span>
                   </div>
@@ -186,16 +180,16 @@ export default function Contact() {
             </div>
 
             {/* Quick Questions */}
-            <div className="bg-amber-50/50 rounded-3xl p-8 border border-amber-200">
+            <div className="bg-amber-50/60 backdrop-blur-sm rounded-3xl p-8 border border-amber-200/50">
               <h3 className="text-xl font-serif text-slate-800 mb-6">Quick Questions Answered</h3>
               <div className="space-y-4">
                 {quickQuestions.map((item, index) => (
-                  <div key={index} className="bg-white rounded-2xl p-4 border border-amber-100">
+                  <div key={index} className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 border border-amber-100/50">
                     <h4 className="font-semibold text-slate-800 mb-2 flex items-center">
                       <span className="text-amber-600 mr-2">•</span>
                       {item.question}
                     </h4>
-                    <p className="text-slate-600 text-sm leading-relaxed">{item.answer}</p>
+                    <p className="text-slate-700 text-sm leading-relaxed">{item.answer}</p>
                   </div>
                 ))}
               </div>
@@ -203,7 +197,7 @@ export default function Contact() {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white rounded-3xl p-8 border border-amber-100 shadow-sm order-1 lg:order-2 h-fit">
+          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-amber-100/50 shadow-sm h-fit order-1 lg:order-2">
             <div className="text-center mb-8">
               <h2 className="text-2xl font-serif text-slate-800 mb-2">Plan Your Adventure</h2>
               <p className="text-slate-600">Tell us about your dream desert experience</p>
@@ -219,7 +213,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-4 border-2 border-amber-200 rounded-xl focus:outline-none focus:border-amber-500 bg-white transition-colors placeholder-slate-400"
+                    className="w-full px-4 py-4 border-2 border-amber-200/70 rounded-xl focus:outline-none focus:border-amber-500 bg-white/90 transition-colors placeholder-slate-500 text-slate-800"
                     placeholder="How should we call you?"
                   />
                 </div>
@@ -231,7 +225,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-4 border-2 border-amber-200 rounded-xl focus:outline-none focus:border-amber-500 bg-white transition-colors placeholder-slate-400"
+                    className="w-full px-4 py-4 border-2 border-amber-200/70 rounded-xl focus:outline-none focus:border-amber-500 bg-white/90 transition-colors placeholder-slate-500 text-slate-800"
                     placeholder="your@email.com"
                   />
                 </div>
@@ -245,7 +239,7 @@ export default function Contact() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-4 border-2 border-amber-200 rounded-xl focus:outline-none focus:border-amber-500 bg-white transition-colors placeholder-slate-400"
+                    className="w-full px-4 py-4 border-2 border-amber-200/70 rounded-xl focus:outline-none focus:border-amber-500 bg-white/90 transition-colors placeholder-slate-500 text-slate-800"
                     placeholder="For quicker updates"
                   />
                 </div>
@@ -255,7 +249,7 @@ export default function Contact() {
                     name="tourType"
                     value={formData.tourType}
                     onChange={handleChange}
-                    className="w-full px-4 py-4 border-2 border-amber-200 rounded-xl focus:outline-none focus:border-amber-500 bg-white transition-colors text-slate-700"
+                    className="w-full px-4 py-4 border-2 border-amber-200/70 rounded-xl focus:outline-none focus:border-amber-500 bg-white/90 transition-colors text-slate-800"
                   >
                     <option value="combo">Quad + Camel Combo</option>
                     <option value="quad">Quad Biking Only</option>
@@ -268,11 +262,11 @@ export default function Contact() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-slate-700 font-medium mb-3">Number of Adventurers</label>
-                  <div className="flex items-center justify-between bg-white rounded-xl p-3 border-2 border-amber-200">
+                  <div className="flex items-center justify-between bg-white/90 rounded-xl p-3 border-2 border-amber-200/70">
                     <button
                       type="button"
                       onClick={() => setFormData({...formData, guests: Math.max(1, formData.guests - 1)})}
-                      className="w-12 h-12 rounded-full border-2 border-amber-300 flex items-center justify-center hover:bg-amber-50 transition-colors text-amber-600 font-bold text-lg"
+                      className="w-12 h-12 rounded-full border-2 border-amber-300/70 flex items-center justify-center hover:bg-amber-50/80 transition-colors text-amber-600 font-bold text-lg"
                     >
                       -
                     </button>
@@ -280,7 +274,7 @@ export default function Contact() {
                     <button
                       type="button"
                       onClick={() => setFormData({...formData, guests: formData.guests + 1})}
-                      className="w-12 h-12 rounded-full border-2 border-amber-300 flex items-center justify-center hover:bg-amber-50 transition-colors text-amber-600 font-bold text-lg"
+                      className="w-12 h-12 rounded-full border-2 border-amber-300/70 flex items-center justify-center hover:bg-amber-50/80 transition-colors text-amber-600 font-bold text-lg"
                     >
                       +
                     </button>
@@ -293,7 +287,7 @@ export default function Contact() {
                     name="preferredDate"
                     value={formData.preferredDate}
                     onChange={handleChange}
-                    className="w-full px-4 py-4 border-2 border-amber-200 rounded-xl focus:outline-none focus:border-amber-500 bg-white transition-colors text-slate-700"
+                    className="w-full px-4 py-4 border-2 border-amber-200/70 rounded-xl focus:outline-none focus:border-amber-500 bg-white/90 transition-colors text-slate-800"
                   />
                 </div>
               </div>
@@ -306,7 +300,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   rows={4}
-                  className="w-full px-4 py-4 border-2 border-amber-200 rounded-xl focus:outline-none focus:border-amber-500 bg-white transition-colors resize-none placeholder-slate-400"
+                  className="w-full px-4 py-4 border-2 border-amber-200/70 rounded-xl focus:outline-none focus:border-amber-500 bg-white/90 transition-colors resize-none placeholder-slate-500 text-slate-800"
                   placeholder="Tell us about your ideal desert experience, any special requests, or questions you have..."
                 ></textarea>
               </div>
@@ -314,7 +308,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-amber-600 hover:bg-amber-700 text-white py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-lg transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                className="w-full bg-amber-600 hover:bg-amber-700 text-white py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl"
               >
                 {isSubmitting ? (
                   <>
@@ -329,7 +323,7 @@ export default function Contact() {
                 )}
               </button>
 
-              <p className="text-slate-500 text-sm text-center">
+              <p className="text-slate-600 text-sm text-center">
                 We'll respond within hours with personalized options
               </p>
             </form>
@@ -337,7 +331,7 @@ export default function Contact() {
         </div>
 
         {/* Personal Promise */}
-        <div className="mt-16 bg-gradient-to-r from-amber-500 to-amber-600 rounded-3xl p-8 text-white text-center">
+        <div className="mt-16 bg-linear-to-r from-amber-500 to-amber-600 rounded-3xl p-8 text-white text-center shadow-xl">
           <h2 className="text-2xl md:text-3xl font-serif mb-4">
             Our Promise to You
           </h2>

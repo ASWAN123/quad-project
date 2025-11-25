@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 const Footer = () => {
   return (
    <footer className="relative bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
@@ -12,10 +14,12 @@ const Footer = () => {
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
       {/* Brand Section */}
       <div className="space-y-6">
-        <div className="flex items-center space-x-3">
-          <div className="w-3 h-10 bg-linear-to-b from-amber-400 to-amber-500 rounded-full"></div>
-          <span className="text-white font-light text-3xl tracking-widest">QuadCamelMarrakesh</span>
-        </div>
+        <Link href="/" className="flex items-center space-x-3 group">
+          <div className="w-3 h-10 bg-linear-to-b from-amber-400 to-amber-500 rounded-full group-hover:scale-110 transition-transform duration-300"></div>
+          <span className="text-white font-light text-3xl tracking-widest group-hover:text-amber-400 transition-colors duration-300">
+            QuadCamelMarrakesh
+          </span>
+        </Link>
         
         <p className="text-slate-300 text-lg leading-relaxed max-w-md">
           Crafting unforgettable desert experiences in the heart of Morocco through luxury adventures and authentic cultural immersion.
@@ -44,23 +48,7 @@ const Footer = () => {
 
       {/* Links Grid */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
-        {/* Experiences */}
-        <div className="space-y-4">
-          <h3 className="text-white font-semibold text-lg tracking-widest uppercase mb-4">
-            Experiences
-          </h3>
-          <div className="space-y-3">
-            {['Quad Biking', 'Camel Trekking', 'Private Groups'].map((item, index) => (
-              <a
-                key={index}
-                href="#"
-                className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
-              >
-                {item}
-              </a>
-            ))}
-          </div>
-        </div>
+
 
         {/* Company */}
         <div className="space-y-4">
@@ -68,15 +56,30 @@ const Footer = () => {
             Company
           </h3>
           <div className="space-y-3">
-            {['About Us', 'Our Guides', 'Safety', 'Sustainability'].map((item, index) => (
-              <a
-                key={index}
-                href="#"
-                className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
-              >
-                {item}
-              </a>
-            ))}
+            <Link
+              href="/about"
+              className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
+            >
+              About Us
+            </Link>
+            <Link
+              href="/guides"
+              className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
+            >
+              Our Guides
+            </Link>
+            <Link
+              href="/safety"
+              className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
+            >
+              Safety
+            </Link>
+            <Link
+              href="/sustainability"
+              className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
+            >
+              Sustainability
+            </Link>
           </div>
         </div>
 
@@ -86,15 +89,30 @@ const Footer = () => {
             Support
           </h3>
           <div className="space-y-3">
-            {['Contact', 'FAQ', 'Booking Policy', 'Privacy'].map((item, index) => (
-              <a
-                key={index}
-                href="#"
-                className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
-              >
-                {item}
-              </a>
-            ))}
+            <Link
+              href="/contact"
+              className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
+            >
+              Contact
+            </Link>
+            <a
+              href="#"
+              className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
+            >
+              FAQ
+            </a>
+            <a
+              href="#"
+              className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
+            >
+              Booking Policy
+            </a>
+            <a
+              href="#"
+              className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
+            >
+              Privacy
+            </a>
           </div>
         </div>
       </div>
@@ -109,18 +127,44 @@ const Footer = () => {
         </h3>
         <div className="space-y-4">
           {[
-            { icon: '📍', text: 'Marrakech, Morocco', subtext: 'Desert Adventure Base' },
-            { icon: '📞', text: '+212 6 12 34 56 78', subtext: 'Available 24/7' },
-            { icon: '✉️', text: 'experience@quadCamelMarrakesh.com', subtext: 'Quick Response' }
+            { 
+              icon: '📍', 
+              text: 'Marrakech, Morocco', 
+              subtext: 'Desert Adventure Base',
+              link: 'https://www.google.com/maps/search/CIH%20Bank/@31.63742193,-8.00273953,17z?hl=en'
+            },
+            { 
+              icon: '📞', 
+              text: '+212 6 27 349 254', 
+              subtext: 'Available 24/7',
+              link: 'tel:+212627349254'
+            },
+            { 
+              icon: '✉️', 
+              text: 'experience@quadCamelMarrakesh.com', 
+              subtext: 'Quick Response',
+              link: 'mailto:experience@quadCamelMarrakesh.com'
+            }
           ].map((contact, index) => (
             <div key={index} className="flex items-start space-x-4 group">
               <div className="w-10 h-10 bg-amber-500/10 rounded-lg flex items-center justify-center group-hover:bg-amber-500/20 transition-colors duration-300">
                 <span className="text-amber-400 text-lg">{contact.icon}</span>
               </div>
               <div>
-                <div className="text-white font-medium group-hover:text-amber-400 transition-colors duration-300">
-                  {contact.text}
-                </div>
+                {contact.link ? (
+                  <a 
+                    href={contact.link} 
+                    target={contact.link.startsWith('http') ? '_blank' : '_self'}
+                    rel="noopener noreferrer"
+                    className="text-white font-medium group-hover:text-amber-400 transition-colors duration-300 hover:underline"
+                  >
+                    {contact.text}
+                  </a>
+                ) : (
+                  <div className="text-white font-medium group-hover:text-amber-400 transition-colors duration-300">
+                    {contact.text}
+                  </div>
+                )}
                 <div className="text-slate-500 text-sm mt-1">
                   {contact.subtext}
                 </div>
@@ -129,6 +173,8 @@ const Footer = () => {
           ))}
         </div>
       </div>
+
+
 
     </div>
 
@@ -168,7 +214,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
@@ -178,6 +223,8 @@ const Footer = () => {
       {/* WhatsApp */}
       <a
         href="https://wa.me/212627349254"
+        target="_blank"
+        rel="noopener noreferrer"
         className="group relative bg-linear-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white p-4 rounded-2xl shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-xl"
       >
         <div className="flex items-center space-x-2">
@@ -190,14 +237,16 @@ const Footer = () => {
       </a>
 
       {/* Book Now */}
-      <button className="group bg-linear-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white p-4 rounded-2xl shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-xl">
-        <div className="flex items-center space-x-2">
-          <span className="text-lg">⚡</span>
-          <div className="text-xs font-medium tracking-wide">
-            Book Now
+      <Link href="/contact">
+        <button className="group bg-linear-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white p-4 rounded-2xl shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-xl">
+          <div className="flex items-center space-x-2">
+            <span className="text-lg">⚡</span>
+            <div className="text-xs font-medium tracking-wide">
+              Book Now
+            </div>
           </div>
-        </div>
-      </button>
+        </button>
+      </Link>
     </div>
   </div>
 </footer>

@@ -54,7 +54,7 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-3 px-6">
             {[
               { name: 'HOME', href: '/', emoji: '🏠' }, // ADDED HOME LINK
-              { name: 'EXPERIENCES', href: '/experiences', emoji: '🏜️' },
+              { name: 'EXPERIENCES', href: '/experiences/quad-biking-and-camel-ride-in-the-agafay-desert', emoji: '🏜️' },
               { name: 'GALLERY', href: '/gallery', emoji: '📸' },
               { name: 'STORIES', href: '/stories', emoji: '📖' },
               { name: 'CONTACT', href: '/contact-us', emoji: '💌' }
@@ -109,7 +109,7 @@ const Header = () => {
           <div className="px-6 py-6 space-y-4">
             {[
               { name: 'HOME', href: '/', emoji: '🏠' }, // ADDED HOME LINK
-              { name: 'EXPERIENCES', href: '/experiences', emoji: '🏜️' },
+              { name: 'EXPERIENCES', href: '/experiences/quad-biking-and-camel-ride-in-the-agafay-desert', emoji: '🏜️' },
               { name: 'GALLERY', href: '/gallery', emoji: '📸' },
               { name: 'STORIES', href: '/stories', emoji: '📖' },
               { name: 'CONTACT', href: '/contact-us', emoji: '💌' }

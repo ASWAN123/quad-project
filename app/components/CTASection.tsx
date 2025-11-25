@@ -8,7 +8,7 @@ const CTASection = () => {
   {/* Background Elements */}
   <div className="absolute inset-0">
     {/* Subtle Pattern */}
-    <div className="absolute inset-0 bg-[url('/images/subtle-pattern.png')] opacity-5"></div>
+    <div className="absolute inset-0  opacity-5"></div>
     
     {/* Floating Elements */}
     <div className="absolute top-10 left-10 w-32 h-32 bg-amber-200/30 rounded-full blur-xl"></div>

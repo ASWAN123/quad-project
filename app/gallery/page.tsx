@@ -1,8 +1,6 @@
-/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import { useState, useEffect } from 'react';
-import Head from 'next/head';
 import Image from 'next/image';
 
 interface GalleryImage {
@@ -29,109 +27,85 @@ export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
   const [loadedImages, setLoadedImages] = useState<{ [key: number]: boolean }>({});
 
-  // All your images organized by category
+  // Updated with your new professional images
   const galleryImages: GalleryImages = {
     all: [
-      { id: 1, src: '/images/1000092073.jpg', category: 'landscape', title: 'Golden Dunes Sunset', description: 'Breathtaking sunset over the Agafay desert' },
-      { id: 2, src: '/images/1000091075.jpg', category: 'quad', title: 'Quad Biking Adventure', description: 'Thrilling ATV ride through desert terrain' },
-      { id: 3, src: '/images/1000091074.jpg', category: 'camel', title: 'Camel Caravan', description: 'Traditional camel trekking experience' },
-      { id: 4, src: '/images/1000090188.jpg', category: 'landscape', title: 'Desert Horizon', description: 'Vast desert landscapes under Moroccan sky' },
-      { id: 5, src: '/images/1000090187.jpg', category: 'quad', title: 'Dune Exploration', description: 'Exploring hidden desert paths on quad bikes' },
-      { id: 6, src: '/images/1000090185.jpg', category: 'camel', title: 'Berber Journey', description: 'Authentic camel riding with local guides' },
-      { id: 7, src: '/images/1000090181.jpg', category: 'people', title: 'Happy Adventurers', description: 'Group photo with our desert explorers' },
-      { id: 8, src: '/images/1000090176.jpg', category: 'landscape', title: 'Desert Serenity', description: 'Peaceful moments in the heart of Agafay' },
-      { id: 9, src: '/images/1000090175.jpg', category: 'quad', title: 'Sunset Ride', description: 'Quad biking as the sun sets over dunes' },
-      { id: 10, src: '/images/1000090174.jpg', category: 'camel', title: 'Traditional Trek', description: 'Experience ancient caravan routes' },
-      { id: 11, src: '/images/1000090173.jpg', category: 'people', title: 'Desert Memories', description: 'Unforgettable moments with friends' },
-      { id: 12, src: '/images/1000090171.jpg', category: 'landscape', title: 'Golden Hours', description: 'Magic hour lighting in the desert' },
-      { id: 13, src: '/images/1000090170.jpg', category: 'quad', title: 'Desert Thrills', description: 'Adventure through golden sand dunes' },
-      { id: 14, src: '/images/1000090169.jpg', category: 'camel', title: 'Sunset Caravan', description: 'Camel ride during golden hour' },
-      { id: 15, src: '/images/1000090167.jpg', category: 'people', title: 'Group Adventure', description: 'Friends enjoying desert exploration' },
-      { id: 16, src: '/images/1000090166.jpg', category: 'landscape', title: 'Desert Beauty', description: 'Stunning natural desert formations' },
-      { id: 17, src: '/images/1000090165.jpg', category: 'quad', title: 'Off-Road Excitement', description: 'Quad biking through challenging terrain' },
-      { id: 18, src: '/images/1000090164.jpg', category: 'camel', title: 'Desert Giants', description: 'Gentle camels in their natural habitat' },
-      { id: 19, src: '/images/1000090163.jpg', category: 'people', title: 'Smiling Faces', description: 'Happy travelers creating memories' },
-      { id: 20, src: '/images/1000090160.jpg', category: 'landscape', title: 'Endless Dunes', description: 'Expansive desert views' },
-      { id: 21, src: '/images/1000090159.jpg', category: 'quad', title: 'Dust Trails', description: 'Quad bikes creating desert clouds' },
-      { id: 22, src: '/images/1000090155.jpg', category: 'camel', title: 'Desert Walk', description: 'Peaceful camel trekking experience' },
-      { id: 23, src: '/images/3fba3688-dd12-4084-b2c5-ef9985c10236.jpeg', category: 'people', title: 'Adventure Team', description: 'Our guides and happy customers' },
-      { id: 24, src: '/images/3ffdda04-5867-4a6e-8d0d-2cc5f0327729.jpeg', category: 'landscape', title: 'Desert Colors', description: 'Vibrant desert sunset colors' },
-      { id: 25, src: '/images/6fcf9589-0157-4346-bbbf-506206faa400.jpeg', category: 'quad', title: 'Powerful Machines', description: 'Ready for desert exploration' },
-      { id: 26, src: '/images/7b96d1c7-58cd-42d4-b640-48ca7f81ed5f.jpeg', category: 'camel', title: 'Desert Companions', description: 'Friendly camels awaiting adventure' },
-      { id: 27, src: '/images/8aab37be-9980-426f-8c4f-cdd0ab10272f.jpeg', category: 'people', title: 'Joyful Moments', description: 'Laughter and fun in the desert' },
-      { id: 28, src: '/images/8e35bdd3-1774-41c3-a229-f50ab8774909.jpeg', category: 'landscape', title: 'Golden Sands', description: 'Beautiful desert textures' },
-      { id: 29, src: '/images/8fc60428-5d04-4a6b-8812-87b20ef594a3.jpeg', category: 'quad', title: 'Desert Racing', description: 'High-speed desert adventure' },
-      { id: 30, src: '/images/8fd5d81f-3b69-4868-a2dc-f4a156166a17.jpeg', category: 'camel', title: 'Traditional Experience', description: 'Authentic Berber camel trek' },
-      { id: 31, src: '/images/9c7ba39c-70b7-4044-8c3f-92a76f58dabb.jpeg', category: 'people', title: 'Desert Friends', description: 'Making memories together' },
-      { id: 32, src: '/images/357b70ca-160f-4643-9b02-869fa795c87b.jpeg', category: 'landscape', title: 'Vast Horizons', description: 'Endless desert beauty' },
-      { id: 33, src: '/images/451c3993-1b3a-47e6-bca6-850aba523293.jpeg', category: 'quad', title: 'Dune Challenge', description: 'Conquering sandy slopes' },
-      { id: 34, src: '/images/708a902e-1119-4283-938d-c5f2c9463195.jpeg', category: 'camel', title: 'Sunset Journey', description: 'Camel ride at magical hour' },
-      { id: 35, src: '/images/811cdeff-4c64-4ed9-b08a-698623ac21cf.jpeg', category: 'people', title: 'Happy Travelers', description: 'Smiles all around' },
-      { id: 36, src: '/images/983f6d01-2e8d-4988-988b-e43aa115a7cd.jpeg', category: 'landscape', title: 'Desert Dreams', description: 'Picture perfect desert scene' },
-      { id: 37, src: '/images/9671f312-f3ef-4c01-97fc-569752103450.jpeg', category: 'quad', title: 'Adventure Ready', description: 'Gearing up for fun' },
-      { id: 38, src: '/images/067999f4-1f6d-4f8e-b807-e088fe7d386c.jpeg', category: 'camel', title: 'Gentle Giants', description: 'Camels in the golden light' },
-      { id: 39, src: '/images/547054ff-1396-49c7-b46f-7e373cf45b14.jpeg', category: 'people', title: 'Group Fun', description: 'Shared desert experience' },
-      { id: 40, src: '/images/2712278f-3686-43ef-82d2-64463b9a6e78.jpeg', category: 'landscape', title: 'Natural Beauty', description: 'Desert landscape artistry' },
-      { id: 41, src: '/images/a0491123-bf10-42e0-9287-542d57cacd1f.jpeg', category: 'quad', title: 'Power Ride', description: 'Quad biking excitement' },
-      { id: 42, src: '/images/ae480951-1454-491a-9288-63c35074f8f0.jpeg', category: 'camel', title: 'Desert Tradition', description: 'Ancient travel methods' },
-      { id: 43, src: '/images/d2d348b8-1015-4415-9612-6a64ecca3ca9.jpeg', category: 'people', title: 'Memory Makers', description: 'Creating stories together' },
-      { id: 44, src: '/images/dad2797f-d311-4bd2-8895-2b62b93ce6e3.jpeg', category: 'landscape', title: 'Sandy Waves', description: 'Desert dune patterns' },
-      { id: 45, src: '/images/eccb202d-4078-4c8a-91ca-1cd735c61e9b.jpeg', category: 'quad', title: 'Thrill Seekers', description: 'Adrenaline in the desert' },
-      { id: 46, src: '/images/ee091071-7fcd-47b6-8786-ed5cd7eff97b.jpeg', category: 'camel', title: 'Peaceful Trek', description: 'Slow and steady desert journey' }
+      { id: 1, src: '/images/Quad-Biking-in-the-Agafay-Desert-at-Sunset.jpeg', category: 'quad', title: 'Sunset Quad Adventure', description: 'Thrilling quad biking as the sun sets over Agafay Desert' },
+      { id: 2, src: '/images/Sunset-Quad-Biking-Adventure.jpeg', category: 'quad', title: 'Golden Hour Ride', description: 'Quad biking through golden desert landscapes' },
+      { id: 3, src: '/images/sunset-camel-ride.jpeg', category: 'camel', title: 'Sunset Camel Trek', description: 'Peaceful camel ride during magical sunset hours' },
+      { id: 4, src: '/images/Desert-Camel-Ride.jpeg', category: 'camel', title: 'Desert Caravan', description: 'Traditional camel trekking experience' },
+      { id: 5, src: '/images/Quad-Biking-in-the-Desert-and-Palm-Grove.jpg', category: 'quad', title: 'Palm Grove Exploration', description: 'Quad biking through desert oasis and palm groves' },
+      { id: 6, src: '/images/Quad-biking-in-a-desert-landscape.jpeg', category: 'quad', title: 'Desert Landscape Adventure', description: 'Exploring vast desert terrain on quad bikes' },
+      { id: 7, src: '/images/quad-biking-desert-adventure.jpeg', category: 'quad', title: 'Desert Thrills', description: 'High-energy quad biking through sandy dunes' },
+      { id: 8, src: '/images/Quad-Biking-Adventure-in-the-Desert.jpeg', category: 'quad', title: 'Desert Expedition', description: 'Guided quad tour through stunning desert scenery' },
+      { id: 9, src: '/images/Quad-Biking-Adventure-in-Marrakech.jpeg', category: 'quad', title: 'Marrakech Adventure', description: 'Quad biking adventure starting from Marrakech' },
+      { id: 10, src: '/images/person-riding-a-red-quad-bike-.jpeg', category: 'quad', title: 'Red Quad Action', description: 'Action-packed quad biking on red desert terrain' },
+      { id: 11, src: '/images/Palm-Grove-Quad-Tour.jpg', category: 'quad', title: 'Oasis Tour', description: 'Quad biking through lush palm groves and desert' },
+      { id: 12, src: '/images/Off-Road-Exploration.jpeg', category: 'quad', title: 'Off-Road Exploration', description: 'Exploring off-road desert trails on quad bikes' },
+      { id: 13, src: '/images/Moroccan-Memories.jpeg', category: 'people', title: 'Moroccan Memories', description: 'Travelers enjoying authentic desert experiences' },
+      { id: 14, src: '/images/Moroccan-Desert-Adventure.jpeg', category: 'landscape', title: 'Desert Adventure', description: 'Breathtaking views of Moroccan desert landscapes' },
+      { id: 15, src: '/images/Marrakech-Quad-Bike-Experience-Desert-and-Palmeraie.jpeg', category: 'quad', title: 'Desert & Palmeraie', description: 'Quad biking through desert and palm plantations' },
+      { id: 16, src: '/images/Marrakech-Palmeraie-Quad-Bike-Desert-Adventure.jpg', category: 'quad', title: 'Palmeraie Adventure', description: 'Adventure through Marrakech palm groves' },
+      { id: 17, src: '/images/Marrakech-Palmeraie-Quad-Bike-Desert-Adventure.jpeg', category: 'quad', title: 'Desert Journey', description: 'Scenic quad biking journey through desert' },
+      { id: 18, src: '/images/Marrakech-Palm-Oasis-and-Desert-Quad-Bike-Adventure.jpeg', category: 'quad', title: 'Oasis Adventure', description: 'Quad biking from oasis to desert landscapes' },
+      { id: 19, src: '/images/Marrakech-Palm-Grove-Quad-Bike-Tour.jpeg', category: 'quad', title: 'Palm Grove Tour', description: 'Guided quad tour through beautiful palm groves' },
+      { id: 20, src: '/images/Marrakech-Desert-Quad-Adventure.jpg', category: 'quad', title: 'Desert Quad Adventure', description: 'Professional quad biking in Marrakech desert' },
+      { id: 21, src: '/images/Marrakech-Desert-and-Palm-Grove-Quad-Bike-Tour.jpg', category: 'quad', title: 'Desert & Grove Tour', description: 'Combined desert and palm grove quad experience' },
+      // { id: 22, src: '/images/Marrakech-Desert-and-Palm-Grove-Quad-Bike-Tour.jpeg', category: 'quad', title: 'Scenic Route', description: 'Picturesque quad biking route through varied terrain' },
+      { id: 23, src: '/images/Marrakech-Desert-and-Palm-Grove-Quad-Bike-Adventure.jpg', category: 'quad', title: 'Dual Landscape', description: 'Quad adventure through desert and green landscapes' },
+      { id: 24, src: '/images/Man-riding-quad-bike-over-sandy-terrain.jpg', category: 'quad', title: 'Sandy Terrain', description: 'Mastering sandy desert terrain on quad bike' },
+      { id: 25, src: '/images/Exploring-the-Desert-on-Camelback.jpg', category: 'camel', title: 'Camelback Exploration', description: 'Traditional desert exploration on camelback' },
+      { id: 26, src: '/images/Dromedaries-on-the-Sand.jpeg', category: 'camel', title: 'Desert Dromedaries', description: 'Camels resting on golden desert sands' },
+      { id: 27, src: '/images/Desert-Sunset-Quad-Ride.jpeg', category: 'quad', title: 'Sunset Quad Ride', description: 'Evening quad biking with spectacular sunset views' },
+      { id: 28, src: '/images/Desert-Quad-Biking-Adventure.jpeg', category: 'quad', title: 'Desert Expedition', description: 'Full desert quad biking adventure experience' },
+      { id: 29, src: '/images/Desert-Caravan-Silhouette.jpeg', category: 'camel', title: 'Caravan Silhouette', description: 'Beautiful camel caravan silhouette at dusk' },
+      { id: 30, src: '/images/Desert-Camel-Ride-Adventure.jpeg', category: 'camel', title: 'Camel Adventure', description: 'Exciting camel riding adventure in the desert' },
+      { id: 31, src: '/images/Camel-Trekking-Experience.jpeg', category: 'camel', title: 'Trekking Experience', description: 'Authentic camel trekking through desert trails' },
+      { id: 32, src: '/images/ATV-Tour-in-Marrakech.jpg', category: 'quad', title: 'ATV Tour', description: 'Professional ATV tour in Marrakech desert' },
+      { id: 33, src: '/images/Agafay-Desert-Camel-Trek.jpeg', category: 'camel', title: 'Agafay Trek', description: 'Camel trekking through beautiful Agafay Desert' },
+      { id: 34, src: '/images/Traditional-Moroccan-Seating-Area.jpg', category: 'culture', title: 'Moroccan Hospitality', description: 'Traditional seating area for tea and relaxation' }
     ],
     quad: [
-      { id: 2, src: '/images/1000091075.jpg', category: 'quad', title: 'Quad Biking Adventure', description: 'Thrilling ATV ride through desert terrain' },
-      { id: 5, src: '/images/1000090187.jpg', category: 'quad', title: 'Dune Exploration', description: 'Exploring hidden desert paths on quad bikes' },
-      { id: 9, src: '/images/1000090175.jpg', category: 'quad', title: 'Sunset Ride', description: 'Quad biking as the sun sets over dunes' },
-      { id: 13, src: '/images/1000090170.jpg', category: 'quad', title: 'Desert Thrills', description: 'Adventure through golden sand dunes' },
-      { id: 17, src: '/images/1000090165.jpg', category: 'quad', title: 'Off-Road Excitement', description: 'Quad biking through challenging terrain' },
-      { id: 21, src: '/images/1000090159.jpg', category: 'quad', title: 'Dust Trails', description: 'Quad bikes creating desert clouds' },
-      { id: 25, src: '/images/6fcf9589-0157-4346-bbbf-506206faa400.jpeg', category: 'quad', title: 'Powerful Machines', description: 'Ready for desert exploration' },
-      { id: 29, src: '/images/8fc60428-5d04-4a6b-8812-87b20ef594a3.jpeg', category: 'quad', title: 'Desert Racing', description: 'High-speed desert adventure' },
-      { id: 33, src: '/images/451c3993-1b3a-47e6-bca6-850aba523293.jpeg', category: 'quad', title: 'Dune Challenge', description: 'Conquering sandy slopes' },
-      { id: 37, src: '/images/9671f312-f3ef-4c01-97fc-569752103450.jpeg', category: 'quad', title: 'Adventure Ready', description: 'Gearing up for fun' },
-      { id: 41, src: '/images/a0491123-bf10-42e0-9287-542d57cacd1f.jpeg', category: 'quad', title: 'Power Ride', description: 'Quad biking excitement' },
-      { id: 45, src: '/images/eccb202d-4078-4c8a-91ca-1cd735c61e9b.jpeg', category: 'quad', title: 'Thrill Seekers', description: 'Adrenaline in the desert' }
+      { id: 1, src: '/images/Quad-Biking-in-the-Agafay-Desert-at-Sunset.jpeg', category: 'quad', title: 'Sunset Quad Adventure', description: 'Thrilling quad biking as the sun sets over Agafay Desert' },
+      { id: 2, src: '/images/Sunset-Quad-Biking-Adventure.jpeg', category: 'quad', title: 'Golden Hour Ride', description: 'Quad biking through golden desert landscapes' },
+      { id: 5, src: '/images/Quad-Biking-in-the-Desert-and-Palm-Grove.jpg', category: 'quad', title: 'Palm Grove Exploration', description: 'Quad biking through desert oasis and palm groves' },
+      { id: 6, src: '/images/Quad-biking-in-a-desert-landscape.jpeg', category: 'quad', title: 'Desert Landscape Adventure', description: 'Exploring vast desert terrain on quad bikes' },
+      { id: 7, src: '/images/quad-biking-desert-adventure.jpeg', category: 'quad', title: 'Desert Thrills', description: 'High-energy quad biking through sandy dunes' },
+      { id: 8, src: '/images/Quad-Biking-Adventure-in-the-Desert.jpeg', category: 'quad', title: 'Desert Expedition', description: 'Guided quad tour through stunning desert scenery' },
+      { id: 9, src: '/images/Quad-Biking-Adventure-in-Marrakech.jpeg', category: 'quad', title: 'Marrakech Adventure', description: 'Quad biking adventure starting from Marrakech' },
+      { id: 10, src: '/images/person-riding-a-red-quad-bike-.jpeg', category: 'quad', title: 'Red Quad Action', description: 'Action-packed quad biking on red desert terrain' },
+      { id: 11, src: '/images/Palm-Grove-Quad-Tour.jpg', category: 'quad', title: 'Oasis Tour', description: 'Quad biking through lush palm groves and desert' },
+      { id: 12, src: '/images/Off-Road-Exploration.jpeg', category: 'quad', title: 'Off-Road Exploration', description: 'Exploring off-road desert trails on quad bikes' },
+      { id: 15, src: '/images/Marrakech-Quad-Bike-Experience-Desert-and-Palmeraie.jpeg', category: 'quad', title: 'Desert & Palmeraie', description: 'Quad biking through desert and palm plantations' },
+      { id: 16, src: '/images/Marrakech-Palmeraie-Quad-Bike-Desert-Adventure.jpg', category: 'quad', title: 'Palmeraie Adventure', description: 'Adventure through Marrakech palm groves' },
+      { id: 17, src: '/images/Marrakech-Palmeraie-Quad-Bike-Desert-Adventure.jpeg', category: 'quad', title: 'Desert Journey', description: 'Scenic quad biking journey through desert' },
+      { id: 18, src: '/images/Marrakech-Palm-Oasis-and-Desert-Quad-Bike-Adventure.jpeg', category: 'quad', title: 'Oasis Adventure', description: 'Quad biking from oasis to desert landscapes' },
+      { id: 19, src: '/images/Marrakech-Palm-Grove-Quad-Bike-Tour.jpeg', category: 'quad', title: 'Palm Grove Tour', description: 'Guided quad tour through beautiful palm groves' },
+      { id: 20, src: '/images/Marrakech-Desert-Quad-Adventure.jpg', category: 'quad', title: 'Desert Quad Adventure', description: 'Professional quad biking in Marrakech desert' },
+      { id: 21, src: '/images/Marrakech-Desert-and-Palm-Grove-Quad-Bike-Tour.jpg', category: 'quad', title: 'Desert & Grove Tour', description: 'Combined desert and palm grove quad experience' },
+      // { id: 22, src: '/images/Marrakech-Desert-and-Palm-Grove-Quad-Bike-Tour.jpeg', category: 'quad', title: 'Scenic Route', description: 'Picturesque quad biking route through varied terrain' },
+      { id: 23, src: '/images/Marrakech-Desert-and-Palm-Grove-Quad-Bike-Adventure.jpg', category: 'quad', title: 'Dual Landscape', description: 'Quad adventure through desert and green landscapes' },
+      { id: 24, src: '/images/Man-riding-quad-bike-over-sandy-terrain.jpg', category: 'quad', title: 'Sandy Terrain', description: 'Mastering sandy desert terrain on quad bike' },
+      { id: 27, src: '/images/Desert-Sunset-Quad-Ride.jpeg', category: 'quad', title: 'Sunset Quad Ride', description: 'Evening quad biking with spectacular sunset views' },
+      { id: 28, src: '/images/Desert-Quad-Biking-Adventure.jpeg', category: 'quad', title: 'Desert Expedition', description: 'Full desert quad biking adventure experience' },
+      { id: 32, src: '/images/ATV-Tour-in-Marrakech.jpg', category: 'quad', title: 'ATV Tour', description: 'Professional ATV tour in Marrakech desert' }
     ],
     camel: [
-      { id: 3, src: '/images/1000091074.jpg', category: 'camel', title: 'Camel Caravan', description: 'Traditional camel trekking experience' },
-      { id: 6, src: '/images/1000090185.jpg', category: 'camel', title: 'Berber Journey', description: 'Authentic camel riding with local guides' },
-      { id: 10, src: '/images/1000090174.jpg', category: 'camel', title: 'Traditional Trek', description: 'Experience ancient caravan routes' },
-      { id: 14, src: '/images/1000090169.jpg', category: 'camel', title: 'Sunset Caravan', description: 'Camel ride during golden hour' },
-      { id: 18, src: '/images/1000090164.jpg', category: 'camel', title: 'Desert Giants', description: 'Gentle camels in their natural habitat' },
-      { id: 22, src: '/images/1000090155.jpg', category: 'camel', title: 'Desert Walk', description: 'Peaceful camel trekking experience' },
-      { id: 26, src: '/images/7b96d1c7-58cd-42d4-b640-48ca7f81ed5f.jpeg', category: 'camel', title: 'Desert Companions', description: 'Friendly camels awaiting adventure' },
-      { id: 30, src: '/images/8fd5d81f-3b69-4868-a2dc-f4a156166a17.jpeg', category: 'camel', title: 'Traditional Experience', description: 'Authentic Berber camel trek' },
-      { id: 34, src: '/images/708a902e-1119-4283-938d-c5f2c9463195.jpeg', category: 'camel', title: 'Sunset Journey', description: 'Camel ride at magical hour' },
-      { id: 38, src: '/images/067999f4-1f6d-4f8e-b807-e088fe7d386c.jpeg', category: 'camel', title: 'Gentle Giants', description: 'Camels in the golden light' },
-      { id: 42, src: '/images/ae480951-1454-491a-9288-63c35074f8f0.jpeg', category: 'camel', title: 'Desert Tradition', description: 'Ancient travel methods' },
-      { id: 46, src: '/images/ee091071-7fcd-47b6-8786-ed5cd7eff97b.jpeg', category: 'camel', title: 'Peaceful Trek', description: 'Slow and steady desert journey' }
+      { id: 3, src: '/images/sunset-camel-ride.jpeg', category: 'camel', title: 'Sunset Camel Trek', description: 'Peaceful camel ride during magical sunset hours' },
+      { id: 4, src: '/images/Desert-Camel-Ride.jpeg', category: 'camel', title: 'Desert Caravan', description: 'Traditional camel trekking experience' },
+      { id: 25, src: '/images/Exploring-the-Desert-on-Camelback.jpg', category: 'camel', title: 'Camelback Exploration', description: 'Traditional desert exploration on camelback' },
+      { id: 26, src: '/images/Dromedaries-on-the-Sand.jpeg', category: 'camel', title: 'Desert Dromedaries', description: 'Camels resting on golden desert sands' },
+      { id: 29, src: '/images/Desert-Caravan-Silhouette.jpeg', category: 'camel', title: 'Caravan Silhouette', description: 'Beautiful camel caravan silhouette at dusk' },
+      { id: 30, src: '/images/Desert-Camel-Ride-Adventure.jpeg', category: 'camel', title: 'Camel Adventure', description: 'Exciting camel riding adventure in the desert' },
+      { id: 31, src: '/images/Camel-Trekking-Experience.jpeg', category: 'camel', title: 'Trekking Experience', description: 'Authentic camel trekking through desert trails' },
+      { id: 33, src: '/images/Agafay-Desert-Camel-Trek.jpeg', category: 'camel', title: 'Agafay Trek', description: 'Camel trekking through beautiful Agafay Desert' }
     ],
     landscape: [
-      { id: 1, src: '/images/1000092073.jpg', category: 'landscape', title: 'Golden Dunes Sunset', description: 'Breathtaking sunset over the Agafay desert' },
-      { id: 4, src: '/images/1000090188.jpg', category: 'landscape', title: 'Desert Horizon', description: 'Vast desert landscapes under Moroccan sky' },
-      { id: 8, src: '/images/1000090176.jpg', category: 'landscape', title: 'Desert Serenity', description: 'Peaceful moments in the heart of Agafay' },
-      { id: 12, src: '/images/1000090171.jpg', category: 'landscape', title: 'Golden Hours', description: 'Magic hour lighting in the desert' },
-      { id: 16, src: '/images/1000090166.jpg', category: 'landscape', title: 'Desert Beauty', description: 'Stunning natural desert formations' },
-      { id: 20, src: '/images/1000090160.jpg', category: 'landscape', title: 'Endless Dunes', description: 'Expansive desert views' },
-      { id: 24, src: '/images/3ffdda04-5867-4a6e-8d0d-2cc5f0327729.jpeg', category: 'landscape', title: 'Desert Colors', description: 'Vibrant desert sunset colors' },
-      { id: 28, src: '/images/8e35bdd3-1774-41c3-a229-f50ab8774909.jpeg', category: 'landscape', title: 'Golden Sands', description: 'Beautiful desert textures' },
-      { id: 32, src: '/images/357b70ca-160f-4643-9b02-869fa795c87b.jpeg', category: 'landscape', title: 'Vast Horizons', description: 'Endless desert beauty' },
-      { id: 36, src: '/images/983f6d01-2e8d-4988-988b-e43aa115a7cd.jpeg', category: 'landscape', title: 'Desert Dreams', description: 'Picture perfect desert scene' },
-      { id: 40, src: '/images/2712278f-3686-43ef-82d2-64463b9a6e78.jpeg', category: 'landscape', title: 'Natural Beauty', description: 'Desert landscape artistry' },
-      { id: 44, src: '/images/dad2797f-d311-4bd2-8895-2b62b93ce6e3.jpeg', category: 'landscape', title: 'Sandy Waves', description: 'Desert dune patterns' }
+      { id: 14, src: '/images/Moroccan-Desert-Adventure.jpeg', category: 'landscape', title: 'Desert Adventure', description: 'Breathtaking views of Moroccan desert landscapes' }
     ],
-    people: [
-      { id: 7, src: '/images/1000090181.jpg', category: 'people', title: 'Happy Adventurers', description: 'Group photo with our desert explorers' },
-      { id: 11, src: '/images/1000090173.jpg', category: 'people', title: 'Desert Memories', description: 'Unforgettable moments with friends' },
-      { id: 15, src: '/images/1000090167.jpg', category: 'people', title: 'Group Adventure', description: 'Friends enjoying desert exploration' },
-      { id: 19, src: '/images/1000090163.jpg', category: 'people', title: 'Smiling Faces', description: 'Happy travelers creating memories' },
-      { id: 23, src: '/images/3fba3688-dd12-4084-b2c5-ef9985c10236.jpeg', category: 'people', title: 'Adventure Team', description: 'Our guides and happy customers' },
-      { id: 27, src: '/images/8aab37be-9980-426f-8c4f-cdd0ab10272f.jpeg', category: 'people', title: 'Joyful Moments', description: 'Laughter and fun in the desert' },
-      { id: 31, src: '/images/9c7ba39c-70b7-4044-8c3f-92a76f58dabb.jpeg', category: 'people', title: 'Desert Friends', description: 'Making memories together' },
-      { id: 35, src: '/images/811cdeff-4c64-4ed9-b08a-698623ac21cf.jpeg', category: 'people', title: 'Happy Travelers', description: 'Smiles all around' },
-      { id: 39, src: '/images/547054ff-1396-49c7-b46f-7e373cf45b14.jpeg', category: 'people', title: 'Group Fun', description: 'Shared desert experience' },
-      { id: 43, src: '/images/d2d348b8-1015-4415-9612-6a64ecca3ca9.jpeg', category: 'people', title: 'Memory Makers', description: 'Creating stories together' }
+    culture: [
+      { id: 13, src: '/images/Moroccan-Memories.jpeg', category: 'culture', title: 'Moroccan Memories', description: 'Travelers enjoying authentic desert experiences' },
+      { id: 34, src: '/images/Traditional-Moroccan-Seating-Area.jpg', category: 'culture', title: 'Moroccan Hospitality', description: 'Traditional seating area for tea and relaxation' }
     ]
   };
 
@@ -140,7 +114,7 @@ export default function Gallery() {
     { id: 'quad', name: 'Quad Biking', count: galleryImages.quad.length, emoji: '🏍️' },
     { id: 'camel', name: 'Camel Trekking', count: galleryImages.camel.length, emoji: '🐫' },
     { id: 'landscape', name: 'Desert Landscapes', count: galleryImages.landscape.length, emoji: '🏜️' },
-    { id: 'people', name: 'Our Adventurers', count: galleryImages.people.length, emoji: '👥' }
+    { id: 'culture', name: 'Moroccan Culture', count: galleryImages.culture.length, emoji: '🫖' }
   ];
 
   const filteredImages = selectedCategory === 'all' 
@@ -191,14 +165,10 @@ export default function Gallery() {
   }, [selectedImage]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 to-white py-24">
-      <Head>
-        <title>Gallery | QuadCamelMarrakesh - Desert Adventure Photos</title>
-        <meta name="description" content="Explore stunning photos from our quad biking and camel trekking adventures in the Agafay desert near Marrakech" />
-      </Head>
+    <div className="min-h-screen bg-linear-to-br from-amber-50 to-white py-24">
 
       {/* Header */}
-      <div className="bg-gradient-to-b from-white to-amber-50/30 border-b border-amber-100">
+      <div className="bg-linear-to-b from-white to-amber-50/30 border-b border-amber-100">
         <div className="max-w-6xl mx-auto px-6 py-16">
           <div className="text-center">
             <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full border border-amber-200 mb-6">
@@ -249,7 +219,7 @@ export default function Gallery() {
           {filteredImages.map((image) => (
             <div
               key={image.id}
-              className="group relative aspect-square rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 cursor-pointer bg-slate-200"
+              className="group relative aspect-square rounded-3xl overflow-hidden border border-amber-100 hover:border-amber-300 transition-all duration-500 hover:scale-105 cursor-pointer bg-slate-200"
               onClick={() => openLightbox(image)}
             >
               {/* Image */}
@@ -276,7 +246,7 @@ export default function Gallery() {
 
               {/* Loading Skeleton */}
               {!loadedImages[image.id] && (
-                <div className="absolute inset-0 bg-gradient-to-br from-amber-100 to-amber-200 animate-pulse flex items-center justify-center">
+                <div className="absolute inset-0 bg-linear-to-br from-amber-100 to-amber-200 animate-pulse flex items-center justify-center">
                   <div className="w-8 h-8 border-2 border-amber-500 border-t-transparent rounded-full animate-spin"></div>
                 </div>
               )}

@@ -15,32 +15,28 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Quad Camel Marrakech - Ride a Quad Bike in Agafay & Enjoy Camel Experience",
+  title: {
+    default: "Quad Camel Marrakech - Quad Bike & Camel Ride in Agafay Desert",
+    template: "%s | Quad Camel Marrakech" // Dynamic titles for other pages
+  },
   description: "Ride a quad bike across the Agafay desert and enjoy a peaceful camel experience with stunning views, golden landscapes, and unforgettable moments.",
   keywords: "quad biking Marrakech, camel ride Agafay, desert adventure Morocco, quad bike tour, camel experience, Agafay desert tour, Marrakech activities",
   authors: [{ name: "Quad Camel Marrakech" }],
-  creator: "Quad Camel Marrakech",
-  publisher: "Quad Camel Marrakech", 
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
   metadataBase: new URL('https://quadcamelmarrakesh.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: "Quad Camel Marrakech - Ride a Quad Bike in Agafay & Enjoy Camel Experience",
+    title: "Quad Camel Marrakech - Quad Bike & Camel Ride in Agafay Desert",
     description: "Ride a quad bike across the Agafay desert and enjoy a peaceful camel experience with stunning views, golden landscapes, and unforgettable moments.",
     url: 'https://quadcamelmarrakesh.com',
     siteName: 'Quad Camel Marrakech',
     images: [
       {
-        url: '/images/1000092073.jpg',
+        url: '/images/quad-biking-desert-adventure.jpeg', // Make sure this path is correct
         width: 1200,
         height: 630,
-        alt: 'Quad biking and camel experience in Agafay desert',
+        alt: 'Quad biking adventure at sunset in Agafay Desert near Marrakech',
       },
     ],
     locale: 'en_US',
@@ -48,9 +44,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Quad Camel Marrakech - Ride a Quad Bike in Agafay & Enjoy Camel Experience",
+    title: "Quad Camel Marrakech - Quad Bike & Camel Ride in Agafay Desert",
     description: "Ride a quad bike across the Agafay desert and enjoy a peaceful camel experience with stunning views, golden landscapes, and unforgettable moments.",
-    images: ['/images/1000092073.jpg'],
+    creator: '@quadcamelmarrakech', // Add if you have Twitter
+    images: ['/images/quad-biking-desert-adventure.jpeg'], // Use same image
   },
   robots: {
     index: true,
@@ -63,11 +60,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    // You can add Google Search Console verification here later
-    // google: 'your-google-verification-code',
-  },
-
 };
 
 export default function RootLayout({
@@ -77,17 +69,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-      </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Header />
-        {children}
+        <main>{children}</main> {/* Wrap in main for semantic HTML */}
         <Footer />
       </body>
     </html>

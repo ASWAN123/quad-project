@@ -36,7 +36,7 @@ const Testimonials = () => {
               Q
             </div>
             <div className="text-left">
-              <p className="text-slate-800 font-medium text-sm">Karim & The Team</p>
+              <p className="text-slate-800 font-medium text-sm">The Team</p>
               <p className="text-slate-500 text-xs">Your Desert Family in Marrakech</p>
             </div>
           </div>
@@ -50,7 +50,7 @@ const Testimonials = () => {
         {
           name: "Sarah & Mark",
           location: "London, UK • Honeymoon",
-          text: "We came for the adventure but left with so much more. Karim didn't just guide us - he shared his home, his stories, and made us feel like family. The moment we stopped for mint tea as the sun set over the dunes... that's when we fell in love with Morocco.",
+          text: "We came for the adventure but left with so much more. abderrahim didn't just guide us - he shared his home, his stories, and made us feel like family. The moment we stopped for mint tea as the sun set over the dunes... that's when we fell in love with Morocco.",
           rating: 5,
           highlight: "Honeymoon Special",
           emoji: "💑",

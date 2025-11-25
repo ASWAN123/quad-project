@@ -2,7 +2,8 @@
 "use client";
 import { useState } from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
+import Link from 'next/link';
+
 
 interface BlogStory {
   id: number;
@@ -28,34 +29,7 @@ export default function Stories() {
     { id: 'families', name: 'Family Adventures', count: 2, emoji: '👨‍👩‍👧‍👦' }
   ];
 
-  const featuredStories: BlogStory[] = [
-    {
-      id: 1,
-      type: 'blog',
-      title: "From Office to Desert: A Solo Journey of Discovery",
-      excerpt: "How one week in the Moroccan desert changed my perspective on life, adventure, and what truly matters",
-      author: "Michael Chen",
-      location: "New York, USA",
-      readTime: "5 min read",
-      category: 'adventure',
-      image: "/images/1000091075.jpg",
-      date: "2024-01-12",
-      highlights: ["Personal growth", "Cultural immersion", "Overcoming fears", "Finding peace"]
-    },
-    {
-      id: 2,
-      type: 'blog',
-      title: "Our Magical Honeymoon in the Agafay Desert",
-      excerpt: "Sarah and Mark share their unforgettable experience combining quad biking thrills with romantic camel sunsets",
-      author: "Sarah & Mark",
-      location: "London, UK",
-      readTime: "4 min read",
-      category: 'couples',
-      image: "/images/1000092073.jpg",
-      date: "2024-01-15",
-      highlights: ["Romantic sunset", "Adventure bonding", "Cultural experience", "Professional service"]
-    }
-  ];
+
 
   const stories: BlogStory[] = [
     {
@@ -138,20 +112,15 @@ export default function Stories() {
     }
   ];
 
-  const allStories = [...featuredStories, ...stories];
+  const allStories = [ ...stories];
   const filteredStories = selectedCategory === 'all' 
     ? allStories 
     : allStories.filter(story => story.category === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 to-white py-24">
-      <Head>
-        <title>Travel Stories & Experiences | QuadCamelMarrakesh</title>
-        <meta name="description" content="Read real stories and experiences from travelers who've explored the Agafay desert with QuadCamelMarrakesh" />
-      </Head>
-
+    <div className="min-h-screen bg-linear-to-br from-amber-50 to-white py-24">
       {/* Header */}
-      <div className="bg-gradient-to-b from-white to-amber-50/30 border-b border-amber-100">
+      <div className="bg-linear-to-b from-white to-amber-50/30 border-b border-amber-100">
         <div className="max-w-6xl mx-auto px-6 py-16">
           <div className="text-center">
             <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full border border-amber-200 mb-6">
@@ -172,62 +141,6 @@ export default function Stories() {
 
       <div className="max-w-6xl mx-auto px-6 py-12">
         
-        {/* Featured Stories */}
-        <div className="mb-16">
-          <h2 className="text-2xl font-serif text-slate-800 mb-8">Featured Stories</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {featuredStories.map((story) => (
-              <div key={story.id} className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-amber-100">
-                <div className="relative h-64">
-                  <Image
-                    src={story.image}
-                    alt={story.title}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-amber-500 rounded-full text-xs font-bold text-white">
-                      📝 FEATURED
-                    </span>
-                  </div>
-                </div>
-                
-                <div className="p-6">
-                  <div className="flex items-center space-x-2 mb-3">
-                    <span className={`px-2 py-1 rounded text-xs font-medium ${
-                      story.category === 'adventure' ? 'bg-blue-100 text-blue-700' :
-                      story.category === 'couples' ? 'bg-pink-100 text-pink-700' :
-                      'bg-green-100 text-green-700'
-                    }`}>
-                      {story.category}
-                    </span>
-                    <span className="text-slate-400 text-sm">•</span>
-                    <span className="text-slate-500 text-sm">{story.readTime}</span>
-                  </div>
-                  
-                  <h3 className="text-xl font-semibold text-slate-800 mb-3">{story.title}</h3>
-                  <p className="text-slate-600 mb-4 leading-relaxed">{story.excerpt}</p>
-                  
-                  <div className="flex items-center justify-between text-sm text-slate-500 mb-4">
-                    <div className="flex items-center space-x-4">
-                      <span>By {story.author}</span>
-                      <span>•</span>
-                      <span>{story.location}</span>
-                    </div>
-                    <span>{story.date}</span>
-                  </div>
-
-                  <div className="flex items-center justify-between">
-                    <button className="text-amber-600 hover:text-amber-700 font-medium flex items-center space-x-2 transition-colors">
-                      <span>Read Full Story</span>
-                      <span className="group-hover:translate-x-1 transition-transform">→</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
 
         {/* Story Categories */}
         <div className="mb-12">
@@ -260,35 +173,49 @@ export default function Stories() {
         {/* Stories Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {filteredStories.map((story) => (
-            <div key={story.id} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-amber-100 group">
-              <div className="flex items-start justify-between mb-3">
-                <span className={`px-2 py-1 rounded text-xs font-medium ${
-                  story.category === 'adventure' ? 'bg-blue-100 text-blue-700' :
-                  story.category === 'couples' ? 'bg-pink-100 text-pink-700' :
-                  'bg-green-100 text-green-700'
-                }`}>
-                  {story.category}
-                </span>
-                <span className="text-slate-400 text-sm">{story.readTime}</span>
+            <div key={story.id} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-amber-100 group relative overflow-hidden">
+              {/* Coming Soon Overlay */}
+              <div className="absolute inset-0 bg-white/80 backdrop-blur-sm rounded-2xl flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="text-center p-4">
+                  <div className="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-white text-lg">🔒</span>
+                  </div>
+                  <p className="font-semibold text-slate-800">Coming Soon</p>
+                  <p className="text-slate-600 text-sm mt-1">Stories section launching soon!</p>
+                </div>
               </div>
               
-              <h3 className="font-semibold text-slate-800 mb-2 line-clamp-2 group-hover:text-amber-700 transition-colors">
-                {story.title}
-              </h3>
-              <p className="text-slate-600 text-sm mb-4 line-clamp-3 leading-relaxed">
-                {story.excerpt}
-              </p>
-              
-              <div className="flex items-center justify-between text-sm text-slate-500">
-                <span>By {story.author}</span>
-                <span>{story.date}</span>
+              {/* Content Blur Effect on Hover */}
+              <div className="group-hover:blur-sm transition-all duration-300">
+                <div className="flex items-start justify-between mb-3">
+                  <span className={`px-2 py-1 rounded text-xs font-medium ${
+                    story.category === 'adventure' ? 'bg-blue-100 text-blue-700' :
+                    story.category === 'couples' ? 'bg-pink-100 text-pink-700' :
+                    'bg-green-100 text-green-700'
+                  }`}>
+                    {story.category}
+                  </span>
+                  <span className="text-slate-400 text-sm">{story.readTime}</span>
+                </div>
+                
+                <h3 className="font-semibold text-slate-800 mb-2 line-clamp-2 group-hover:text-amber-700 transition-colors">
+                  {story.title}
+                </h3>
+                <p className="text-slate-600 text-sm mb-4 line-clamp-3 leading-relaxed">
+                  {story.excerpt}
+                </p>
+                
+                <div className="flex items-center justify-between text-sm text-slate-500">
+                  <span>By {story.author}</span>
+                  <span>{story.date}</span>
+                </div>
               </div>
             </div>
           ))}
         </div>
 
         {/* Share Your Story CTA */}
-        <div className="bg-gradient-to-r from-amber-500 to-amber-600 rounded-3xl p-8 text-white text-center">
+        <div className="bg-linear-to-r from-amber-500 to-amber-600 rounded-3xl p-8 text-white text-center">
           <h2 className="text-2xl md:text-3xl font-serif mb-4">
             Share Your Desert Story
           </h2>
@@ -296,12 +223,18 @@ export default function Stories() {
             Had an amazing adventure with us? We'd love to hear about your experience and share it with future travelers.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-amber-600 hover:bg-amber-50 px-6 py-3 rounded-xl font-semibold transition-colors duration-300">
+            <a 
+              href="mailto:experience@quadCamelMarrakesh.com?subject=My Desert Adventure Story&body=Hi Quad Camel Team, I'd like to share my desert adventure story..."
+              className="bg-white text-amber-600 hover:bg-amber-50 px-6 py-3 rounded-xl font-semibold transition-colors duration-300 inline-block"
+            >
               Share Your Experience
-            </button>
-            <button className="border border-amber-300 text-amber-100 hover:bg-amber-500 px-6 py-3 rounded-xl font-medium transition-colors duration-300">
+            </a>
+            <Link 
+              href="/contact-us"
+              className="border border-amber-300 text-amber-100 hover:bg-amber-500 px-6 py-3 rounded-xl font-medium transition-colors duration-300 inline-block"
+            >
               Contact Us
-            </button>
+            </Link>
           </div>
         </div>
       </div>

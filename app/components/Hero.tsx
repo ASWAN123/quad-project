@@ -7,14 +7,10 @@ import Link from "next/link"
 import { useState } from "react"
 
 const Hero = () => {
-  const images = {
-    hero: [
-      '/images/1000092073.jpg', 
-      '/images/1000091075.jpg', 
-      '/images/1000091074.jpg', 
-      '/images/1000090188.jpg'  
-    ]
-  }
+  const images = [
+    '/images/Desert-Camel-Ride-Adventure.jpeg',
+    '/images/Moroccan-Memories.jpeg', 
+  ]
 
   const [isHoveredPrimary, setIsHoveredPrimary] = useState(false)
   const [isHoveredSecondary, setIsHoveredSecondary] = useState(false)
@@ -22,25 +18,25 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-amber-50 via-orange-50 to-amber-100 pt-16">
       {/* Background Texture */}
-      <div className="absolute inset-0 bg-[url('/images/moroccan-pattern.png')] opacity-5 mix-blend-soft-light"></div>
+      <div className="absolute inset-0 opacity-5 mix-blend-soft-light"></div>
       
-      <div className="max-w-6xl mx-auto w-full px-6 lg:px-8 py-12 lg:py-20">
+      <div className="max-w-6xl mx-auto w-full px-6 lg:px-8 py-12 lg:py-20 relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
           {/* Images Section - MOVED TO TOP ON MOBILE */}
           <div className="relative order-1 lg:order-2 space-y-6">
             {/* Main Featured Image */}
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white/90 transform rotate-1 hover:rotate-0 transition-transform duration-500">
+            <div className="relative rounded-3xl overflow-hidden border-8 border-white/90 transform md:rotate-1 hover:rotate-0 transition-transform duration-500">
               <Image
-                src={images.hero[0]}
-                alt="Beautiful Moroccan desert landscape at sunset"
+                src={images[0]}
+                alt="Quad biking adventure at sunset in Agafay Desert"
                 width={600}
                 height={400}
-                className="w-full h-[300px] lg:h-[350px] object-cover"
+                className="w-full h-[300px] lg:h-[450px] object-cover"
                 priority
               />
               {/* Overlay Label */}
-              <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg">
+              <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2">
                 <p className="text-amber-800 font-medium text-sm">Agafay Desert • Marrakech</p>
               </div>
             </div>
@@ -48,20 +44,20 @@ const Hero = () => {
             {/* Second Image - Side by side with experience cards */}
             <div className="grid grid-cols-2 gap-4">
               {/* Second Image */}
-              <div className="relative rounded-2xl overflow-hidden shadow-xl border-6 border-white/90 transform -rotate-1 hover:rotate-0 transition-transform duration-500">
+              <div className="relative rounded-2xl overflow-hidden border-6 border-white/90 transform -rotate-1 hover:rotate-0 transition-transform duration-500">
                 <Image
-                  src={images.hero[1]}
-                  alt="Quad biking adventure in the desert"
+                  src={images[1]}
+                  alt="Sunset quad biking adventure in the desert"
                   width={300}
                   height={200}
-                  className="w-full h-[180px] object-cover"
+                  className="w-full h-[180px] lg:h-60 object-cover"
                 />
               </div>
 
               {/* Experience Cards Stack */}
               <div className="space-y-4">
                 {/* Quad Biking Card */}
-                <div className="bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-amber-200/50 transform hover:scale-105 transition-transform duration-300">
+                <div className="bg-white/95 backdrop-blur-md rounded-2xl p-4 border border-amber-200/50 transform hover:scale-105 transition-transform duration-300">
                   <div className="flex items-center space-x-3">
                     <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center">
                       <span className="text-amber-700 text-xl">🏍️</span>
@@ -74,7 +70,7 @@ const Hero = () => {
                 </div>
 
                 {/* Camel Trekking Card */}
-                <div className="bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-amber-200/50 transform hover:scale-105 transition-transform duration-300">
+                <div className="bg-white/95 backdrop-blur-md rounded-2xl p-4 border border-amber-200/50 transform hover:scale-105 transition-transform duration-300">
                   <div className="flex items-center space-x-3">
                     <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center">
                       <span className="text-amber-700 text-xl">🐫</span>
@@ -89,7 +85,7 @@ const Hero = () => {
             </div>
 
             {/* Trust Badge */}
-            <div className="absolute top-4 right-4 bg-linear-to-r from-amber-500 to-amber-600 text-white px-4 py-2 rounded-full shadow-lg">
+            <div className="absolute top-4 right-4 bg-linear-to-r from-amber-500 to-amber-600 text-white px-4 py-2 rounded-full">
               <p className="text-sm font-medium">✨ Trusted Since 2024</p>
             </div>
           </div>
@@ -117,7 +113,7 @@ const Hero = () => {
             </div>
 
             {/* Personal Invitation */}
-            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-amber-200/50 shadow-sm max-w-md mx-auto lg:mx-0">
+            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-amber-200/50 max-w-md mx-auto lg:mx-0">
               <p className="text-slate-700 text-sm lg:text-base leading-relaxed italic">
                 "From the thrill of quad biking across golden dunes to the peaceful rhythm of camel trekking at sunset - every moment is crafted with care and local wisdom."
               </p>
@@ -134,11 +130,11 @@ const Hero = () => {
 
             {/* Action Buttons with Mouse Events */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-              <button 
-                className="group bg-linear-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white px-8 py-4 rounded-full font-medium tracking-wide transition-all duration-300 hover:shadow-xl flex items-center justify-center space-x-2 relative overflow-hidden"
+              <Link
+                href="/contact-us"
+                className="group bg-linear-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white px-8 py-4 rounded-full font-medium tracking-wide transition-all duration-300 flex items-center justify-center space-x-2 relative overflow-hidden"
                 onMouseEnter={() => setIsHoveredPrimary(true)}
                 onMouseLeave={() => setIsHoveredPrimary(false)}
-                onClick={() => window.location.href = '/contact-us'}
               >
                 <span className={`relative z-10 transition-transform duration-300 ${isHoveredPrimary ? 'translate-x-1' : ''}`}>
                   Start Your Adventure
@@ -148,7 +144,7 @@ const Hero = () => {
                 </span>
                 {/* Animated background effect */}
                 <div className={`absolute inset-0 bg-linear-to-r from-white/20 to-white/10 transition-transform duration-500 ${isHoveredPrimary ? 'translate-x-0' : '-translate-x-full'}`}></div>
-              </button>
+              </Link>
               
               <Link
                 href="/stories"
@@ -168,25 +164,31 @@ const Hero = () => {
             </div>
 
             {/* Quick Contact */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-3 sm:space-y-0 sm:space-x-6 pt-6 text-sm text-slate-600">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-3 sm:space-y-0 sm:space-x-6 pt-6 text-sm text-slate-600 relative z-30">
               <a 
                 href="https://wa.me/212627349254"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center space-x-2 hover:text-green-600 transition-colors duration-300"
               >
                 <span className="text-green-600">💬</span>
                 <span>Chat on WhatsApp</span>
               </a>
-              <div className="flex items-center space-x-2">
+              <a 
+                href="tel:+212627349254"
+                className="flex items-center space-x-2 hover:text-amber-600 transition-colors duration-300"
+              >
                 <span className="text-amber-600">📞</span>
-                <span>+212 612-345678</span>
-              </div>
+                <span>+212 627349254</span>
+              </a>
             </div>
+            
           </div>
         </div>
       </div>
 
-      {/* Scroll Invitation - FIXED Z-INDEX */}
-      <div className="absolute md:bottom-8 left-1/2 transform -translate-x-1/2  md:animate-bounce z-10">
+      {/* Scroll Invitation - FIXED Z-INDEX ISSUE */}
+      <div className="hidden md:block absolute md:bottom-8 left-1/2 transform -translate-x-1/2 md:animate-bounce z-10">
         <div className="text-center space-y-2">
           <p className="text-slate-500 text-sm tracking-widest">DISCOVER MORE</p>
           <div className="w-px h-8 bg-linear-to-b from-amber-600 to-transparent mx-auto"></div>
