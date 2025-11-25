@@ -10,7 +10,7 @@ export default function robots(): MetadataRoute.Robots {
         '/experiences/quad-biking-and-camel-ride-in-the-agafay-desert/',
         '/gallery/',
         '/stories/',
-        '/contact/',
+        '/contact-us',
         '/about/',
         '/guides/',
         '/safety/',

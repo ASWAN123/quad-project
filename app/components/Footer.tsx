@@ -94,7 +94,7 @@ const Footer = () => {
       href="/contact-us"
       className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
     >
-      Contact
+      Contact Us
     </Link>
     <Link
       href="/faq"
