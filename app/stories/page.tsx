@@ -120,7 +120,7 @@ export default function Stories() {
   return (
     <div className="min-h-screen bg-linear-to-br from-amber-50 to-white py-24">
       {/* Header */}
-      <div className="bg-linear-to-b from-white to-amber-50/30 border-b border-amber-100">
+      <div className="bg-linear-to-b from-white to-amber-50/30 border-b border-amber-100 py-8">
         <div className="max-w-6xl mx-auto px-6 py-16">
           <div className="text-center">
             <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full border border-amber-200 mb-6">

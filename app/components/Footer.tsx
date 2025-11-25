@@ -84,37 +84,38 @@ const Footer = () => {
         </div>
 
         {/* Support */}
-        <div className="space-y-4">
-          <h3 className="text-white font-semibold text-lg tracking-widest uppercase mb-4">
-            Support
-          </h3>
-          <div className="space-y-3">
-            <Link
-              href="/contact"
-              className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
-            >
-              Contact
-            </Link>
-            <a
-              href="#"
-              className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
-            >
-              FAQ
-            </a>
-            <a
-              href="#"
-              className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
-            >
-              Booking Policy
-            </a>
-            <a
-              href="#"
-              className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
-            >
-              Privacy
-            </a>
-          </div>
-        </div>
+     {/* Support */}
+<div className="space-y-4">
+  <h3 className="text-white font-semibold text-lg tracking-widest uppercase mb-4">
+    Support
+  </h3>
+  <div className="space-y-3">
+    <Link
+      href="/contact-us"
+      className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
+    >
+      Contact
+    </Link>
+    <Link
+      href="/faq"
+      className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
+    >
+      FAQ
+    </Link>
+    <Link
+      href="/booking-policy"
+      className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
+    >
+      Booking Policy
+    </Link>
+    <Link
+      href="/privacy"
+      className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
+    >
+      Privacy
+    </Link>
+  </div>
+</div>
       </div>
     </div>
 
@@ -237,7 +238,7 @@ const Footer = () => {
       </a>
 
       {/* Book Now */}
-      <Link href="/contact">
+      <Link href="/contact-us">
         <button className="group bg-linear-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white p-4 rounded-2xl shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-xl">
           <div className="flex items-center space-x-2">
             <span className="text-lg">⚡</span>

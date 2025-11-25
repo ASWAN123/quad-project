@@ -36,7 +36,7 @@ export default function Sustainability() {
 
   return (
     <div className="min-h-screen bg-white py-24">
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-4xl mx-auto px-6 py-8">
         <h1 className="text-4xl md:text-5xl font-serif text-slate-800 text-center mb-8">
           Sustainable Adventures
         </h1>
