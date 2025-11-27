@@ -32,7 +32,7 @@ const Hero = () => {
                 alt="Quad biking adventure at sunset in Agafay Desert"
                 width={600}
                 height={400}
-                className="w-full h-[300px] lg:h-[450px] object-cover"
+                className="w-full h-[350px] lg:h-[450px] object-cover"
                 
                   priority // For above-the-fold images
             
@@ -50,7 +50,7 @@ const Hero = () => {
             {/* Second Image - Side by side with experience cards */}
             <div className="grid grid-cols-2 gap-4">
               {/* Second Image */}
-              <div className="relative rounded-2xl overflow-hidden border-6 border-white/90 transform -rotate-1 hover:rotate-0 transition-transform duration-500">
+              <div className="relative rounded-2xl h-fit overflow-hidden border-6 border-white/90 transform -rotate-1 hover:rotate-0 transition-transform duration-500">
                 <Image
                   src={images[1]}
                   alt="Sunset quad biking adventure in the desert"
