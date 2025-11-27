@@ -18,4 +18,4 @@ const nextConfig: NextConfig = {
   compress: true,
 };
 
-export default nextConfig;
+export default nextConfig ;
