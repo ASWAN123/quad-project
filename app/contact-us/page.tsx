@@ -129,7 +129,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-slate-50 py-24">
       {/* Header */}
-      <div className="bg-gradient-to-b from-amber-50/80 to-slate-50 border-b border-amber-100/50">
+      <div className="bg-linear-to-b from-amber-50/80 to-slate-50 border-b border-amber-100/50">
         <div className="max-w-6xl mx-auto px-6 py-16">
           <div className="text-center">
             <div className="inline-flex items-center space-x-2 bg-white/70 backdrop-blur-sm px-6 py-3 rounded-full border border-amber-200/80 mb-6">
@@ -348,17 +348,7 @@ export default function Contact() {
                 disabled={isSubmitting}
                 className="w-full bg-amber-600 hover:bg-amber-700 text-white py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl"
               >
-                {/* {isSubmitting ? (
-                  <>
-                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                    <span>Creating Your Adventure...</span>
-                  </>
-                ) : (
-                  <>
-                    <span>Start Your Desert Journey</span>
-                    <span className="group-hover:translate-x-1 transition-transform">🏜️</span>
-                  </>
-                )} */}
+          
                 {isSubmitting ? (
   <>
     <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>

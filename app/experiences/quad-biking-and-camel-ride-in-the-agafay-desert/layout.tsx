@@ -2,21 +2,31 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Marrakech: Quad Biking & Camel Ride in Agafay Desert",
-  description: "Experience quad biking and camel riding in Agafay Desert. Hotel pickup, professional guides, and unforgettable sunset views. Book your desert adventure today!",
+  title: "Agafay Desert Adventure: Quad Biking & Sunset Camel Trek from Marrakech",
+  description: "4-hour desert experience with quad biking, camel trekking, and Moroccan tea. Hotel pickup included. Professional guides, all skill levels welcome. Book your adventure today!",
+  keywords: "quad biking Marrakech, camel ride Agafay desert, Agafay desert tour, Marrakech desert adventure, quad bike rental Marrakech, camel trekking Morocco",
   openGraph: {
-    title: "Marrakech: Quad Biking & Camel Ride in Agafay Desert",
-    description: "Experience quad biking and camel riding in Agafay Desert with professional guides and hotel pickup.",
+    title: "Agafay Desert Adventure: Quad Biking & Sunset Camel Trek",
+    description: "4-hour desert experience with quad biking, camel trekking, and Moroccan tea. Professional guides, hotel pickup included.",
+    images: ['/images/Marrakech-Palmeraie-Quad-Bike-Desert-Adventure.jpg'],
+    type: 'website',
+    locale: 'en_US',
+    siteName: 'Quad Camel Marrakech',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Agafay Desert Adventure: Quad Biking & Sunset Camel Trek",
+    description: "4-hour desert experience with quad biking, camel trekking, and Moroccan tea.",
     images: ['/images/Marrakech-Palmeraie-Quad-Bike-Desert-Adventure.jpg'],
   },
 };
 
-// JSON-LD Structured Data
+// JSON-LD Structured Data - UPDATED
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'TouristAttraction',
-  'name': 'Marrakech: Quad Biking and Camel Ride in the Agafay Desert',
-  'description': 'Experience the magic of the Agafay desert with our authentic quad biking and camel trekking adventure. Feel the thrill of riding through golden dunes, then embrace the peaceful rhythm of a traditional camel ride.',
+  'name': 'Agafay Desert Adventure: Quad Biking & Sunset Camel Trek',
+  'description': 'Discover the magic of Morocco\'s Agafay Desert with an unforgettable combination of thrilling quad biking and traditional camel trekking. Experience the perfect blend of adventure and cultural immersion just outside Marrakech.',
   'image': [
     '/images/Marrakech-Palmeraie-Quad-Bike-Desert-Adventure.jpg',
     '/images/Sunset-Quad-Biking-Adventure.jpeg',
@@ -24,13 +34,13 @@ const jsonLd = {
   ],
   'offers': {
     '@type': 'Offer',
-    'name': 'Quad Biking & Camel Ride Experience',
-    'price': '55',
+    'name': 'Quad Biking & Camel Trekking Combo',
+    'price': '95',
     'priceCurrency': 'EUR',
     'priceValidUntil': '2024-12-31',
     'availability': 'https://schema.org/InStock',
     'url': 'https://quadcamelmarrakesh.com/experiences/quad-biking-and-camel-ride-in-the-agafay-desert',
-    'description': 'Full day desert adventure including quad biking, camel trekking, and hotel transfer'
+    'description': '4-hour desert adventure including 2-hour quad biking, 20-minute camel ride, and Moroccan tea break'
   },
   'address': {
     '@type': 'PostalAddress',
@@ -50,7 +60,8 @@ const jsonLd = {
     '@type': 'Organization',
     'name': 'Quad Camel Marrakech',
     'url': 'https://quadcamelmarrakesh.com',
-    'telephone': '+212627349254'
+    'telephone': '+212627349254',
+    'email': 'experience@quadcamelmarrakesh.com'
   },
   'aggregateRating': {
     '@type': 'AggregateRating',
@@ -99,57 +110,90 @@ const jsonLd = {
   ],
   'itinerary': {
     '@type': 'ItemList',
-    'numberOfItems': 4,
+    'numberOfItems': 5,
     'itemListElement': [
       {
         '@type': 'ListItem',
         'position': 1,
-        'name': 'Morning Adventure: Quad Biking (2-3 hours)',
-        'description': 'Hotel pickup, safety briefing, guided ATV tour through desert landscapes with photo stops'
+        'name': 'Hotel Pickup & Transfer',
+        'description': 'Comfortable pickup from your Marrakech accommodation (45-minute journey)'
       },
       {
         '@type': 'ListItem',
         'position': 2,
-        'name': 'Desert Break',
-        'description': 'Refresh with bottled water and rest while enjoying desert scenery'
+        'name': 'Safety Briefing & Equipment',
+        'description': '10-minute safety briefing and quad bike orientation with professional instruction'
       },
       {
         '@type': 'ListItem',
         'position': 3,
-        'name': 'Evening Magic: Camel Trekking (1.5-2 hours)',
-        'description': 'Gentle camel ride through ancient caravan routes with breathtaking sunset views'
+        'name': 'Quad Biking Adventure (2 hours)',
+        'description': 'Guided quad bike tour through Agafay Desert, Berber villages, and scenic viewpoints'
       },
       {
         '@type': 'ListItem',
         'position': 4,
+        'name': 'Moroccan Tea Break & Camel Trekking',
+        'description': 'Traditional mint tea break followed by 20-minute sunset camel ride'
+      },
+      {
+        '@type': 'ListItem',
+        'position': 5,
         'name': 'Return Journey',
-        'description': 'Comfortable transfer back to accommodation with professional photos'
+        'description': 'Comfortable transfer back to your Marrakech accommodation'
       }
     ]
   },
   'includes': [
-    'Hotel pickup and drop-off in Marrakech',
-    'Professional quad biking equipment',
-    'Safety gear and instruction',
-    'Camel trekking experience',
-    'Bottled water during the tour',
-    'Professional guide services',
-    'All safety equipment',
-    'Desert photography'
+    'Round-trip transportation from Marrakech',
+    'Professional quad bike and safety equipment',
+    'Expert safety briefing and guided instruction',
+    'Traditional 20-minute camel ride experience',
+    'Complimentary Moroccan mint tea break',
+    'Multilingual professional guides (English, French, Spanish, Arabic)',
+    'All necessary safety gear and protection',
+    'Scenic photo opportunities throughout'
   ],
-  'duration': 'PT8H', // 8 hours in ISO 8601 duration format
+  'duration': 'PT4H', // 4 hours in ISO 8601 duration format (updated from 8 hours)
   'startDate': '2024-01-01',
   'endDate': '2024-12-31',
   'meetingPoint': 'Your accommodation in Marrakech',
-  'groupSize': 'Small groups (2-8 people)',
-  'difficulty': 'All levels welcome',
-  'ageRange': '6+ years',
+  'groupSize': 'Small Intimate Groups',
+  'difficulty': 'Beginner to Advanced - All Welcome',
+  'ageRange': '15+ years for camel riding, 15+ years for quad biking',
+  'requirements': [
+    'Comfortable outdoor clothing suitable for desert conditions',
+    'Closed-toe shoes for quad biking safety',
+    'Sun protection (hat, sunglasses, sunscreen)',
+    'Camera or smartphone for capturing memories'
+  ],
   'keywords': [
     'quad biking Marrakech',
-    'camel ride Agafay',
-    'desert adventure Morocco',
+    'camel ride Agafay desert',
     'Agafay desert tour',
-    'Marrakech activities'
+    'Marrakech desert adventure',
+    'quad bike rental Marrakech',
+    'camel trekking Morocco',
+    'desert experience Marrakech',
+    'Agafay quad biking',
+    'sunset camel ride Marrakech'
+  ],
+  'additionalProperty': [
+    {
+      '@type': 'PropertyValue',
+      'name': 'Free Cancellation',
+      'value': 'Cancel up to 24 hours in advance for full refund'
+    },
+    {
+      '@type': 'PropertyValue', 
+      'name': 'Reserve Now & Pay Later',
+      'value': 'Book your spot and pay nothing today'
+    },
+    {
+      '@type': 'PropertyValue',
+      'name': 'Languages',
+      'value': 'English, French, Spanish, Arabic'
+    }
   ]
 };
 
