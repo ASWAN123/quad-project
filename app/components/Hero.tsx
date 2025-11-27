@@ -115,7 +115,7 @@ const Hero = () => {
 
             {/* Main Heading with Personal Touch */}
             <div className="space-y-4">
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-serif text-slate-800 leading-tight">
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl  text-slate-800 leading-tight">
                 Your Desert
                 <span className="block text-amber-700 mt-2">Adventure Awaits</span>
               </h1>
@@ -131,7 +131,7 @@ const Hero = () => {
                 "From the thrill of quad biking across golden dunes to the peaceful rhythm of camel trekking at sunset - every moment is crafted with care and local wisdom."
               </p>
               <div className="flex items-center justify-center lg:justify-start space-x-3 mt-4">
-                <div className="w-10 h-10 bg-linear-to-br from-amber-500 to-amber-700 rounded-full flex items-center justify-center text-white font-serif text-sm">
+                <div className="w-10 h-10 bg-linear-to-br from-amber-500 to-amber-700 rounded-full flex items-center justify-center text-white  text-sm">
                   Q
                 </div>
                 <div>

@@ -21,7 +21,7 @@ const Testimonials = () => {
       </div>
       
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-slate-800 mb-6 leading-tight">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl  text-slate-800 mb-6 leading-tight">
           Memories That
           <span className="block text-amber-700 mt-2">Last a Lifetime</span>
         </h2>
@@ -32,7 +32,7 @@ const Testimonials = () => {
             and the desert worked its magic on another beautiful soul."
           </p>
           <div className="flex items-center justify-center space-x-3 mt-4">
-            <div className="w-10 h-10 bg-linear-to-br from-amber-500 to-amber-700 rounded-full flex items-center justify-center text-white font-serif text-sm">
+            <div className="w-10 h-10 bg-linear-to-br from-amber-500 to-amber-700 rounded-full flex items-center justify-center text-white  text-sm">
               Q
             </div>
             <div className="text-left">
@@ -125,7 +125,7 @@ const Testimonials = () => {
     {/* Personal Call-to-Action */}
     <div className="text-center mt-16">
       <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-amber-200/30 shadow-sm max-w-2xl mx-auto">
-        <h3 className="text-2xl md:text-3xl font-serif text-slate-800 mb-4">
+        <h3 className="text-2xl md:text-3xl  text-slate-800 mb-4">
           Ready to Write Your Own Story?
         </h3>
         <p className="text-slate-600 mb-6 leading-relaxed">

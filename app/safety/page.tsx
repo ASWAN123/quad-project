@@ -36,7 +36,7 @@ export default function Safety() {
   return (
     <div className="min-h-screen bg-white py-24">
       <div className="max-w-4xl mx-auto px-6 py-8">
-        <h1 className="text-4xl md:text-5xl font-serif text-slate-800 text-center mb-8">
+        <h1 className="text-4xl md:text-5xl  text-slate-800 text-center mb-8">
           Your Safety Comes First
         </h1>
         <p className="text-xl text-slate-600 text-center mb-12">
@@ -54,7 +54,7 @@ export default function Safety() {
         </div>
 
         <div className="bg-green-50 rounded-2xl p-8 border border-green-200">
-          <h2 className="text-2xl font-serif text-slate-800 mb-4 text-center">Safety Requirements</h2>
+          <h2 className="text-2xl  text-slate-800 mb-4 text-center">Safety Requirements</h2>
           <div className="grid md:grid-cols-2 gap-6 text-slate-700">
             <ul className="space-y-2">
               <li>✅ Minimum age: 12 years (quad biking)</li>

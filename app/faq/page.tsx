@@ -49,7 +49,7 @@ export default function FAQ() {
     <div className="min-h-screen bg-slate-50 py-24">
       <div className="max-w-4xl mx-auto px-6 py-8">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-serif text-slate-800 mb-4">
+          <h1 className="text-4xl md:text-5xl  text-slate-800 mb-4">
             Frequently Asked Questions
           </h1>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
@@ -84,7 +84,7 @@ export default function FAQ() {
         </div>
 
         <div className="mt-12 bg-amber-50/80 rounded-2xl p-8 text-center">
-          <h2 className="text-2xl font-serif text-slate-800 mb-4">
+          <h2 className="text-2xl  text-slate-800 mb-4">
             Still have questions?
           </h2>
           <p className="text-slate-700 mb-6">

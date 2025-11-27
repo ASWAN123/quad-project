@@ -176,7 +176,7 @@ export default function Gallery() {
                 DESERT MOMENTS
               </span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-slate-800 mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl  text-slate-800 mb-6 leading-tight">
               Stories Through
               <span className="block text-amber-700 mt-2">Our Lens</span>
             </h1>

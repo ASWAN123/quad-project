@@ -37,7 +37,7 @@ export default function Sustainability() {
   return (
     <div className="min-h-screen bg-white py-24">
       <div className="max-w-4xl mx-auto px-6 py-8">
-        <h1 className="text-4xl md:text-5xl font-serif text-slate-800 text-center mb-8">
+        <h1 className="text-4xl md:text-5xl  text-slate-800 text-center mb-8">
           Sustainable Adventures
         </h1>
         <p className="text-xl text-slate-600 text-center mb-12">
@@ -45,7 +45,7 @@ export default function Sustainability() {
         </p>
 
         <div className="bg-amber-50 rounded-2xl p-8 mb-12">
-          <h2 className="text-2xl font-serif text-slate-800 mb-4">Our Commitment</h2>
+          <h2 className="text-2xl  text-slate-800 mb-4">Our Commitment</h2>
           <p className="text-slate-700 mb-4">
             We believe tourism should benefit both travelers and the destinations they visit. 
             That's why we're committed to sustainable practices that protect the Agafay Desert 
@@ -68,7 +68,7 @@ export default function Sustainability() {
         </div>
 
         <div className="bg-green-50 rounded-2xl p-8 border border-green-200 text-center">
-          <h2 className="text-2xl font-serif text-slate-800 mb-4">Travel Responsibly</h2>
+          <h2 className="text-2xl  text-slate-800 mb-4">Travel Responsibly</h2>
           <p className="text-slate-700 mb-4">
             Join us in protecting the beautiful Agafay Desert for future generations. 
             Together, we can ensure that the magic of Moroccan deserts remains for years to come.

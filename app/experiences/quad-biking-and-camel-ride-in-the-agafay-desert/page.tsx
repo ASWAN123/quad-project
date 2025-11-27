@@ -129,7 +129,7 @@ export default function ActivityDetails() {
                 </span>
               </div>
               
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-slate-800 mb-4 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl  text-slate-800 mb-4 leading-tight">
                 {activity.title}
               </h1>
               
@@ -236,7 +236,7 @@ export default function ActivityDetails() {
           <div className="bg-linear-to-r from-amber-500 to-amber-600 rounded-3xl p-8 text-white text-center">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
               <div className="text-left">
-                <h3 className="text-2xl lg:text-3xl font-serif mb-2">Ready for Your Desert Adventure?</h3>
+                <h3 className="text-2xl lg:text-3xl  mb-2">Ready for Your Desert Adventure?</h3>
                 <p className="text-amber-100 text-lg">Join {activity.reviews}+ satisfied adventurers</p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -289,7 +289,7 @@ export default function ActivityDetails() {
             {selectedTab === 'overview' && (
               <div className="space-y-8">
                 <div className="bg-amber-50/50 rounded-3xl p-8 border border-amber-100">
-                  <h3 className="text-2xl font-serif text-slate-800 mb-6">Your Desert Adventure Awaits</h3>
+                  <h3 className="text-2xl  text-slate-800 mb-6">Your Desert Adventure Awaits</h3>
                   <p className="text-slate-700 leading-relaxed text-lg mb-6">
                     Experience the perfect combination of adrenaline-pumping excitement and authentic cultural immersion 
                     in the breathtaking Agafay Desert. This carefully crafted adventure showcases the very best of Morocco's 
@@ -339,7 +339,7 @@ export default function ActivityDetails() {
 
             {selectedTab === 'itinerary' && (
               <div className="space-y-6">
-                <h3 className="text-2xl font-serif text-slate-800 mb-6">Your Desert Adventure Timeline</h3>
+                <h3 className="text-2xl  text-slate-800 mb-6">Your Desert Adventure Timeline</h3>
                 {activity.fullDescription.split('\n\n').map((section, index) => (
                   <div key={index} className="bg-white rounded-2xl p-6 border border-amber-100">
                     <div className="text-slate-700 leading-relaxed whitespace-pre-line">
@@ -353,7 +353,7 @@ export default function ActivityDetails() {
             {selectedTab === 'includes' && (
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-2xl font-serif text-slate-800 mb-6">Everything We Provide for Your Adventure</h3>
+                  <h3 className="text-2xl  text-slate-800 mb-6">Everything We Provide for Your Adventure</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="space-y-4">
                       <h4 className="font-semibold text-slate-800 text-lg flex items-center">
@@ -391,7 +391,7 @@ export default function ActivityDetails() {
 
             {selectedTab === 'reviews' && (
               <div className="space-y-8">
-                <h3 className="text-2xl font-serif text-slate-800 mb-6">What Our Adventurers Say</h3>
+                <h3 className="text-2xl  text-slate-800 mb-6">What Our Adventurers Say</h3>
                 <div className="space-y-6">
                   {reviews.map((review) => (
                     <div key={review.id} className="bg-white rounded-2xl p-6 border border-amber-100">
@@ -415,7 +415,7 @@ export default function ActivityDetails() {
             <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
               <div className="bg-white rounded-3xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
                 <div className="flex justify-between items-center mb-6">
-                  <h3 className="text-3xl font-serif text-slate-800">Reserve Your Desert Adventure</h3>
+                  <h3 className="text-3xl  text-slate-800">Reserve Your Desert Adventure</h3>
                   <button 
                   aria-label="Close booking form"
                     onClick={() => setShowBookingForm(false)}

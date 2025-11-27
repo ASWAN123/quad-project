@@ -128,7 +128,7 @@ export default function Stories() {
                 TRAVELER STORIES
               </span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-slate-800 mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl  text-slate-800 mb-6 leading-tight">
               Real Stories from
               <span className="block text-amber-700 mt-2">The Desert</span>
             </h1>
@@ -144,7 +144,7 @@ export default function Stories() {
 
         {/* Story Categories */}
         <div className="mb-12">
-          <h2 className="text-2xl font-serif text-slate-800 mb-6">Browse Stories</h2>
+          <h2 className="text-2xl  text-slate-800 mb-6">Browse Stories</h2>
           <div className="flex flex-wrap gap-3">
             {storyCategories.map((category) => (
               <button
@@ -217,7 +217,7 @@ export default function Stories() {
 
         {/* Share Your Story CTA */}
         <div className="bg-linear-to-r from-amber-500 to-amber-600 rounded-3xl p-8 text-white text-center">
-          <h2 className="text-2xl md:text-3xl font-serif mb-4">
+          <h2 className="text-2xl md:text-3xl  mb-4">
             Share Your Desert Story
           </h2>
           <p className="text-amber-100 text-lg mb-6 max-w-2xl mx-auto leading-relaxed">

@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-white py-24">
       <div className="max-w-4xl mx-auto px-6 py-8">
-        <h1 className="text-4xl md:text-5xl font-serif text-slate-800 text-center mb-8">
+        <h1 className="text-4xl md:text-5xl  text-slate-800 text-center mb-8">
           About Quad Camel Marrakech
         </h1>
         <div className="prose prose-lg max-w-none">
@@ -13,7 +13,7 @@ export default function About() {
           </p>
           
           <div className="bg-amber-50 rounded-2xl p-8 mb-8">
-            <h2 className="text-2xl font-serif text-slate-800 mb-4">Our Story</h2>
+            <h2 className="text-2xl  text-slate-800 mb-4">Our Story</h2>
             <p className="text-slate-700 mb-4">
               Born and raised in the shadows of the Atlas Mountains, our team has spent a lifetime 
               exploring the Agafay Desert. What started as childhood adventures has grown into a 

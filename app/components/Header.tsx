@@ -69,7 +69,7 @@ const Header = () => {
               <Link 
                 key={item.name}
                 href={item.href}
-                className="group flex items-center space-x-2 text-slate-600 hover:text-amber-600 text-sm font-light tracking-widest transition-all duration-500 hover:scale-105"
+                className="group  flex items-center space-x-2 text-slate-600 hover:text-amber-600 text-sm font-semibold tracking-widest transition-all duration-500 hover:scale-105"
               >
                 <span className="opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300">
                   {item.emoji}
@@ -127,7 +127,7 @@ const Header = () => {
               <Link 
                 key={item.name}
                 href={item.href}
-                className="flex items-center space-x-4 p-3 rounded-2xl hover:bg-amber-50 transition-all duration-300 group"
+                className="flex items-center space-x-4 p-3 rounded-2xl hover:bg-amber-50 transition-all duration-300 group font-semibold"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <div className="w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center group-hover:bg-amber-500 group-hover:scale-110 transition-all duration-300">

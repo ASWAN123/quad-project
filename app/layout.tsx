@@ -1,15 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
+
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
+
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
+
+
+const montserrat = Montserrat({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
@@ -46,8 +54,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "Quad Camel Marrakech - Quad Bike & Camel Ride in Agafay Desert",
     description: "Ride a quad bike across the Agafay desert and enjoy a peaceful camel experience with stunning views, golden landscapes, and unforgettable moments.",
-    creator: '@quadcamelmarrakech', // Add if you have Twitter
-    images: ['/images/quad-biking-desert-adventure.jpeg'], // Use same image
+    creator: '@quadcamelmarrakech',
+    images: ['/images/quad-biking-desert-adventure.jpeg'],
   },
   robots: {
     index: true,
@@ -69,7 +77,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${montserrat.variable} antialiased`}>
         <Header />
         <main>{children}</main> {/* Wrap in main for semantic HTML */}
         <Footer />

@@ -4,7 +4,7 @@ export default function Privacy() {
     <div className="min-h-screen bg-slate-50 py-24">
       <div className="max-w-4xl mx-auto px-6 py-8">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-serif text-slate-800 mb-4">
+          <h1 className="text-4xl md:text-5xl  text-slate-800 mb-4">
             Privacy Policy
           </h1>
           <p className="text-xl text-slate-600">
@@ -15,7 +15,7 @@ export default function Privacy() {
         <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-amber-100/50">
           <div className="prose prose-slate max-w-none">
             <div className="mb-8">
-              <h2 className="text-2xl font-serif text-slate-800 mb-4">Information We Collect</h2>
+              <h2 className="text-2xl  text-slate-800 mb-4">Information We Collect</h2>
               <p className="text-slate-700 mb-4">
                 We collect information you provide directly to us when you book an adventure, 
                 contact our customer service, or communicate with us via WhatsApp, email, or phone.
@@ -29,7 +29,7 @@ export default function Privacy() {
             </div>
 
             <div className="mb-8">
-              <h2 className="text-2xl font-serif text-slate-800 mb-4">How We Use Your Information</h2>
+              <h2 className="text-2xl  text-slate-800 mb-4">How We Use Your Information</h2>
               <ul className="text-slate-700 space-y-2">
                 <li>• To process and manage your bookings</li>
                 <li>• To communicate with you about your adventure</li>
@@ -40,7 +40,7 @@ export default function Privacy() {
             </div>
 
             <div className="mb-8">
-              <h2 className="text-2xl font-serif text-slate-800 mb-4">Information Sharing</h2>
+              <h2 className="text-2xl  text-slate-800 mb-4">Information Sharing</h2>
               <p className="text-slate-700">
                 We do not sell or rent your personal information to third parties. We may share 
                 information only with trusted service providers who assist us in operating our 
@@ -49,7 +49,7 @@ export default function Privacy() {
             </div>
 
             <div className="mb-8">
-              <h2 className="text-2xl font-serif text-slate-800 mb-4">Data Security</h2>
+              <h2 className="text-2xl  text-slate-800 mb-4">Data Security</h2>
               <p className="text-slate-700">
                 We implement appropriate security measures to protect your personal information 
                 against unauthorized access, alteration, disclosure, or destruction.
@@ -57,7 +57,7 @@ export default function Privacy() {
             </div>
 
             <div className="mb-8">
-              <h2 className="text-2xl font-serif text-slate-800 mb-4">Your Rights</h2>
+              <h2 className="text-2xl  text-slate-800 mb-4">Your Rights</h2>
               <ul className="text-slate-700 space-y-2">
                 <li>• Access the personal information we hold about you</li>
                 <li>• Request correction of inaccurate information</li>
@@ -68,7 +68,7 @@ export default function Privacy() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-serif text-slate-800 mb-4">Contact Us</h2>
+              <h2 className="text-2xl  text-slate-800 mb-4">Contact Us</h2>
               <p className="text-slate-700">
                 If you have any questions about this Privacy Policy or our data practices, 
                 please contact us at:

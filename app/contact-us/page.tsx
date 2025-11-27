@@ -138,7 +138,7 @@ export default function Contact() {
               </span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-slate-800 mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl  text-slate-800 mb-6 leading-tight">
               Your Desert Adventure
               <span className="block text-amber-700 mt-2">Starts Here</span>
             </h1>
@@ -148,7 +148,7 @@ export default function Contact() {
                 "We don't just book tours - we create lifelong memories. Tell us your dreams, and we'll craft the perfect desert experience just for you."
               </p>
               <div className="flex items-center justify-center space-x-3 mt-4">
-                <div className="w-10 h-10 bg-linear-to-br from-amber-500 to-amber-700 rounded-full flex items-center justify-center text-white font-serif text-sm">
+                <div className="w-10 h-10 bg-linear-to-br from-amber-500 to-amber-700 rounded-full flex items-center justify-center text-white  text-sm">
                   K
                 </div>
                 <div className="text-left">
@@ -168,7 +168,7 @@ export default function Contact() {
           <div className="space-y-8 order-2 lg:order-1">
             {/* Welcome Message */}
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-amber-100/50 shadow-sm">
-              <h2 className="text-2xl font-serif text-slate-800 mb-4">We'd Love to Hear from You</h2>
+              <h2 className="text-2xl  text-slate-800 mb-4">We'd Love to Hear from You</h2>
               <p className="text-slate-700 leading-relaxed mb-6">
                 Whether you're dreaming of quad biking thrills, peaceful camel sunsets, or a perfect combination - 
                 we're here to make it happen. As locals born and raised in Marrakech, we know the desert like our backyard.
@@ -189,7 +189,7 @@ export default function Contact() {
 
             {/* Quick Contact Options */}
             <div className="space-y-4">
-              <h3 className="text-xl font-serif text-slate-800 mb-4">Quick Ways to Reach Us</h3>
+              <h3 className="text-xl  text-slate-800 mb-4">Quick Ways to Reach Us</h3>
               {contactMethods.map((method, index) => (
                 <a
                   key={index}
@@ -219,7 +219,7 @@ export default function Contact() {
 
             {/* Quick Questions */}
             <div className="bg-amber-50/60 backdrop-blur-sm rounded-3xl p-8 border border-amber-200/50">
-              <h3 className="text-xl font-serif text-slate-800 mb-6">Quick Questions Answered</h3>
+              <h3 className="text-xl  text-slate-800 mb-6">Quick Questions Answered</h3>
               <div className="space-y-4">
                 {quickQuestions.map((item, index) => (
                   <div key={index} className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 border border-amber-100/50">
@@ -237,7 +237,7 @@ export default function Contact() {
           {/* Contact Form */}
           <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-amber-100/50 shadow-sm h-fit order-1 lg:order-2">
             <div className="text-center mb-8">
-              <h2 className="text-2xl font-serif text-slate-800 mb-2">Plan Your Adventure</h2>
+              <h2 className="text-2xl  text-slate-800 mb-2">Plan Your Adventure</h2>
               <p className="text-slate-600">Tell us about your dream desert experience</p>
             </div>
 
@@ -375,7 +375,7 @@ export default function Contact() {
 
         {/* Personal Promise */}
         <div className="mt-16 bg-linear-to-r from-amber-500 to-amber-600 rounded-3xl p-8 text-white text-center shadow-xl">
-          <h2 className="text-2xl md:text-3xl font-serif mb-4">
+          <h2 className="text-2xl md:text-3xl  mb-4">
             Our Promise to You
           </h2>
           <p className="text-amber-100 text-lg mb-6 max-w-2xl mx-auto leading-relaxed">
