@@ -185,6 +185,7 @@ export default function ActivityDetails() {
           
 
                     priority // For above-the-fold images
+                   
   quality={85} // Balance between quality and file size
   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
   placeholder="blur"
@@ -207,7 +208,8 @@ export default function ActivityDetails() {
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
 
-                      priority // For above-the-fold images
+                      priority // For above-the-fold Images
+                 
   quality={85} // Balance between quality and file size
   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
   placeholder="blur"

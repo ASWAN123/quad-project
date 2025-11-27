@@ -51,6 +51,7 @@ const Experience = () => {
                 className="object-contain max-h-[80vh] w-auto"
 
                   priority // For above-the-fold images
+                  
   quality={85} // Balance between quality and file size
   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
   placeholder="blur"
@@ -117,6 +118,7 @@ const Experience = () => {
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
 
                     priority // For above-the-fold images
+                 
   quality={85} // Balance between quality and file size
   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
   placeholder="blur"
@@ -151,6 +153,7 @@ const Experience = () => {
                     className="object-cover"
 
                       priority // For above-the-fold images
+                     
   quality={85} // Balance between quality and file size
   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
   placeholder="blur"
@@ -170,6 +173,7 @@ const Experience = () => {
                     className="object-cover"
 
                       priority // For above-the-fold images
+                   
   quality={85} // Balance between quality and file size
   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
   placeholder="blur"

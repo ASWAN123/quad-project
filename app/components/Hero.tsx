@@ -35,6 +35,7 @@ const Hero = () => {
                 className="w-full h-[300px] lg:h-[450px] object-cover"
                 
                   priority // For above-the-fold images
+            
   quality={85} // Balance between quality and file size
   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
   placeholder="blur"
@@ -58,6 +59,7 @@ const Hero = () => {
                   className="w-full h-[180px] lg:h-60 object-cover"
 
                     priority // For above-the-fold images
+              
   quality={85} // Balance between quality and file size
   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
   placeholder="blur"

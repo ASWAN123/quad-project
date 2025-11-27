@@ -231,6 +231,7 @@ export default function Gallery() {
                 onLoad={() => handleImageLoad(image.id)}
 
                   priority // For above-the-fold images
+                
   quality={85} // Balance between quality and file size
   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
   placeholder="blur"
@@ -305,6 +306,7 @@ export default function Gallery() {
                 className="object-contain"
 
                   priority // For above-the-fold images
+              
   quality={85} // Balance between quality and file size
   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
   placeholder="blur"
