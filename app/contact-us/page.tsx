@@ -22,14 +22,45 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = async (e: { preventDefault: () => void; }) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  // const handleSubmit = async (e: { preventDefault: () => void; }) => {
+  //   e.preventDefault();
+  //   setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+  //   // Simulate form submission
+  //   setTimeout(() => {
+  //     setIsSubmitting(false);
+  //     alert('Thank you for your message! We\'ll get back to you within 24 hours.');
+  //     setFormData({
+  //       name: '',
+  //       email: '',
+  //       phone: '',
+  //       message: '',
+  //       guests: 2,
+  //       preferredDate: '',
+  //       tourType: 'combo'
+  //     });
+  //   }, 2000);
+  // };
+
+
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+  
+  try {
+    const response = await fetch('/api/mail', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const result = await response.json();
+
+    if (response.ok && result.success) {
       alert('Thank you for your message! We\'ll get back to you within 24 hours.');
+      // Reset form
       setFormData({
         name: '',
         email: '',
@@ -39,9 +70,16 @@ export default function Contact() {
         preferredDate: '',
         tourType: 'combo'
       });
-    }, 2000);
-  };
-
+    } else {
+      alert(result.message || 'Something went wrong. Please try again.');
+    }
+  } catch (error) {
+    console.error('Error submitting form:', error);
+    alert('Failed to send message. Please try again or contact us directly via WhatsApp.');
+  } finally {
+    setIsSubmitting(false);
+  }
+};
   const contactMethods = [
     {
       icon: '💬',
@@ -310,7 +348,7 @@ export default function Contact() {
                 disabled={isSubmitting}
                 className="w-full bg-amber-600 hover:bg-amber-700 text-white py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl"
               >
-                {isSubmitting ? (
+                {/* {isSubmitting ? (
                   <>
                     <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                     <span>Creating Your Adventure...</span>
@@ -320,7 +358,19 @@ export default function Contact() {
                     <span>Start Your Desert Journey</span>
                     <span className="group-hover:translate-x-1 transition-transform">🏜️</span>
                   </>
-                )}
+                )} */}
+                {isSubmitting ? (
+  <>
+    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+    <span>Sending Your Adventure Request...</span>
+  </>
+) : (
+  <>
+    <span>Start Your Desert Journey</span>
+    <span className="group-hover:translate-x-1 transition-transform">🏜️</span>
+  </>
+)}
+
               </button>
 
               <p className="text-slate-600 text-sm text-center">

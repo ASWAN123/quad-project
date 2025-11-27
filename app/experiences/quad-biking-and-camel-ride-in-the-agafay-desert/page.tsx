@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import CTASection from '@/app/components/CTASection';
+import Link from 'next/link';
 
 export default function ActivityDetails() {
   const [selectedTab, setSelectedTab] = useState('overview');
@@ -13,53 +14,57 @@ export default function ActivityDetails() {
 
   const activity = {
     id: 1,
-    title: "Marrakech: Quad Biking and Camel Ride in the Agafay Desert",
-    subtitle: "Desert Adventure in Marrakech",
-    description: "Experience the magic of the Agafay desert with our authentic quad biking and camel trekking adventure. Feel the thrill of riding through golden dunes, then embrace the peaceful rhythm of a traditional camel ride as the sun paints the sky with incredible colors.",
+    title: "Agafay Desert Adventure: Quad Biking & Sunset Camel Trek",
+    subtitle: "Ultimate Desert Experience from Marrakech",
+    description: "Discover the magic of Morocco's Agafay Desert with an unforgettable combination of thrilling quad biking and traditional camel trekking. Experience the perfect blend of adventure and cultural immersion just outside Marrakech.",
     fullDescription: `
-      **Morning Adventure: Quad Biking (2-3 hours)**
-      - Hotel pickup from your Marrakech accommodation
-      - Safety briefing and equipment fitting
-      - Guided ATV tour through stunning desert landscapes
-      - Multiple photo stops at scenic viewpoints
-      - Experience the thrill of dune riding
-      - Suitable for all skill levels
+      **Morning Quad Biking Expedition (2 hours)**
+      - Convenient pickup from your Marrakech hotel or riad
+      - Comprehensive safety briefing and equipment orientation
+      - Guided quad bike tour through stunning desert landscapes
+      - Scenic stops at panoramic viewpoints for photography
+      - Explore hidden Berber villages and desert valleys
+      - Professional instruction for all experience levels
 
-      **Desert Break**
-      - Refresh with bottled water
-      - Rest and enjoy the desert scenery
+      **Traditional Desert Break**
+      - Refresh with complimentary Moroccan mint tea
+      - Rest and soak in the breathtaking desert scenery
+      - Opportunity to learn about local Berber culture
 
-      **Evening Magic: Camel Trekking (1.5-2 hours)**
-      - Gentle camel ride through ancient caravan routes
-      - Breathtaking sunset views over Agafay Desert
-      - Cultural insights from Berber guides
-      - Peaceful, meditative desert experience
+      **Sunset Camel Trekking (20 minutes)**
+      - Authentic camel ride through golden desert dunes
+      - Witness spectacular sunset views over the Agafay Desert
+      - Peaceful, traditional desert travel experience
+      - Cultural insights from experienced local guides
 
       **Return Journey**
-      - Comfortable transfer back to your accommodation
-      - Professional photos of your experience
+      - Comfortable transportation back to your accommodation
+      - Memorable photos of your desert adventure
+      - Return filled with unforgettable memories
     `,
-    price: 95,
+    price: 55,
     originalPrice: 110,
-    duration: "Full Day Experience",
-    groupSize: "Small groups (2-8 people)",
-    difficulty: "All levels welcome",
+    duration: "4-Hour Desert Experience",
+    groupSize: "Small Intimate Groups",
+    difficulty: "Beginner to Advanced - All Welcome",
     includes: [
-      "Hotel pickup and drop-off in Marrakech",
-      "Professional quad biking equipment",
-      "Safety gear and instruction",
-      "Camel trekking experience", 
-      "Bottled water during the tour",
-      "Professional guide services",
-      "All safety equipment",
-      "Desert photography"
+      "Round-trip transportation from Marrakech",
+      "Professional quad bike and safety equipment",
+      "Expert safety briefing and guided instruction",
+      "Traditional 20-minute camel ride experience",
+      "Complimentary Moroccan mint tea break",
+      "Multilingual professional guides (English, French, Spanish, Arabic)",
+      "All necessary safety gear and protection",
+      "Scenic photo opportunities throughout"
     ],
     requirements: [
-      "Comfortable clothing and closed-toe shoes",
-      "Sun protection (hat, sunglasses)",
-      "Camera for personal photos",
-      "Minimum age: 12 years (quad biking)",
-      "Minimum age: 6 years (camel trekking)"
+      "Comfortable outdoor clothing suitable for desert conditions",
+      "Closed-toe shoes for quad biking safety",
+      "Sun protection (hat, sunglasses, sunscreen)",
+      "Camera or smartphone for capturing memories",
+      "Minimum age 15 years for camel riding",
+      "Minimum age 15 years for quad biking participation",
+      "Sense of adventure and readiness for fun"
     ],
     images: [
       "/images/Marrakech-Palmeraie-Quad-Bike-Desert-Adventure.jpg",
@@ -73,7 +78,7 @@ export default function ActivityDetails() {
     featured: true,
     bestSeller: true,
     availability: ["09:00", "14:00", "16:00"],
-    meetingPoint: "Your accommodation in Marrakech"
+    meetingPoint: "Complimentary pickup from your Marrakech accommodation"
   };
 
   const reviews = [
@@ -82,21 +87,21 @@ export default function ActivityDetails() {
       name: "Sarah & Mark",
       location: "London, UK",
       date: "2024-01-15",
-      comment: "Absolutely incredible experience! The quad biking was thrilling and the camel trek at sunset was magical. Our guide made us feel safe throughout the entire adventure.",
+      comment: "An absolutely incredible day! The quad biking was exhilarating and the camel ride at sunset was pure magic. Our guide made sure we felt safe while having the time of our lives. The perfect desert adventure!",
     },
     {
       id: 2, 
       name: "Michael T.",
       location: "New York, USA",
       date: "2024-01-12",
-      comment: "Perfect combination of adventure and culture. The transition from high-energy quad biking to peaceful camel riding was seamless. Professional equipment and excellent guides.",
+      comment: "This experience perfectly balanced adrenaline and culture. The transition from high-energy quad biking to the peaceful camel trek was seamless. Professional equipment and knowledgeable guides made all the difference.",
     },
     {
       id: 3,
       name: "The Johnson Family", 
       location: "Sydney, Australia",
       date: "2024-01-08",
-      comment: "Our teenagers loved the quad biking, and we all enjoyed the camel ride. The guides were fantastic with our kids and the safety standards were impressive.",
+      comment: "Our teenagers loved the quad biking adventure, and we all enjoyed the traditional camel ride. The guides were fantastic with our family and the safety standards were impressive throughout the entire experience.",
     }
   ];
 
@@ -120,7 +125,7 @@ export default function ActivityDetails() {
             <div className="flex-1">
               <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-amber-200 mb-4">
                 <span className="text-amber-700 text-sm font-light tracking-widest">
-                  AGAFAY DESERT EXPERIENCE
+                  AGAFAY DESERT ADVENTURE
                 </span>
               </div>
               
@@ -141,7 +146,7 @@ export default function ActivityDetails() {
                 </div>
                 <div className="flex items-center space-x-2">
                   <span className="text-amber-600">⭐</span>
-                  <span>{activity.reviews} adventures</span>
+                  <span>{activity.reviews} Reviews</span>
                 </div>
               </div>
             </div>
@@ -174,14 +179,14 @@ export default function ActivityDetails() {
               <div className="relative h-96 lg:h-[600px] rounded-3xl overflow-hidden border border-amber-100 group">
                 <Image
                   src={activity.images[0]}
-                  alt="Quad biking adventure at sunset in Agafay Desert"
+                  alt="Quad biking adventure through the Agafay Desert near Marrakech"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                   priority
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3">
-                  <p className="text-amber-800 font-medium">Featured Adventure</p>
+                  <p className="text-amber-800 font-medium">Featured Desert Adventure</p>
                 </div>
               </div>
             </div>
@@ -192,7 +197,7 @@ export default function ActivityDetails() {
                 <div key={index} className="relative h-44 lg:h-48 rounded-2xl overflow-hidden border border-amber-100 group">
                   <Image
                     src={image}
-                    alt={`Desert adventure ${index + 2}`}
+                    alt={`Agafay Desert experience ${index + 2}`}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
@@ -206,7 +211,7 @@ export default function ActivityDetails() {
                     <div className="w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform duration-300">
                       <span className="text-white text-lg">+{activity.images.length - 3}</span>
                     </div>
-                    <p className="text-amber-700 font-medium text-sm">More Photos</p>
+                    <p className="text-amber-700 font-medium text-sm">View More Photos</p>
                   </div>
                 </div>
               </div>
@@ -218,15 +223,15 @@ export default function ActivityDetails() {
             <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
               <div className="text-left">
                 <h3 className="text-2xl lg:text-3xl font-serif mb-2">Ready for Your Desert Adventure?</h3>
-                <p className="text-amber-100 text-lg">Join {activity.reviews}+ happy adventurers</p>
+                <p className="text-amber-100 text-lg">Join {activity.reviews}+ satisfied adventurers</p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button 
-                  onClick={() => setShowBookingForm(true)}
-                  className="bg-white text-amber-600 hover:bg-amber-50 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105"
-                >
-                  Book Now - €{activity.price}
-                </button>
+              <Link 
+                href="/contact-us"
+                className="bg-white text-amber-600 hover:bg-amber-50 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 flex items-center justify-center"
+              >
+                Reserve Now - €{activity.price}
+              </Link>
                 <a 
                   href="https://wa.me/212627349254"
                   target="_blank"
@@ -234,7 +239,7 @@ export default function ActivityDetails() {
                   className="border-2 border-white text-white hover:bg-white hover:text-amber-600 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
                 >
                   <span>💬</span>
-                  <span>Ask Questions</span>
+                  <span>Ask About This Adventure</span>
                 </a>
               </div>
             </div>
@@ -244,10 +249,10 @@ export default function ActivityDetails() {
           <div className="border-b border-amber-100">
             <div className="flex space-x-8">
               {[
-                { id: 'overview', label: 'Experience Details' },
-                { id: 'itinerary', label: 'Your Day' },
+                { id: 'overview', label: 'Experience Overview' },
+                { id: 'itinerary', label: 'Detailed Itinerary' },
                 { id: 'includes', label: 'What\'s Included' },
-                { id: 'reviews', label: 'Adventure Stories' }
+                { id: 'reviews', label: 'Guest Experiences' }
               ].map((tab) => (
                 <button
                   key={tab.id}
@@ -269,10 +274,11 @@ export default function ActivityDetails() {
             {selectedTab === 'overview' && (
               <div className="space-y-8">
                 <div className="bg-amber-50/50 rounded-3xl p-8 border border-amber-100">
-                  <h3 className="text-2xl font-serif text-slate-800 mb-6">About This Adventure</h3>
+                  <h3 className="text-2xl font-serif text-slate-800 mb-6">Your Desert Adventure Awaits</h3>
                   <p className="text-slate-700 leading-relaxed text-lg mb-6">
-                    This is the experience we love sharing with our guests - the perfect blend of adrenaline and tranquility 
-                    that captures the true spirit of the Moroccan desert.
+                    Experience the perfect combination of adrenaline-pumping excitement and authentic cultural immersion 
+                    in the breathtaking Agafay Desert. This carefully crafted adventure showcases the very best of Morocco's 
+                    desert landscapes and traditions.
                   </p>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -282,14 +288,15 @@ export default function ActivityDetails() {
                           <span className="text-amber-700 text-xl">🏍️</span>
                         </div>
                         <div>
-                          <h4 className="font-semibold text-slate-800">Quad Biking</h4>
+                          <h4 className="font-semibold text-slate-800">Quad Biking Adventure</h4>
                           <p className="text-slate-600 text-sm">Thrilling desert exploration</p>
                         </div>
                       </div>
                       <ul className="text-slate-600 space-y-2 text-sm ml-16">
-                        <li>• 2-3 hours of guided ATV adventure</li>
-                        <li>• Premium safety equipment provided</li>
-                        <li>• Scenic desert routes with photo stops</li>
+                        <li>• 2 hours of guided quad biking through stunning landscapes</li>
+                        <li>• Premium safety equipment and professional instruction</li>
+                        <li>• Scenic routes with panoramic photo opportunities</li>
+                        <li>• Suitable for all experience levels</li>
                       </ul>
                     </div>
                     
@@ -299,14 +306,15 @@ export default function ActivityDetails() {
                           <span className="text-amber-700 text-xl">🐫</span>
                         </div>
                         <div>
-                          <h4 className="font-semibold text-slate-800">Camel Trekking</h4>
-                          <p className="text-slate-600 text-sm">Peaceful desert journey</p>
+                          <h4 className="font-semibold text-slate-800">Camel Trekking Experience</h4>
+                          <p className="text-slate-600 text-sm">Traditional desert journey</p>
                         </div>
                       </div>
                       <ul className="text-slate-600 space-y-2 text-sm ml-16">
-                        <li>• 1.5-2 hours of camel riding</li>
-                        <li>• Sunset views over Agafay Desert</li>
-                        <li>• Cultural immersion with local guides</li>
+                        <li>• 20-minute authentic camel ride through golden dunes</li>
+                        <li>• Breathtaking sunset views over the Agafay Desert</li>
+                        <li>• Cultural immersion with local Berber guides</li>
+                        <li>• Peaceful, memorable desert travel experience</li>
                       </ul>
                     </div>
                   </div>
@@ -316,7 +324,7 @@ export default function ActivityDetails() {
 
             {selectedTab === 'itinerary' && (
               <div className="space-y-6">
-                <h3 className="text-2xl font-serif text-slate-800 mb-6">Your Desert Day</h3>
+                <h3 className="text-2xl font-serif text-slate-800 mb-6">Your Desert Adventure Timeline</h3>
                 {activity.fullDescription.split('\n\n').map((section, index) => (
                   <div key={index} className="bg-white rounded-2xl p-6 border border-amber-100">
                     <div className="text-slate-700 leading-relaxed whitespace-pre-line">
@@ -330,12 +338,12 @@ export default function ActivityDetails() {
             {selectedTab === 'includes' && (
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-2xl font-serif text-slate-800 mb-6">Everything We Provide</h3>
+                  <h3 className="text-2xl font-serif text-slate-800 mb-6">Everything We Provide for Your Adventure</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="space-y-4">
                       <h4 className="font-semibold text-slate-800 text-lg flex items-center">
                         <span className="text-amber-600 mr-3">✅</span>
-                        Included in Your Adventure
+                        Included in Your Experience
                       </h4>
                       <ul className="space-y-3">
                         {activity.includes.map((item, index) => (
@@ -350,7 +358,7 @@ export default function ActivityDetails() {
                     <div className="space-y-4">
                       <h4 className="font-semibold text-slate-800 text-lg flex items-center">
                         <span className="text-amber-600 mr-3">📝</span>
-                        What to Bring
+                        What to Bring With You
                       </h4>
                       <ul className="space-y-3">
                         {activity.requirements.map((item, index) => (
@@ -368,7 +376,7 @@ export default function ActivityDetails() {
 
             {selectedTab === 'reviews' && (
               <div className="space-y-8">
-                <h3 className="text-2xl font-serif text-slate-800 mb-6">Adventure Stories</h3>
+                <h3 className="text-2xl font-serif text-slate-800 mb-6">What Our Adventurers Say</h3>
                 <div className="space-y-6">
                   {reviews.map((review) => (
                     <div key={review.id} className="bg-white rounded-2xl p-6 border border-amber-100">
@@ -392,7 +400,7 @@ export default function ActivityDetails() {
             <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
               <div className="bg-white rounded-3xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
                 <div className="flex justify-between items-center mb-6">
-                  <h3 className="text-3xl font-serif text-slate-800">Book Your Adventure</h3>
+                  <h3 className="text-3xl font-serif text-slate-800">Reserve Your Desert Adventure</h3>
                   <button 
                     onClick={() => setShowBookingForm(false)}
                     className="text-slate-400 hover:text-slate-600 text-2xl"
@@ -403,7 +411,7 @@ export default function ActivityDetails() {
                 
                 <div className="space-y-6">
                   <div>
-                    <label className="block text-slate-700 font-semibold mb-3 text-lg">Choose Your Date</label>
+                    <label className="block text-slate-700 font-semibold mb-3 text-lg">Select Your Adventure Date</label>
                     <input
                       type="date"
                       value={selectedDate}
@@ -414,13 +422,13 @@ export default function ActivityDetails() {
                   </div>
 
                   <div>
-                    <label className="block text-slate-700 font-semibold mb-3 text-lg">Preferred Time</label>
+                    <label className="block text-slate-700 font-semibold mb-3 text-lg">Preferred Start Time</label>
                     <select
                       value={selectedTime}
                       onChange={(e) => setSelectedTime(e.target.value)}
                       className="w-full px-5 py-4 border-2 border-amber-200 rounded-xl focus:outline-none focus:border-amber-500 bg-amber-50/50 transition-colors text-black text-lg"
                     >
-                      <option value="">Select a time</option>
+                      <option value="">Choose your preferred time</option>
                       {activity.availability.map((time) => (
                         <option key={time} value={time}>{time}</option>
                       ))}
@@ -448,7 +456,7 @@ export default function ActivityDetails() {
 
                   <div className="border-t border-amber-100 pt-6 space-y-4">
                     <div className="flex justify-between items-center text-lg">
-                      <span className="text-slate-600">€{activity.price} × {guests}</span>
+                      <span className="text-slate-600">€{activity.price} × {guests} adventurers</span>
                       <span className="font-semibold text-slate-800">€{activity.price * guests}</span>
                     </div>
                     <div className="flex justify-between items-center text-green-600 text-lg">
@@ -462,7 +470,7 @@ export default function ActivityDetails() {
                   </div>
 
                   <button className="w-full bg-linear-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white py-4 rounded-xl font-bold text-xl transition-all duration-300 hover:scale-105 mt-4">
-                    Complete Booking
+                    Complete Your Reservation
                   </button>
                 </div>
               </div>

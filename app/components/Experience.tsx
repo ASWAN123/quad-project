@@ -1,6 +1,3 @@
-
-
-
 "use client";
 /* eslint-disable react/no-unescaped-entities */
 import { useState } from 'react';
@@ -70,27 +67,28 @@ const Experience = () => {
           <div className="inline-flex items-center space-x-3 bg-amber-100/80 backdrop-blur-sm px-6 py-3 rounded-full border border-amber-200/50 mb-6">
             <div className="w-2 h-2 bg-amber-600 rounded-full animate-pulse"></div>
             <span className="text-amber-700 text-sm font-light tracking-widest">
-              OUR SIGNATURE EXPERIENCE
+              AGAFAY DESERT ADVENTURE
             </span>
           </div>
           
           <div className="max-w-3xl mx-auto">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-slate-800 mb-6 leading-tight">
-              The Desert Journey
-              <span className="block text-amber-700 mt-2">We Love to Share</span>
+              Quad Biking & Sunset Camel Trek
+              <span className="block text-amber-700 mt-2">Ultimate Desert Experience</span>
             </h2>
             
             <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-amber-200/30">
               <p className="text-slate-600 text-lg leading-relaxed">
-                "This isn't just a tour - it's the same magical experience we share with our own friends and family when they visit Morocco. 
-                We've combined the most thrilling and peaceful moments of desert life into one unforgettable day."
+                "This is the experience we love sharing with our guests - the perfect blend of adrenaline and tranquility 
+                that captures the true spirit of the Moroccan desert. We've crafted this adventure to showcase the very best 
+                of our beautiful Agafay Desert."
               </p>
               <div className="flex items-center justify-center space-x-3 mt-4">
                 <div className="w-10 h-10 bg-linear-to-br from-amber-500 to-amber-700 rounded-full flex items-center justify-center text-white font-serif text-sm">
                   Q
                 </div>
                 <div className="text-left">
-                  <p className="text-slate-800 font-medium text-sm">Your Local Team</p>
+                  <p className="text-slate-800 font-medium text-sm">Your Local Guides</p>
                   <p className="text-slate-500 text-xs">Born and raised in Marrakech</p>
                 </div>
               </div>
@@ -98,7 +96,7 @@ const Experience = () => {
           </div>
         </div>
 
-        {/* Main Experience Card - More Personal */}
+        {/* Main Experience Card - Updated Details */}
         <div className="max-w-4xl mx-auto">
           <div className="group relative overflow-hidden rounded-3xl bg-white border border-amber-200/50 transition-all duration-500">
             
@@ -108,7 +106,7 @@ const Experience = () => {
               <div className="absolute inset-0">
                 <Image
                   src={images[0]}
-                  alt="Quad biking adventure at sunset in Agafay Desert"
+                  alt="Quad biking adventure through Agafay Desert near Marrakech"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -118,14 +116,14 @@ const Experience = () => {
               {/* Personal Touch Overlays */}
               <div className="absolute bottom-6 left-6">
                 <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 max-w-xs">
-                  <p className="text-slate-800 text-sm font-medium mb-1">📍 Our Backyard</p>
-                  <p className="text-slate-600 text-xs">Agafay Desert, Marrakech</p>
+                  <p className="text-slate-800 text-sm font-medium mb-1">📍 Agafay Desert</p>
+                  <p className="text-slate-600 text-xs">Just 45 minutes from Marrakech</p>
                 </div>
               </div>
               
               {/* Experience Mini Cards */}
               <div className="absolute top-6 left-6 bg-linear-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-full text-sm font-medium">
-                ✨ Local's Favorite
+                🏆 Most Popular Experience
               </div>
               
               {/* Small Images in Bottom Right - Now Clickable */}
@@ -136,7 +134,7 @@ const Experience = () => {
                 >
                   <Image
                     src={images[3]}
-                    alt="Quad biking at sunset"
+                    alt="Quad biking at sunset in Agafay Desert"
                     fill
                     className="object-cover"
                   />
@@ -147,7 +145,7 @@ const Experience = () => {
                 >
                   <Image
                     src={images[4]}
-                    alt="Sunset quad biking adventure"
+                    alt="Sunset camel trekking experience"
                     fill
                     className="object-cover"
                   />
@@ -156,51 +154,56 @@ const Experience = () => {
               
             </div>
             
-            {/* Content Section - More Conversational */}
+            {/* Content Section - Updated with New Details */}
             <div className="p-8 md:p-10">
-              {/* Header with Personal Touch */}
+              {/* Header with Updated Information */}
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8 gap-4">
                 <div>
                   <h3 className="text-2xl md:text-3xl font-serif text-slate-800 mb-2">
-                    Desert Magic Combo
+                    Agafay Desert Adventure
                   </h3>
                   <p className="text-slate-600 text-lg">
-                    The perfect day we'd plan for our closest friends
+                    Quad Biking & Sunset Camel Trek - 4-Hour Experience
                   </p>
                 </div>
                 <div className="text-right">
                   <div className="flex items-baseline justify-end space-x-2">
-                    <span className="text-amber-600 text-3xl font-light">€95</span>
-                    <span className="text-slate-400 text-sm line-through">€110</span>
+                    <span className="text-amber-600 text-3xl font-light">€55</span>
+                    <span className="text-slate-400 text-sm line-through">€75</span>
                   </div>
-                  <p className="text-slate-500 text-sm mt-1">Per person • All included</p>
+                  <p className="text-slate-500 text-sm mt-1">Save €20 per person • All included</p>
                 </div>
               </div>
               
-              {/* Personal Description */}
+              {/* Updated Description */}
               <div className="mb-8">
                 <p className="text-slate-700 leading-relaxed text-lg">
-                  We start with the excitement of quad biking through golden dunes - feeling the desert wind as you master the trails. 
-                  Then, as the sun begins to set, we transition to the peaceful rhythm of camel trekking, sharing stories and mint tea 
-                  just like our Berber ancestors have done for generations.
+                  Discover the magic of Morocco's Agafay Desert with an unforgettable combination of thrilling quad biking 
+                  and traditional camel trekking. Experience the perfect blend of adventure and cultural immersion just 
+                  outside Marrakech, complete with scenic viewpoints and authentic Berber hospitality.
                 </p>
               </div>
               
-              {/* Experience Breakdown */}
+              {/* Experience Breakdown - Updated */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                {/* Morning Adventure */}
+                {/* Quad Biking Adventure */}
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
                     <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center">
-                      <span className="text-amber-700 text-xl">🌅</span>
+                      <span className="text-amber-700 text-xl">🏍️</span>
                     </div>
                     <div>
-                      <h4 className="text-slate-800 font-semibold text-lg">Morning Thrills</h4>
-                      <p className="text-slate-600 text-sm">Quad Biking Adventure</p>
+                      <h4 className="text-slate-800 font-semibold text-lg">Quad Biking Expedition</h4>
+                      <p className="text-slate-600 text-sm">2-Hour Guided Adventure</p>
                     </div>
                   </div>
                   <div className="space-y-3 ml-15">
-                    {['2 hours of guided desert exploration', 'Learn from local experts', 'All safety equipment provided', 'Capture amazing photos'].map((item, index) => (
+                    {[
+                      '2 hours of guided quad biking through stunning landscapes',
+                      'Premium safety equipment and professional instruction', 
+                      'Scenic routes with panoramic photo opportunities',
+                      'Explore hidden Berber villages and desert valleys'
+                    ].map((item, index) => (
                       <div key={index} className="flex items-start space-x-3">
                         <div className="w-1.5 h-1.5 bg-amber-500 rounded-full mt-2 shrink-0"></div>
                         <span className="text-slate-700/90 text-sm leading-relaxed">{item}</span>
@@ -209,19 +212,24 @@ const Experience = () => {
                   </div>
                 </div>
                 
-                {/* Evening Peace */}
+                {/* Camel Trekking Experience */}
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
                     <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center">
-                      <span className="text-amber-700 text-xl">🌇</span>
+                      <span className="text-amber-700 text-xl">🐫</span>
                     </div>
                     <div>
-                      <h4 className="text-slate-800 font-semibold text-lg">Evening Magic</h4>
-                      <p className="text-slate-600 text-sm">Camel Trek & Tea</p>
+                      <h4 className="text-slate-800 font-semibold text-lg">Camel Trekking</h4>
+                      <p className="text-slate-600 text-sm">20-Minute Traditional Journey</p>
                     </div>
                   </div>
                   <div className="space-y-3 ml-15">
-                    {['Gentle sunset camel ride', 'Traditional mint tea ceremony', 'Stories from Berber culture', 'Unforgettable golden hour'].map((item, index) => (
+                    {[
+                      '20-minute authentic camel ride through golden dunes',
+                      'Breathtaking sunset views over Agafay Desert',
+                      'Cultural immersion with local Berber guides',
+                      'Traditional mint tea break included'
+                    ].map((item, index) => (
                       <div key={index} className="flex items-start space-x-3">
                         <div className="w-1.5 h-1.5 bg-amber-500 rounded-full mt-2 shrink-0"></div>
                         <span className="text-slate-700/90 text-sm leading-relaxed">{item}</span>
@@ -238,15 +246,15 @@ const Experience = () => {
                     <span className="text-amber-700 text-xl">✅</span>
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-amber-800 font-semibold mb-3 text-lg">Everything You Get</h4>
+                    <h4 className="text-amber-800 font-semibold mb-3 text-lg">Everything Included</h4>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-3 text-sm">
                       {[
-                        'Hotel Transfer', 
-                        'Safety Equipment', 
-                        'Bottled Water', 
-                        'Professional Guide', 
-                        'Desert Photos', 
-                        'Local Snacks'
+                        'Hotel Pickup & Drop-off', 
+                        'Professional Quad Bike Equipment', 
+                        'Safety Gear & Instruction', 
+                        '20-Minute Camel Ride', 
+                        'Moroccan Mint Tea Break',
+                        'Multilingual Guides'
                       ].map((item, index) => (
                         <div key={index} className="flex items-center space-x-2">
                           <div className="w-1.5 h-1.5 bg-amber-400 rounded-full shrink-0"></div>
@@ -255,8 +263,35 @@ const Experience = () => {
                       ))}
                     </div>
                     <p className="text-amber-600/80 text-xs mt-3 italic">
-                      * Mint tea available for purchase during camel trek
+                      * Available in English, French, Spanish, and Arabic
                     </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Requirements Section - New Addition */}
+              <div className="bg-slate-50/80 rounded-2xl p-6 mb-8 border border-slate-200/50">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center shrink-0">
+                    <span className="text-slate-700 text-xl">📝</span>
+                  </div>
+                  <div>
+                    <h4 className="text-slate-800 font-semibold mb-2 text-lg">What to Bring</h4>
+                    <div className="grid grid-cols-2 gap-3 text-sm">
+                      {[
+                        'Comfortable outdoor clothing',
+                        'Closed-toe shoes',
+                        'Sun protection',
+                        'Camera for memories',
+                        'Minimum age: 15 (quad)',
+                        'Minimum age: 15 (camel)'
+                      ].map((item, index) => (
+                        <div key={index} className="flex items-center space-x-2">
+                          <div className="w-1.5 h-1.5 bg-slate-400 rounded-full shrink-0"></div>
+                          <span className="text-slate-700">{item}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -268,9 +303,10 @@ const Experience = () => {
                     <span className="text-blue-700 text-xl">🎯</span>
                   </div>
                   <div>
-                    <h4 className="text-blue-800 font-semibold mb-2 text-lg">Want Something Different?</h4>
+                    <h4 className="text-blue-800 font-semibold mb-2 text-lg">Flexible Booking Options</h4>
                     <p className="text-blue-700/90 text-sm leading-relaxed mb-3">
-                      Prefer only quad biking? Just camel trekking? Smaller group? We customize every experience to match your dreams.
+                      Free cancellation up to 24 hours in advance • Reserve now & pay later • 
+                      Multiple starting times available (9:00, 14:00, 16:00)
                     </p>
                     <Link
                       href="/contact-us"
@@ -285,8 +321,11 @@ const Experience = () => {
               
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href={"/experience/Desert-Adventure"} className="flex-1 bg-linear-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white py-4 font-medium tracking-wide rounded-xl transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2 group">
-                  <span>Book This Combo</span>
+                <Link 
+                  href={"/contact-us"} 
+                  className="flex-1 bg-linear-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white py-4 font-medium tracking-wide rounded-xl transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2 group"
+                >
+                  <span>Reserve Now - €95</span>
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </Link>
                 
@@ -294,15 +333,15 @@ const Experience = () => {
                   href="/contact-us"
                   className="flex-1 border border-blue-500 text-blue-600 hover:bg-blue-500 hover:text-white py-4 font-medium tracking-wide rounded-xl transition-all duration-300 flex items-center justify-center space-x-2 group"
                 >
-                  <span>Customize My Tour</span>
-                  <span className="group-hover:scale-110 transition-transform">✨</span>
+                  <span>Ask Questions</span>
+                  <span className="group-hover:scale-110 transition-transform">💬</span>
                 </Link>
 
                 <Link
                   href="/experiences/quad-biking-and-camel-ride-in-the-agafay-desert"
                   className="flex-1 border border-slate-300 text-slate-600 hover:bg-slate-100 py-4 font-medium tracking-wide rounded-xl transition-all duration-300 flex items-center justify-center space-x-2 group"
                 >
-                  <span>See All Options</span>
+                  <span>Full Details</span>
                   <span className="group-hover:scale-110 transition-transform">📖</span>
                 </Link>
               </div>
@@ -310,13 +349,13 @@ const Experience = () => {
           </div>
         </div>
 
-        {/* Personal Stats */}
+        {/* Updated Personal Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
           {[
-            { number: '5,000+', label: 'Happy Travelers', emoji: '😊' },
-            { number: '12', label: 'Years of Stories', emoji: '📅' },
-            { number: '98%', label: 'Come Back Smiling', emoji: '⭐' },
-            { number: '4.9/5', label: 'Local Expertise', emoji: '🎯' }
+            { number: '342+', label: 'Adventure Reviews', emoji: '⭐' },
+            { number: '4.9/5', label: 'Guest Rating', emoji: '🎯' },
+            { number: '45min', label: 'From Marrakech', emoji: '📍' },
+            { number: 'All Levels', label: 'Welcome', emoji: '👥' }
           ].map((stat, index) => (
             <div key={index} className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 hover:scale-105 transition-all duration-300 border border-amber-200/30 text-center group">
               <div className="text-2xl mb-2 group-hover:scale-110 transition-transform duration-300">

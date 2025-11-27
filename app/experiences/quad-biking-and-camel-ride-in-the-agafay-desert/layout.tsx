@@ -25,7 +25,7 @@ const jsonLd = {
   'offers': {
     '@type': 'Offer',
     'name': 'Quad Biking & Camel Ride Experience',
-    'price': '95',
+    'price': '55',
     'priceCurrency': 'EUR',
     'priceValidUntil': '2024-12-31',
     'availability': 'https://schema.org/InStock',
