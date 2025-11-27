@@ -49,6 +49,12 @@ const Experience = () => {
                 width={1200}
                 height={800}
                 className="object-contain max-h-[80vh] w-auto"
+
+                  priority // For above-the-fold images
+  quality={85} // Balance between quality and file size
+  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+  placeholder="blur"
+  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg..." // Add blur placeholder
               />
             </div>
             
@@ -109,6 +115,12 @@ const Experience = () => {
                   alt="Quad biking adventure through Agafay Desert near Marrakech"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
+
+                    priority // For above-the-fold images
+  quality={85} // Balance between quality and file size
+  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+  placeholder="blur"
+  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg..." // Add blur placeholder
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent"></div>
               </div>
@@ -137,7 +149,15 @@ const Experience = () => {
                     alt="Quad biking at sunset in Agafay Desert"
                     fill
                     className="object-cover"
+
+                      priority // For above-the-fold images
+  quality={85} // Balance between quality and file size
+  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+  placeholder="blur"
+  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg..." // Add blur placeholder
                   />
+
+
                 </button>
                 <button 
                   onClick={() => openImage(images[4])}
@@ -148,6 +168,12 @@ const Experience = () => {
                     alt="Sunset camel trekking experience"
                     fill
                     className="object-cover"
+
+                      priority // For above-the-fold images
+  quality={85} // Balance between quality and file size
+  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+  placeholder="blur"
+  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg..." // Add blur placeholder
                   />
                 </button>
               </div>

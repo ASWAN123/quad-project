@@ -21,7 +21,7 @@ const Gallery = () => {
   return (
     <section className="py-24 bg-linear-to-b from-white to-amber-50/30 relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-32 bg-[url('/images/moroccan-pattern.png')] opacity-5"></div>
+      <div className="absolute top-0 left-0 w-full h-32  opacity-5"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-200/10 rounded-full blur-3xl"></div>
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -116,6 +116,12 @@ const Gallery = () => {
                 alt={image.title}
                 fill
                 className="object-cover group-hover:scale-110 transition-transform duration-700"
+
+                  priority // For above-the-fold images
+  quality={85} // Balance between quality and file size
+  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+  placeholder="blur"
+  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg..." // Add blur placeholder
               />
               
               {/* Gradient Overlay */}

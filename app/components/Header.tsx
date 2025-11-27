@@ -37,6 +37,12 @@ const Header = () => {
                   width={80} 
                   height={80} 
                   className="w-15 h-15 rounded-2xl group-hover:scale-110 transition-all duration-500 shadow-lg"
+
+                    priority // For above-the-fold images
+  quality={85} // Balance between quality and file size
+  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+  placeholder="blur"
+  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg..." // Add blur placeholder
                 />
               </Link>
               {/* Floating particles */}

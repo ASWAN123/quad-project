@@ -182,7 +182,13 @@ export default function ActivityDetails() {
                   alt="Quad biking adventure through the Agafay Desert near Marrakech"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  priority
+          
+
+                    priority // For above-the-fold images
+  quality={85} // Balance between quality and file size
+  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+  placeholder="blur"
+  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg..." // Add blur placeholder
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3">
@@ -200,6 +206,12 @@ export default function ActivityDetails() {
                     alt={`Agafay Desert experience ${index + 2}`}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
+
+                      priority // For above-the-fold images
+  quality={85} // Balance between quality and file size
+  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+  placeholder="blur"
+  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg..." // Add blur placeholder
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
                 </div>

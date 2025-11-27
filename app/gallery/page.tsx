@@ -53,8 +53,8 @@ export default function Gallery() {
       { id: 21, src: '/images/Marrakech-Desert-and-Palm-Grove-Quad-Bike-Tour.jpg', category: 'quad', title: 'Desert & Grove Tour', description: 'Combined desert and palm grove quad experience' },
       // { id: 22, src: '/images/Marrakech-Desert-and-Palm-Grove-Quad-Bike-Tour.jpeg', category: 'quad', title: 'Scenic Route', description: 'Picturesque quad biking route through varied terrain' },
       { id: 23, src: '/images/Marrakech-Desert-and-Palm-Grove-Quad-Bike-Adventure.jpg', category: 'quad', title: 'Dual Landscape', description: 'Quad adventure through desert and green landscapes' },
-      { id: 24, src: '/images/Man-riding-quad-bike-over-sandy-terrain.jpg', category: 'quad', title: 'Sandy Terrain', description: 'Mastering sandy desert terrain on quad bike' },
-      { id: 25, src: '/images/Exploring-the-Desert-on-Camelback.jpg', category: 'camel', title: 'Camelback Exploration', description: 'Traditional desert exploration on camelback' },
+      { id: 24, src: '/images/Man-riding-quad-bike-over-sandy-terrain.jpeg', category: 'quad', title: 'Sandy Terrain', description: 'Mastering sandy desert terrain on quad bike' },
+      { id: 25, src: '/images/Exploring-the-Desert-on-Camelback.jpeg', category: 'camel', title: 'Camelback Exploration', description: 'Traditional desert exploration on camelback' },
       { id: 26, src: '/images/Dromedaries-on-the-Sand.jpeg', category: 'camel', title: 'Desert Dromedaries', description: 'Camels resting on golden desert sands' },
       { id: 27, src: '/images/Desert-Sunset-Quad-Ride.jpeg', category: 'quad', title: 'Sunset Quad Ride', description: 'Evening quad biking with spectacular sunset views' },
       { id: 28, src: '/images/Desert-Quad-Biking-Adventure.jpeg', category: 'quad', title: 'Desert Expedition', description: 'Full desert quad biking adventure experience' },
@@ -85,7 +85,7 @@ export default function Gallery() {
       { id: 21, src: '/images/Marrakech-Desert-and-Palm-Grove-Quad-Bike-Tour.jpg', category: 'quad', title: 'Desert & Grove Tour', description: 'Combined desert and palm grove quad experience' },
       // { id: 22, src: '/images/Marrakech-Desert-and-Palm-Grove-Quad-Bike-Tour.jpeg', category: 'quad', title: 'Scenic Route', description: 'Picturesque quad biking route through varied terrain' },
       { id: 23, src: '/images/Marrakech-Desert-and-Palm-Grove-Quad-Bike-Adventure.jpg', category: 'quad', title: 'Dual Landscape', description: 'Quad adventure through desert and green landscapes' },
-      { id: 24, src: '/images/Man-riding-quad-bike-over-sandy-terrain.jpg', category: 'quad', title: 'Sandy Terrain', description: 'Mastering sandy desert terrain on quad bike' },
+      { id: 24, src: '/images/Man-riding-quad-bike-over-sandy-terrain.jpeg', category: 'quad', title: 'Sandy Terrain', description: 'Mastering sandy desert terrain on quad bike' },
       { id: 27, src: '/images/Desert-Sunset-Quad-Ride.jpeg', category: 'quad', title: 'Sunset Quad Ride', description: 'Evening quad biking with spectacular sunset views' },
       { id: 28, src: '/images/Desert-Quad-Biking-Adventure.jpeg', category: 'quad', title: 'Desert Expedition', description: 'Full desert quad biking adventure experience' },
       { id: 32, src: '/images/ATV-Tour-in-Marrakech.jpg', category: 'quad', title: 'ATV Tour', description: 'Professional ATV tour in Marrakech desert' }
@@ -93,7 +93,7 @@ export default function Gallery() {
     camel: [
       { id: 3, src: '/images/sunset-camel-ride.jpeg', category: 'camel', title: 'Sunset Camel Trek', description: 'Peaceful camel ride during magical sunset hours' },
       { id: 4, src: '/images/Desert-Camel-Ride.jpeg', category: 'camel', title: 'Desert Caravan', description: 'Traditional camel trekking experience' },
-      { id: 25, src: '/images/Exploring-the-Desert-on-Camelback.jpg', category: 'camel', title: 'Camelback Exploration', description: 'Traditional desert exploration on camelback' },
+      { id: 25, src: '/images/Exploring-the-Desert-on-Camelback.jpeg', category: 'camel', title: 'Camelback Exploration', description: 'Traditional desert exploration on camelback' },
       { id: 26, src: '/images/Dromedaries-on-the-Sand.jpeg', category: 'camel', title: 'Desert Dromedaries', description: 'Camels resting on golden desert sands' },
       { id: 29, src: '/images/Desert-Caravan-Silhouette.jpeg', category: 'camel', title: 'Caravan Silhouette', description: 'Beautiful camel caravan silhouette at dusk' },
       { id: 30, src: '/images/Desert-Camel-Ride-Adventure.jpeg', category: 'camel', title: 'Camel Adventure', description: 'Exciting camel riding adventure in the desert' },
@@ -229,6 +229,12 @@ export default function Gallery() {
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
                 onLoad={() => handleImageLoad(image.id)}
+
+                  priority // For above-the-fold images
+  quality={85} // Balance between quality and file size
+  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+  placeholder="blur"
+  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg..." // Add blur placeholder
               />
               
               {/* Overlay */}
@@ -297,6 +303,12 @@ export default function Gallery() {
                 alt={selectedImage.title}
                 fill
                 className="object-contain"
+
+                  priority // For above-the-fold images
+  quality={85} // Balance between quality and file size
+  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+  placeholder="blur"
+  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg..." // Add blur placeholder
               />
             </div>
 

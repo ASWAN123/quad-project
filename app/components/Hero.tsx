@@ -33,7 +33,12 @@ const Hero = () => {
                 width={600}
                 height={400}
                 className="w-full h-[300px] lg:h-[450px] object-cover"
-                priority
+                
+                  priority // For above-the-fold images
+  quality={85} // Balance between quality and file size
+  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+  placeholder="blur"
+  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg..." // Add blur placeholder
               />
               {/* Overlay Label */}
               <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2">
@@ -51,6 +56,12 @@ const Hero = () => {
                   width={300}
                   height={200}
                   className="w-full h-[180px] lg:h-60 object-cover"
+
+                    priority // For above-the-fold images
+  quality={85} // Balance between quality and file size
+  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+  placeholder="blur"
+  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg..." // Add blur placeholder
                 />
               </div>
 
