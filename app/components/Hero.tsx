@@ -6,6 +6,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
 
+const BLUR_DATA_URL = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q==";
+
 const Hero = () => {
   const images = [
     '/images/Desert-Camel-Ride-Adventure.jpeg',
@@ -27,7 +29,7 @@ const Hero = () => {
           <div className="relative order-1 lg:order-2 space-y-6">
             {/* Main Featured Image */}
             <div className="relative rounded-3xl overflow-hidden border-8 border-white/90 transform md:rotate-1 hover:rotate-0 transition-transform duration-500">
-              <Image
+              {/* <Image
                 src={images[0]}
                 alt="Quad biking adventure at sunset in Agafay Desert"
                 width={600}
@@ -40,6 +42,18 @@ const Hero = () => {
   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
   placeholder="blur"
   blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg..." // Add blur placeholder
+              /> */}
+              <Image
+                src={images[0]}
+                alt="Quad biking adventure at sunset in Agafay Desert"
+                width={600}
+                height={400}
+                className="w-full h-auto object-cover" // Changed to h-auto for better CLS
+                priority={true} // Keep only on the main LCP image
+                quality={85}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px" // More specific sizes
+                placeholder="blur"
+                blurDataURL={BLUR_DATA_URL}
               />
               {/* Overlay Label */}
               <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2">
@@ -58,12 +72,12 @@ const Hero = () => {
                   height={200}
                   className="w-full h-[180px] lg:h-60 object-cover"
 
-                    priority // For above-the-fold images
+               
               
   quality={85} // Balance between quality and file size
   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-  placeholder="blur"
-  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg..." // Add blur placeholder
+                placeholder="blur"
+                blurDataURL={BLUR_DATA_URL}
                 />
               </div>
 

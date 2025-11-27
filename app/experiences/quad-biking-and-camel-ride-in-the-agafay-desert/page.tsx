@@ -5,6 +5,9 @@ import Image from 'next/image';
 import CTASection from '@/app/components/CTASection';
 import Link from 'next/link';
 
+
+const BLUR_DATA_URL = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q==";
+
 export default function ActivityDetails() {
   const [selectedTab, setSelectedTab] = useState('overview');
   const [selectedDate, setSelectedDate] = useState('');
@@ -184,12 +187,12 @@ export default function ActivityDetails() {
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
           
 
-                    priority // For above-the-fold images
+            
                    
   quality={85} // Balance between quality and file size
   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-  placeholder="blur"
-  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg..." // Add blur placeholder
+                placeholder="blur"
+                blurDataURL={BLUR_DATA_URL}
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3">
@@ -208,12 +211,12 @@ export default function ActivityDetails() {
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
 
-                      priority // For above-the-fold Images
+       
                  
   quality={85} // Balance between quality and file size
   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-  placeholder="blur"
-  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg..." // Add blur placeholder
+                placeholder="blur"
+                blurDataURL={BLUR_DATA_URL}
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
                 </div>
