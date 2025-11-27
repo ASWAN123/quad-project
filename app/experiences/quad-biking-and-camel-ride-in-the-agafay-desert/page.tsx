@@ -269,6 +269,7 @@ export default function ActivityDetails() {
                 { id: 'reviews', label: 'Guest Experiences' }
               ].map((tab) => (
                 <button
+                aria-label="Select tab"
                   key={tab.id}
                   onClick={() => setSelectedTab(tab.id)}
                   className={`pb-4 px-1 font-medium transition-colors border-b-2 ${
@@ -416,6 +417,7 @@ export default function ActivityDetails() {
                 <div className="flex justify-between items-center mb-6">
                   <h3 className="text-3xl font-serif text-slate-800">Reserve Your Desert Adventure</h3>
                   <button 
+                  aria-label="Close booking form"
                     onClick={() => setShowBookingForm(false)}
                     className="text-slate-400 hover:text-slate-600 text-2xl"
                   >
@@ -453,6 +455,7 @@ export default function ActivityDetails() {
                     <label className="block text-slate-700 font-semibold mb-3 text-lg">Number of Adventurers</label>
                     <div className="flex items-center justify-between bg-amber-50/50 rounded-xl p-4 border-2 border-amber-200">
                       <button
+                      aria-label="Decrease number of guests"
                         onClick={() => setGuests(Math.max(1, guests - 1))}
                         className="w-12 h-12 rounded-full border-2 border-amber-300 flex items-center justify-center hover:bg-amber-100 transition-colors text-amber-600 text-xl font-bold"
                       >
@@ -460,6 +463,7 @@ export default function ActivityDetails() {
                       </button>
                       <span className="text-xl font-bold text-slate-800 px-6">{guests}</span>
                       <button
+                      aria-label="Increase number of guests"
                         onClick={() => setGuests(guests + 1)}
                         className="w-12 h-12 rounded-full border-2 border-amber-300 flex items-center justify-center hover:bg-amber-100 transition-colors text-amber-600 text-xl font-bold"
                       >
@@ -483,7 +487,9 @@ export default function ActivityDetails() {
                     </div>
                   </div>
 
-                  <button className="w-full bg-linear-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white py-4 rounded-xl font-bold text-xl transition-all duration-300 hover:scale-105 mt-4">
+                  <button 
+                  aria-label="Complete your reservation"
+                  className="w-full bg-linear-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white py-4 rounded-xl font-bold text-xl transition-all duration-300 hover:scale-105 mt-4">
                     Complete Your Reservation
                   </button>
                 </div>

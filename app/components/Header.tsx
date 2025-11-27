@@ -87,7 +87,9 @@ const Header = () => {
 
 
             {/* Main CTA Button */}
-            <button className="hidden md:block bg-linear-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-6 py-3 text-sm font-medium tracking-widest rounded-full transition-all duration-500 hover:scale-105 hover:shadow-xl group relative overflow-hidden">
+            <button 
+            aria-label="Book Adventure"
+            className="hidden md:block bg-linear-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-6 py-3 text-sm font-medium tracking-widest rounded-full transition-all duration-500 hover:scale-105 hover:shadow-xl group relative overflow-hidden">
               <span className="relative z-10 flex items-center space-x-2">
                 <span>BOOK ADVENTURE</span>
                 <span className="transform group-hover:translate-x-1 transition-transform duration-300">→</span>
@@ -97,6 +99,7 @@ const Header = () => {
             
             {/* Mobile Menu Button */}
             <button 
+            aria-label="Toggle menu"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="md:hidden w-10 h-10 rounded-full border border-slate-300 hover:border-amber-500 flex items-center justify-center text-slate-600 hover:text-amber-600 transition-all duration-300 hover:scale-110"
             >
@@ -150,7 +153,9 @@ const Header = () => {
                 <span>💬</span>
                 <span>Chat on WhatsApp</span>
               </a>
-              <button className="w-full bg-linear-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white py-3 rounded-xl font-bold transition-all duration-300">
+              <button
+              aria-label="Book Your Adventure"
+              className="w-full bg-linear-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white py-3 rounded-xl font-bold transition-all duration-300">
                 Book Your Adventure
               </button>
             </div>

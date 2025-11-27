@@ -36,6 +36,7 @@ const Experience = () => {
             <button
               onClick={closeImage}
               className="absolute -top-12 right-0 text-white hover:text-amber-300 transition-colors duration-200 z-10"
+              aria-label="Close image preview"
             >
               <div className="flex items-center justify-center w-10 h-10 bg-white/20 rounded-full backdrop-blur-sm">
                 <span className="text-2xl font-light">×</span>
@@ -145,6 +146,7 @@ const Experience = () => {
                 <button 
                   onClick={() => openImage(images[3])}
                   className="relative w-16 h-16 rounded-lg overflow-hidden border-2 border-white/80 shadow-lg transform hover:scale-110 transition-transform duration-300 focus:outline-none focus:ring-2 focus:ring-amber-300"
+                aria-label="View quad biking sunset photo in full size"
                 >
                   <Image
                     src={images[3]}
@@ -165,6 +167,7 @@ const Experience = () => {
                 <button 
                   onClick={() => openImage(images[4])}
                   className="relative w-16 h-16 rounded-lg overflow-hidden border-2 border-white/80 shadow-lg transform hover:scale-110 transition-transform duration-300 focus:outline-none focus:ring-2 focus:ring-amber-300"
+                aria-label="View sunset camel trekking photo in full size" // ADD THIS
                 >
                   <Image
                     src={images[4]}

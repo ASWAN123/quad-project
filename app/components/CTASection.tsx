@@ -41,13 +41,17 @@ const CTASection = () => {
     {/* High-Contrast Buttons */}
     <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
       {/* Primary Button */}
-      <button className="group bg-linear-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white px-12 py-5 text-lg font-medium tracking-wide rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center space-x-3">
+      <button 
+      aria-label="Start Your Adventure"
+      className="group bg-linear-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white px-12 py-5 text-lg font-medium tracking-wide rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center space-x-3">
         <span>Start Your Adventure</span>
         <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
       </button>
       
       {/* Secondary Button */}
-      <button className="group border-2 border-amber-600 text-amber-700 hover:bg-amber-600 hover:text-white px-10 py-5 text-lg font-medium tracking-wide rounded-full transition-all duration-300 flex items-center space-x-3">
+      <button 
+      aria-label="Contact Us"
+      className="group border-2 border-amber-600 text-amber-700 hover:bg-amber-600 hover:text-white px-10 py-5 text-lg font-medium tracking-wide rounded-full transition-all duration-300 flex items-center space-x-3">
         <span>Contact Us</span>
         <span className="group-hover:scale-110 transition-transform duration-300">💬</span>
       </button>

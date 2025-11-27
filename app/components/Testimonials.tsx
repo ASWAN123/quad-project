@@ -132,7 +132,9 @@ const Testimonials = () => {
           Every adventure begins with a conversation. Tell us your dreams, and we'll make them come alive in the desert.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="bg-linear-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white px-8 py-4 rounded-full font-medium tracking-wide transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center space-x-2 group">
+          <button 
+            aria-label="Start Your Adventure"
+          className="bg-linear-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white px-8 py-4 rounded-full font-medium tracking-wide transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center space-x-2 group">
             <span>Start Your Adventure</span>
             <span className="group-hover:translate-x-1 transition-transform">→</span>
           </button>

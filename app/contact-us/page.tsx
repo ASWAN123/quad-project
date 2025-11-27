@@ -302,6 +302,7 @@ export default function Contact() {
                   <label className="block text-slate-700 font-medium mb-3">Number of Adventurers</label>
                   <div className="flex items-center justify-between bg-white/90 rounded-xl p-3 border-2 border-amber-200/70">
                     <button
+                    aria-label="Decrease number of guests"
                       type="button"
                       onClick={() => setFormData({...formData, guests: Math.max(1, formData.guests - 1)})}
                       className="w-12 h-12 rounded-full border-2 border-amber-300/70 flex items-center justify-center hover:bg-amber-50/80 transition-colors text-amber-600 font-bold text-lg"
@@ -310,6 +311,7 @@ export default function Contact() {
                     </button>
                     <span className="text-xl font-bold text-slate-800 px-4">{formData.guests}</span>
                     <button
+                    aria-label="Increase number of guests"
                       type="button"
                       onClick={() => setFormData({...formData, guests: formData.guests + 1})}
                       className="w-12 h-12 rounded-full border-2 border-amber-300/70 flex items-center justify-center hover:bg-amber-50/80 transition-colors text-amber-600 font-bold text-lg"
@@ -344,6 +346,7 @@ export default function Contact() {
               </div>
 
               <button
+              aria-label="Start Your Desert Journey"
                 type="submit"
                 disabled={isSubmitting}
                 className="w-full bg-amber-600 hover:bg-amber-700 text-white py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl"

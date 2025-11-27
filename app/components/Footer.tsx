@@ -239,7 +239,9 @@ const Footer = () => {
 
       {/* Book Now */}
       <Link href="/contact-us">
-        <button className="group bg-linear-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white p-4 rounded-2xl shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-xl">
+        <button 
+        aria-label="Book Now"
+        className="group bg-linear-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white p-4 rounded-2xl shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-xl">
           <div className="flex items-center space-x-2">
             <span className="text-lg">⚡</span>
             <div className="text-xs font-medium tracking-wide">

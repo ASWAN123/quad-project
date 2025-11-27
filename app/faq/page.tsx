@@ -61,6 +61,7 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <div key={index} className="bg-white/80 backdrop-blur-sm rounded-2xl border border-amber-100/50 overflow-hidden">
               <button
+              aria-label={`Toggle answer for: ${faq.question}`}
                 onClick={() => toggleQuestion(index)}
                 className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-amber-50/50 transition-colors duration-300"
               >

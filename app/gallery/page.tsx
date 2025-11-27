@@ -193,6 +193,7 @@ export default function Gallery() {
         <div className="flex flex-wrap justify-center gap-3 mb-12">
           {categories.map((category) => (
             <button
+            aria-label={`Filter by ${category.name}`}
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
               className={`group flex items-center space-x-3 px-6 py-3 rounded-2xl text-sm font-medium transition-all duration-300 ${
@@ -277,6 +278,7 @@ export default function Gallery() {
           <div className="relative max-w-6xl max-h-full w-full">
             {/* Close Button */}
             <button
+            aria-label="Close image viewer"
               onClick={closeLightbox}
               className="absolute top-4 right-4 z-10 w-10 h-10 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition-colors"
             >
@@ -285,12 +287,14 @@ export default function Gallery() {
 
             {/* Navigation Buttons */}
             <button
+            aria-label="Previous image"
               onClick={() => navigateImage('prev')}
               className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition-colors"
             >
               ‹
             </button>
             <button
+            aria-label='Next image'
               onClick={() => navigateImage('next')}
               className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 w-10 h-10 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition-colors"
             >

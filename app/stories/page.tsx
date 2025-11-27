@@ -148,6 +148,7 @@ export default function Stories() {
           <div className="flex flex-wrap gap-3">
             {storyCategories.map((category) => (
               <button
+              aria-label={`Filter by ${category.name}`}
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
                 className={`flex items-center space-x-3 px-6 py-3 rounded-2xl text-sm font-medium transition-all duration-300 ${
