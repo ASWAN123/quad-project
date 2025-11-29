@@ -341,7 +341,7 @@ const Experience = () => {
                     <h4 className="text-blue-800 font-semibold mb-2 text-lg">Flexible Booking Options</h4>
                     <p className="text-blue-700/90 text-sm leading-relaxed mb-3">
                       Free cancellation up to 24 hours in advance • Reserve now & pay later • 
-                      Multiple starting times available (9:00, 14:00, 16:00)
+                      Multiple starting times available (09:00, 11:00, 13:00 , 15:00 ,  17:00)
                     </p>
                     <Link
                       href="/contact-us"

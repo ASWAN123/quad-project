@@ -8,6 +8,7 @@ export default function About() {
           About Quad Camel Marrakech
         </h1>
         <div className="prose prose-lg max-w-none">
+          
           <p className="text-xl text-slate-600 text-center mb-12">
             Local experts creating unforgettable desert adventures since 2018
           </p>

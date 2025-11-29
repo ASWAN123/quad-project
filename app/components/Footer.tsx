@@ -1,4 +1,7 @@
+import Image from "next/image"
 import Link from "next/link"
+const BLUR_DATA_URL =
+    "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q==";
 
 const Footer = () => {
   return (
@@ -14,12 +17,28 @@ const Footer = () => {
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
       {/* Brand Section */}
       <div className="space-y-6">
-        <Link href="/" className="flex items-center space-x-3 group">
-          <div className="w-3 h-10 bg-linear-to-b from-amber-400 to-amber-500 rounded-full group-hover:scale-110 transition-transform duration-300"></div>
-          <span className="text-white font-light text-3xl tracking-widest group-hover:text-amber-400 transition-colors duration-300">
-            QuadCamelMarrakesh
-          </span>
-        </Link>
+        <Link href="/" className="flex items-center space-x-4 group">
+  {/* Logo */}
+  <Image
+    src="/marakech-quad-camel/logo/logo-desktop.png"
+    alt="Quad Camel Marrakech - Desert Adventures"
+    width={60}
+    height={60}
+    className="w-12 h-12 rounded-xl group-hover:scale-110 transition-all duration-500 shadow-lg"
+    quality={85}
+    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+    placeholder="blur"
+    blurDataURL={BLUR_DATA_URL}
+  />
+  
+  {/* Text with decorative element */}
+  <div className="flex items-center space-x-3">
+    <div className="w-2 h-8 bg-gradient-to-b from-amber-400 to-amber-500 rounded-full group-hover:scale-110 transition-transform duration-300"></div>
+    <span className="text-white font-light text-2xl tracking-widest group-hover:text-amber-400 transition-colors duration-300">
+      QuadCamelMarrakesh
+    </span>
+  </div>
+</Link>
         
         <p className="text-slate-300 text-lg leading-relaxed max-w-md">
           Crafting unforgettable desert experiences in the heart of Morocco through luxury adventures and authentic cultural immersion.
