@@ -31,11 +31,11 @@ const Header = () => {
         >
             <div className="max-w-7xl mx-auto px-6 py-4">
                 <div className="flex justify-between items-center">
-                    <div className="flex items-center space-x-6 group cursor-pointer">
+                    <div className="flex items-center space-x-4 group cursor-pointer">
                         <div className="relative">
                             <Link href={"/"} className="block">
                                 <Image
-                                    src="/marakech-quad-camel/logo/logo-desktop.png"
+                                    src="/marakech-quad-camel/logo/logo-desktop.jpeg"
                                     alt="Quad Camel Marrakech - Desert Adventures"
                                     width={80}
                                     height={80}
@@ -52,8 +52,8 @@ const Header = () => {
                         </div>
 
                         {/* Brand Text */}
-                        <div className="  hidden md:flex-col ">
-                            <Link href={"/"} className="text-slate-800 font-light text-xl tracking-widest leading-none">
+                        <div className="  hidden md:flex flex-col ">
+                            <Link href={"/"} className="text-slate-800 font-semibold text-xl tracking-widest leading-none">
                                 QuadCamelMarrakesh
                             </Link>
                         </div>

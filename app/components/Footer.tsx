@@ -1,278 +1,248 @@
-import Image from "next/image"
-import Link from "next/link"
+import Image from "next/image";
+import Link from "next/link";
 const BLUR_DATA_URL =
     "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q==";
 
 const Footer = () => {
-  return (
-   <footer className="relative bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
-  {/* Background Pattern */}
-  <div className="absolute inset-0 opacity-5">
-    <div className="absolute top-0 left-0 w-72 h-72 bg-amber-400 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
-    <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-500 rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
-  </div>
+    return (
+        <footer className="relative bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 opacity-5">
+                <div className="absolute top-0 left-0 w-72 h-72 bg-amber-400 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
+                <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-500 rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
+            </div>
 
-  <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
-    {/* Main Footer Content */}
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-      {/* Brand Section */}
-      <div className="space-y-6">
-        <Link href="/" className="flex items-center space-x-4 group">
-  {/* Logo */}
-  <Image
-    src="/marakech-quad-camel/logo/logo-desktop.png"
-    alt="Quad Camel Marrakech - Desert Adventures"
-    width={60}
-    height={60}
-    className="w-12 h-12 rounded-xl group-hover:scale-110 transition-all duration-500 shadow-lg"
-    quality={85}
-    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-    placeholder="blur"
-    blurDataURL={BLUR_DATA_URL}
-  />
-  
-  {/* Text with decorative element */}
-  <div className="flex items-center space-x-3">
-    <div className="w-2 h-8 bg-gradient-to-b from-amber-400 to-amber-500 rounded-full group-hover:scale-110 transition-transform duration-300"></div>
-    <span className="text-white font-light text-2xl tracking-widest group-hover:text-amber-400 transition-colors duration-300">
-      QuadCamelMarrakesh
-    </span>
-  </div>
-</Link>
-        
-        <p className="text-slate-300 text-lg leading-relaxed max-w-md">
-          Crafting unforgettable desert experiences in the heart of Morocco through luxury adventures and authentic cultural immersion.
-        </p>
-        
-        {/* Social Links */}
-        <div className="flex space-x-4">
-          {[
-            { icon: '📷', label: 'Instagram' },
-            { icon: '👥', label: 'Facebook' },
-            { icon: '🎥', label: 'YouTube' },
-            { icon: '💼', label: 'LinkedIn' }
-          ].map((social, index) => (
-            <a
-              key={index}
-              href="#"
-              className="group w-12 h-12 bg-slate-700/50 hover:bg-amber-500 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border border-slate-600/50 hover:border-amber-400"
-            >
-              <span className="text-lg group-hover:scale-110 transition-transform duration-300">
-                {social.icon}
-              </span>
-            </a>
-          ))}
-        </div>
-      </div>
+            <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
+                {/* Main Footer Content */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                    {/* Brand Section */}
+                    <div className="space-y-6">
+                        <Link href="/" className="flex items-center space-x-4 group">
+                            {/* Logo */}
+                            <Image
+                                src="/marakech-quad-camel/logo/logo-desktop.jpeg"
+                                alt="Quad Camel Marrakech - Desert Adventures"
+                                width={60}
+                                height={60}
+                                className="w-12 h-12 rounded-xl group-hover:scale-110 transition-all duration-500 shadow-lg"
+                                quality={85}
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                placeholder="blur"
+                                blurDataURL={BLUR_DATA_URL}
+                            />
 
-      {/* Links Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+                            {/* Text with decorative element */}
+                            <div className="flex items-center space-x-3">
+                                <div className="w-2 h-8 bg-linear-to-b from-amber-400 to-amber-500 rounded-full group-hover:scale-110 transition-transform duration-300"></div>
+                                <span className="text-white font-light text-2xl tracking-widest group-hover:text-amber-400 transition-colors duration-300">
+                                    QuadCamelMarrakesh
+                                </span>
+                            </div>
+                        </Link>
 
+                        <p className="text-slate-300 text-lg leading-relaxed max-w-md">
+                            Crafting unforgettable desert experiences in the heart of Morocco through luxury adventures and authentic cultural immersion.
+                        </p>
 
-        {/* Company */}
-        <div className="space-y-4">
-          <h3 className="text-white font-semibold text-lg tracking-widest uppercase mb-4">
-            Company
-          </h3>
-          <div className="space-y-3">
-            <Link
-              href="/about"
-              className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
-            >
-              About Us
-            </Link>
-            <Link
-              href="/guides"
-              className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
-            >
-              Our Guides
-            </Link>
-            <Link
-              href="/safety"
-              className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
-            >
-              Safety
-            </Link>
-            <Link
-              href="/sustainability"
-              className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
-            >
-              Sustainability
-            </Link>
-          </div>
-        </div>
+                        {/* Social Links */}
+                        <div className="flex space-x-4">
+                            {[
+                                { icon: "📷", label: "Instagram" },
+                                { icon: "👥", label: "Facebook" },
+                                { icon: "🎥", label: "YouTube" },
+                                { icon: "💼", label: "LinkedIn" },
+                            ].map((social, index) => (
+                                <a
+                                    key={index}
+                                    href="#"
+                                    className="group w-12 h-12 bg-slate-700/50 hover:bg-amber-500 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border border-slate-600/50 hover:border-amber-400"
+                                >
+                                    <span className="text-lg group-hover:scale-110 transition-transform duration-300">{social.icon}</span>
+                                </a>
+                            ))}
+                        </div>
+                    </div>
 
-        {/* Support */}
-     {/* Support */}
-<div className="space-y-4">
-  <h3 className="text-white font-semibold text-lg tracking-widest uppercase mb-4">
-    Support
-  </h3>
-  <div className="space-y-3">
-    <Link
-      href="/contact-us"
-      className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
-    >
-      Contact Us
-    </Link>
-    <Link
-      href="/faq"
-      className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
-    >
-      FAQ
-    </Link>
-    <Link
-      href="/booking-policy"
-      className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
-    >
-      Booking Policy
-    </Link>
-    <Link
-      href="/privacy"
-      className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
-    >
-      Privacy
-    </Link>
-  </div>
-</div>
-      </div>
-    </div>
+                    {/* Links Grid */}
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+                        {/* Company */}
+                        <div className="space-y-4">
+                            <h3 className="text-white font-semibold text-lg tracking-widest uppercase mb-4">Company</h3>
+                            <div className="space-y-3">
+                                <Link
+                                    href="/about"
+                                    className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
+                                >
+                                    About Us
+                                </Link>
+                                <Link
+                                    href="/guides"
+                                    className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
+                                >
+                                    Our Guides
+                                </Link>
+                                <Link
+                                    href="/safety"
+                                    className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
+                                >
+                                    Safety
+                                </Link>
+                                <Link
+                                    href="/sustainability"
+                                    className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
+                                >
+                                    Sustainability
+                                </Link>
+                            </div>
+                        </div>
 
-    {/* Contact & Newsletter */}
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 py-12 border-t border-slate-700/50">
-      {/* Contact Info */}
-      <div className="space-y-6">
-        <h3 className="text-white font-semibold text-lg tracking-widest uppercase">
-          Get In Touch
-        </h3>
-        <div className="space-y-4">
-          {[
-            { 
-              icon: '📍', 
-              text: 'Marrakech, Morocco', 
-              subtext: 'Desert Adventure Base',
-              link: 'https://www.google.com/maps/search/CIH%20Bank/@31.63742193,-8.00273953,17z?hl=en'
-            },
-            { 
-              icon: '📞', 
-              text: '+212 6 27 349 254', 
-              subtext: 'Available 24/7',
-              link: 'tel:+212627349254'
-            },
-            { 
-              icon: '✉️', 
-              text: 'experience@quadCamelMarrakesh.com', 
-              subtext: 'Quick Response',
-              link: 'mailto:experience@quadCamelMarrakesh.com'
-            }
-          ].map((contact, index) => (
-            <div key={index} className="flex items-start space-x-4 group">
-              <div className="w-10 h-10 bg-amber-500/10 rounded-lg flex items-center justify-center group-hover:bg-amber-500/20 transition-colors duration-300">
-                <span className="text-amber-400 text-lg">{contact.icon}</span>
-              </div>
-              <div>
-                {contact.link ? (
-                  <a 
-                    href={contact.link} 
-                    target={contact.link.startsWith('http') ? '_blank' : '_self'}
-                    rel="noopener noreferrer"
-                    className="text-white font-medium group-hover:text-amber-400 transition-colors duration-300 hover:underline"
-                  >
-                    {contact.text}
-                  </a>
-                ) : (
-                  <div className="text-white font-medium group-hover:text-amber-400 transition-colors duration-300">
-                    {contact.text}
-                  </div>
-                )}
-                <div className="text-slate-500 text-sm mt-1">
-                  {contact.subtext}
+                        {/* Support */}
+                        {/* Support */}
+                        <div className="space-y-4">
+                            <h3 className="text-white font-semibold text-lg tracking-widest uppercase mb-4">Support</h3>
+                            <div className="space-y-3">
+                                <Link
+                                    href="/contact-us"
+                                    className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
+                                >
+                                    Contact Us
+                                </Link>
+                                <Link href="/faq" className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm">
+                                    FAQ
+                                </Link>
+                                <Link
+                                    href="/booking-policy"
+                                    className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
+                                >
+                                    Booking Policy
+                                </Link>
+                                <Link
+                                    href="/privacy"
+                                    className="block text-slate-400 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 text-sm"
+                                >
+                                    Privacy
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
+
+                {/* Contact & Newsletter */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 py-12 border-t border-slate-700/50">
+                    {/* Contact Info */}
+                    <div className="space-y-6">
+                        <h3 className="text-white font-semibold text-lg tracking-widest uppercase">Get In Touch</h3>
+                        <div className="space-y-4">
+                            {[
+                                {
+                                    icon: "📍",
+                                    text: "Marrakech, Morocco",
+                                    subtext: "Desert Adventure Base",
+                                    link: "https://www.google.com/maps/search/CIH%20Bank/@31.63742193,-8.00273953,17z?hl=en",
+                                },
+                                {
+                                    icon: "📞",
+                                    text: "+212 6 27 349 254",
+                                    subtext: "Available 24/7",
+                                    link: "tel:+212627349254",
+                                },
+                                {
+                                    icon: "✉️",
+                                    text: "experience@quadCamelMarrakesh.com",
+                                    subtext: "Quick Response",
+                                    link: "mailto:experience@quadCamelMarrakesh.com",
+                                },
+                            ].map((contact, index) => (
+                                <div key={index} className="flex items-start space-x-4 group">
+                                    <div className="w-10 h-10 bg-amber-500/10 rounded-lg flex items-center justify-center group-hover:bg-amber-500/20 transition-colors duration-300">
+                                        <span className="text-amber-400 text-lg">{contact.icon}</span>
+                                    </div>
+                                    <div>
+                                        {contact.link ? (
+                                            <a
+                                                href={contact.link}
+                                                target={contact.link.startsWith("http") ? "_blank" : "_self"}
+                                                rel="noopener noreferrer"
+                                                className="text-white font-medium group-hover:text-amber-400 transition-colors duration-300 hover:underline"
+                                            >
+                                                {contact.text}
+                                            </a>
+                                        ) : (
+                                            <div className="text-white font-medium group-hover:text-amber-400 transition-colors duration-300">
+                                                {contact.text}
+                                            </div>
+                                        )}
+                                        <div className="text-slate-500 text-sm mt-1">{contact.subtext}</div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                {/* Bottom Bar */}
+                <div className="border-t border-slate-700/50 pt-8">
+                    <div className="flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">
+                        {/* Copyright */}
+                        <div className="text-slate-500 text-sm">© 2024 QuadCamelMarrakesh ADVENTURES. ALL RIGHTS RESERVED.</div>
+
+                        {/* Legal Links */}
+                        <div className="flex items-center space-x-8">
+                            {["Privacy Policy", "Terms of Service", "Cookie Policy", "Accessibility"].map((item, index) => (
+                                <a key={index} href="#" className="text-slate-500 hover:text-amber-400 text-sm transition-colors duration-300 hover:scale-105">
+                                    {item}
+                                </a>
+                            ))}
+                        </div>
+
+                        {/* Payment Methods */}
+                        <div className="flex items-center space-x-4">
+                            <div className="text-slate-500 text-sm mr-4">We Accept:</div>
+                            <div className="flex space-x-2">
+                                {["💳", "💰", "🏦", "💵"].map((method, index) => (
+                                    <div key={index} className="w-8 h-8 bg-slate-700/50 rounded-lg flex items-center justify-center text-slate-400">
+                                        {method}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          ))}
-        </div>
-      </div>
 
+            {/* Floating CTA */}
+            <div className="fixed bottom-6 right-6 z-50">
+                <div className="flex flex-col space-y-3">
+                    {/* WhatsApp */}
+                    <a
+                        href="https://wa.me/212627349254"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group relative bg-linear-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white p-4 rounded-2xl shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-xl"
+                    >
+                        <div className="flex items-center space-x-2">
+                            <span className="text-lg">💬</span>
+                            <div className="text-xs font-medium tracking-wide">Chat Now</div>
+                        </div>
+                        <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-400 rounded-full animate-ping"></div>
+                    </a>
 
-
-    </div>
-
-    {/* Bottom Bar */}
-    <div className="border-t border-slate-700/50 pt-8">
-      <div className="flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">
-        {/* Copyright */}
-        <div className="text-slate-500 text-sm">
-          © 2024 QuadCamelMarrakesh ADVENTURES. ALL RIGHTS RESERVED.
-        </div>
-
-        {/* Legal Links */}
-        <div className="flex items-center space-x-8">
-          {['Privacy Policy', 'Terms of Service', 'Cookie Policy', 'Accessibility'].map((item, index) => (
-            <a
-              key={index}
-              href="#"
-              className="text-slate-500 hover:text-amber-400 text-sm transition-colors duration-300 hover:scale-105"
-            >
-              {item}
-            </a>
-          ))}
-        </div>
-
-        {/* Payment Methods */}
-        <div className="flex items-center space-x-4">
-          <div className="text-slate-500 text-sm mr-4">We Accept:</div>
-          <div className="flex space-x-2">
-            {['💳', '💰', '🏦', '💵'].map((method, index) => (
-              <div
-                key={index}
-                className="w-8 h-8 bg-slate-700/50 rounded-lg flex items-center justify-center text-slate-400"
-              >
-                {method}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  {/* Floating CTA */}
-  <div className="fixed bottom-6 right-6 z-50">
-    <div className="flex flex-col space-y-3">
-      {/* WhatsApp */}
-      <a
-        href="https://wa.me/212627349254"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group relative bg-linear-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white p-4 rounded-2xl shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-xl"
-      >
-        <div className="flex items-center space-x-2">
-          <span className="text-lg">💬</span>
-          <div className="text-xs font-medium tracking-wide">
-            Chat Now
-          </div>
-        </div>
-        <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-400 rounded-full animate-ping"></div>
-      </a>
-
-      {/* Book Now */}
-      <Link href="/contact-us">
-        <button 
-        aria-label="Book Now"
-        className="group bg-linear-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white p-4 rounded-2xl shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-xl">
-          <div className="flex items-center space-x-2">
-            <span className="text-lg">⚡</span>
-            <div className="text-xs font-medium tracking-wide">
-              Book Now
+                    {/* Book Now */}
+                    <Link href="/contact-us">
+                        <button
+                            aria-label="Book Now"
+                            className="group bg-linear-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white p-4 rounded-2xl shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-xl"
+                        >
+                            <div className="flex items-center space-x-2">
+                                <span className="text-lg">⚡</span>
+                                <div className="text-xs font-medium tracking-wide">Book Now</div>
+                            </div>
+                        </button>
+                    </Link>
+                </div>
             </div>
-          </div>
-        </button>
-      </Link>
-    </div>
-  </div>
-</footer>
-  )
-}
+        </footer>
+    );
+};
 
-export default Footer
+export default Footer;
