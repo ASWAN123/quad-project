@@ -111,7 +111,7 @@ export default function ActivityDetails() {
     reviews: 342,
     featured: true,
     bestSeller: true,
-    availability: ["09:00", "14:00", "16:00"],
+    availability: ["09:00", "11:00", "13:00" , "15:00" ,  "17:00"],
     meetingPoint: "Complimentary pickup from your Marrakech accommodation"
   };
 
