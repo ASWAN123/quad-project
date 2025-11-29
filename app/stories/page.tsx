@@ -1,9 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import { useState } from 'react';
-import Head from 'next/head';
 import Link from 'next/link';
-
 
 interface BlogStory {
   id: number;
@@ -28,8 +26,6 @@ export default function Stories() {
     { id: 'couples', name: 'Romantic Getaways', count: 2, emoji: '💑' },
     { id: 'families', name: 'Family Adventures', count: 2, emoji: '👨‍👩‍👧‍👦' }
   ];
-
-
 
   const stories: BlogStory[] = [
     {
@@ -175,8 +171,16 @@ export default function Stories() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {filteredStories.map((story) => (
             <div key={story.id} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-amber-100 group relative overflow-hidden">
-              {/* Coming Soon Overlay */}
-              <div className="absolute inset-0 bg-white/80 backdrop-blur-sm rounded-2xl flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              {/* Mobile Badge - Visible only on mobile */}
+              <div className="md:hidden absolute top-4 right-4 z-10">
+                <div className="bg-amber-500 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center space-x-1">
+                  <span>🔒</span>
+                  <span>Coming Soon</span>
+                </div>
+              </div>
+              
+              {/* Desktop Overlay - Visible on hover */}
+              <div className="hidden md:block absolute inset-0 bg-white/80 backdrop-blur-sm rounded-2xl flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="text-center p-4">
                   <div className="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center mx-auto mb-3">
                     <span className="text-white text-lg">🔒</span>
@@ -187,7 +191,7 @@ export default function Stories() {
               </div>
               
               {/* Content Blur Effect on Hover */}
-              <div className="group-hover:blur-sm transition-all duration-300">
+              <div className="md:group-hover:blur-sm transition-all duration-300">
                 <div className="flex items-start justify-between mb-3">
                   <span className={`px-2 py-1 rounded text-xs font-medium ${
                     story.category === 'adventure' ? 'bg-blue-100 text-blue-700' :
