@@ -148,9 +148,9 @@ const Footer = () => {
                                 },
                                 {
                                     icon: "✉️",
-                                    text: "experience@quadCamelMarrakesh.com",
+                                    text: "quadcamelmarrakesh@gmail.com",
                                     subtext: "Quick Response",
-                                    link: "mailto:experience@quadCamelMarrakesh.com",
+                                    link: "mailto:quadcamelmarrakesh@gmail.com",
                                 },
                             ].map((contact, index) => (
                                 <div key={index} className="flex items-start space-x-4 group">

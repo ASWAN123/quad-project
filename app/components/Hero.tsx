@@ -158,7 +158,7 @@ const Hero = () => {
             {/* Action Buttons with Mouse Events */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
               <Link
-                href="/contact-us"
+                href="/experiences/quad-biking-and-camel-ride-in-the-agafay-desert"
                 className="group bg-linear-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white px-8 py-4 rounded-full font-medium tracking-wide transition-all duration-300 flex items-center justify-center space-x-2 relative overflow-hidden"
                 onMouseEnter={() => setIsHoveredPrimary(true)}
                 onMouseLeave={() => setIsHoveredPrimary(false)}

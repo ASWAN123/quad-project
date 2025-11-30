@@ -100,9 +100,9 @@ export default function Contact() {
     {
       icon: '✉️',
       title: 'Send Email',
-      details: 'experience@quadcamelmarrakesh.com',
+      details: 'quadcamelmarrakesh@gmail.com',
       description: 'For detailed planning',
-      action: 'mailto:experience@quadcamelmarrakesh.com',
+      action: 'mailto:quadcamelmarrakesh@gmail.com',
       color: 'from-amber-500 to-amber-600'
     }
   ];

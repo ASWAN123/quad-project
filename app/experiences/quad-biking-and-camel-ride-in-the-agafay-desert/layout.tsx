@@ -61,7 +61,7 @@ const jsonLd = {
     'name': 'Quad Camel Marrakech',
     'url': 'https://quadcamelmarrakesh.com',
     'telephone': '+212627349254',
-    'email': 'experience@quadcamelmarrakesh.com'
+    'email': 'quadcamelmarrakesh@gmail.com'
   },
   'aggregateRating': {
     '@type': 'AggregateRating',

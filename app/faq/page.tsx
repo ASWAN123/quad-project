@@ -100,7 +100,7 @@ export default function FAQ() {
               💬 Chat on WhatsApp
             </a>
             <a
-              href="mailto:experience@quadcamelmarrakesh.com"
+              href="mailto:quadcamelmarrakesh@gmail.com"
               className="bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
             >
               ✉️ Send Email

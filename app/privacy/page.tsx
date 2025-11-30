@@ -74,7 +74,7 @@ export default function Privacy() {
                 please contact us at:
               </p>
               <div className="mt-4 space-y-2 text-slate-700">
-                <div>📧 experience@quadcamelmarrakesh.com</div>
+                <div>📧 quadcamelmarrakesh@gmail.com</div>
                 <div>📞 +212 6 27 349 254</div>
                 <div>💬 WhatsApp: +212 6 27 349 254</div>
               </div>

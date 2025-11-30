@@ -180,7 +180,7 @@ export default function Stories() {
               </div>
               
               {/* Desktop Overlay - Visible on hover */}
-              <div className="hidden md:block absolute inset-0 bg-white/80 backdrop-blur-sm rounded-2xl flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="md:block absolute inset-0 bg-white/80 backdrop-blur-sm rounded-2xl flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="text-center p-4">
                   <div className="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center mx-auto mb-3">
                     <span className="text-white text-lg">🔒</span>
@@ -229,7 +229,7 @@ export default function Stories() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="mailto:experience@quadCamelMarrakesh.com?subject=My Desert Adventure Story&body=Hi Quad Camel Team, I'd like to share my desert adventure story..."
+              href="mailto:quadcamelmarrakesh@gmail.com?subject=My Desert Adventure Story&body=Hi Quad Camel Team, I'd like to share my desert adventure story..."
               className="bg-white text-amber-600 hover:bg-amber-50 px-6 py-3 rounded-xl font-semibold transition-colors duration-300 inline-block"
             >
               Share Your Experience

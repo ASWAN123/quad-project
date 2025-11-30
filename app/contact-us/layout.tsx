@@ -24,7 +24,7 @@ const jsonLd = {
     'description': 'Professional desert adventure tours in Agafay Desert, Marrakech',
     'url': 'https://quadcamelmarrakesh.com',
     'telephone': '+212627349254',
-    'email': 'experience@quadcamelmarrakesh.com',
+    'email': 'quadcamelmarrakesh@gmail.com',
     'address': {
       '@type': 'PostalAddress',
       'addressLocality': 'Marrakech',

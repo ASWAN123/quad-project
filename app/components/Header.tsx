@@ -87,8 +87,8 @@ const Header = () => {
                     {/* CTA & Mobile Menu */}
                     <div className="flex items-center space-x-4">
                         {/* Main CTA Button */}
-                        <button
-                            aria-label="Book Adventure"
+                        <Link
+                            href="/contact-us"
                             className="hidden md:block bg-linear-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-6 py-3 text-sm font-medium tracking-widest rounded-full transition-all duration-500 hover:scale-105 hover:shadow-xl group relative overflow-hidden"
                         >
                             <span className="relative z-10 flex items-center space-x-2">
@@ -96,7 +96,7 @@ const Header = () => {
                                 <span className="transform group-hover:translate-x-1 transition-transform duration-300">→</span>
                             </span>
                             <div className="absolute inset-0 bg-linear-to-r from-white/20 to-white/10 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-full"></div>
-                        </button>
+                        </Link>
 
                         {/* Mobile Menu Button */}
                         <button
@@ -152,12 +152,12 @@ const Header = () => {
                                 <span>💬</span>
                                 <span>Chat on WhatsApp</span>
                             </a>
-                            <button
-                                aria-label="Book Your Adventure"
-                                className="w-full bg-linear-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white py-3 rounded-xl font-bold transition-all duration-300"
+                            <Link
+                                href="/contact-us"
+                                className="w-full bg-linear-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white py-3 rounded-xl font-bold transition-all duration-300 text-center block"
                             >
                                 Book Your Adventure
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
