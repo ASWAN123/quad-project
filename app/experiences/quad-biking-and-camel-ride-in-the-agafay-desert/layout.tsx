@@ -160,7 +160,7 @@ const jsonLd = {
   'meetingPoint': 'Your accommodation in Marrakech',
   'groupSize': 'Small Intimate Groups',
   'difficulty': 'Beginner to Advanced - All Welcome',
-  'ageRange': '15+ years for camel riding, 15+ years for quad biking',
+  'ageRange': '10+ years for camel riding, 12+ years for quad biking',
   'requirements': [
     'Comfortable outdoor clothing suitable for desert conditions',
     'Closed-toe shoes for quad biking safety',

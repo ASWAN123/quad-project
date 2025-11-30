@@ -66,8 +66,8 @@ export default function ActivityDetails() {
       "Closed-toe shoes for quad biking safety",
       "Sun protection (hat, sunglasses, sunscreen)",
       "Camera or smartphone for capturing memories",
-      "Minimum age 15 years for camel riding",
-      "Minimum age 15 years for quad biking participation",
+      "Minimum age 10 years for camel riding",
+      "Minimum age 12 years for quad biking participation",
       "Sense of adventure and readiness for fun"
     ],
     images: [
