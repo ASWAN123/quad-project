@@ -11,6 +11,17 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: '**.quadcamelmarrakesh.com',
       },
+      // Add TripAdvisor domain here
+      {
+        protocol: 'https',
+        hostname: 'dynamic-media-cdn.tripadvisor.com',
+        pathname: '/media/**', // Allow all paths under /media/
+      },
+      {
+        protocol: 'https',
+        hostname: '**.tripadvisor.com',
+        pathname: '/media/**',
+      },
     ],
     qualities: [75, 85, 95],
   },
@@ -18,4 +29,4 @@ const nextConfig: NextConfig = {
   compress: true,
 };
 
-export default nextConfig ;
+export default nextConfig;

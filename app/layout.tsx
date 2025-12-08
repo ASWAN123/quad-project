@@ -25,7 +25,7 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: {
     default: "Quad Camel Marrakech - Quad Bike & Camel Ride in Agafay Desert",
-    template: "%s | Quad Camel Marrakech" // Dynamic titles for other pages
+    template: "%s | Quad Camel Marrakech"
   },
   description: "Ride a quad bike across the Agafay desert and enjoy a peaceful camel experience with stunning views, golden landscapes, and unforgettable moments.",
   keywords: "quad biking Marrakech, camel ride Agafay, desert adventure Morocco, quad bike tour, camel experience, Agafay desert tour, Marrakech activities",

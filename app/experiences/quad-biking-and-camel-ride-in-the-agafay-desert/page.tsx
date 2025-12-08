@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable @next/next/no-html-link-for-pages */
 "use client";
 import { useState, useEffect } from 'react';
@@ -47,7 +48,7 @@ export default function ActivityDetails() {
       - Return filled with unforgettable memories
     `,
     price: 55,
-    originalPrice: 110,
+    originalPrice: 75,
     duration: "4-Hour Desert Experience",
     groupSize: "Small Intimate Groups",
     difficulty: "Beginner to Advanced - All Welcome",
@@ -111,33 +112,53 @@ export default function ActivityDetails() {
     reviews: 342,
     featured: true,
     bestSeller: true,
-    availability: ["09:00", "11:00", "13:00" , "15:00" ,  "17:00"],
+    availability: ["09:00", "11:00", "13:00", "15:00", "17:00"],
     meetingPoint: "Complimentary pickup from your Marrakech accommodation"
   };
 
-  const reviews = [
+  const tripAdvisorReviews = [
     {
-      id: 1,
-      name: "Sarah & Mark",
-      location: "London, UK",
-      date: "2024-01-15",
-      comment: "An absolutely incredible day! The quad biking was exhilarating and the camel ride at sunset was pure magic. Our guide made sure we felt safe while having the time of our lives. The perfect desert adventure!",
+      name: "Andrea S",
+      avatar: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f6/f1/b8/default-avatar-2020-22.jpg?w=100&h=-1&s=1",
+      date: "Dec 2025",
+      contributions: "4 contribution",
+      tripType: "Couples",
+      rating: 5,
+      title: "Amazing experience and great guide",
+      text: "Great experience driving in the desert at sunset! Our guide, Abderrahim, has been the best showing us around and taking lots of pictures of us into action! Highly recommended!!",
+      activity: "Riding in the Agafay Desert",
+      image: null
     },
     {
-      id: 2, 
-      name: "Michael T.",
-      location: "New York, USA",
-      date: "2024-01-12",
-      comment: "This experience perfectly balanced adrenaline and culture. The transition from high-energy quad biking to the peaceful camel trek was seamless. Professional equipment and knowledgeable guides made all the difference.",
+      name: "Avery B",
+      avatar: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/13/85/c6/avery-b.jpg?w=100&h=-1&s=1",
+      contributions: "11 contributions",
+      date: "Oct 2025",
+      tripType: "Solo",
+      rating: 5,
+      title: "Excellent desert experience",
+      text: "I had such a fun time exploring the Agafay desert. My host, Abderrahim was excellent and very hospitable. I learned about the desert, culture, and was given excellent recommendations about more to do. I highly recommend this excursion to anyone considering it. Beautiful views, great people, and an amazing time in general. Thank you for a fantastic time.",
+      activity: "Agafay Desert Exploration",
+      image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/31/ee/6e/bc/caption.jpg?w=2400&h=2400&s=1"
     },
     {
-      id: 3,
-      name: "The Johnson Family", 
-      location: "Sydney, Australia",
-      date: "2024-01-08",
-      comment: "Our teenagers loved the quad biking adventure, and we all enjoyed the traditional camel ride. The guides were fantastic with our family and the safety standards were impressive throughout the entire experience.",
+      name: "Saray E",
+      avatar: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f6/7c/01/default-avatar-2020-5.jpg?w=100&h=-1&s=1",
+      contributions: "1 contribution",
+      date: "Dec 2025",
+      tripType: "Friends",
+      rating: 5,
+      title: "Quad con el guía Abderrahim",
+      text: "We spent a wonderful afternoon riding Quad, the guide Abderrahim is always willing to help with everything, he is a kind and funny person, which made the experience much more enjoyable for us. In addition, he is very attentive in case we need help. This experience made us spend a fun afternoon with friends and made us explore Agafay. I would definitely repeat riding Quad with Abderrahim.",
+      activity: "Quad Biking Adventure",
+      images: [
+        "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/31/ec/31/dc/caption.jpg?w=2400&h=2400&s=1",
+        "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/31/ec/31/db/caption.jpg?w=2400&h=2400&s=1"
+      ]
     }
   ];
+
+
 
   // Keyboard navigation for gallery
   useEffect(() => {
@@ -206,38 +227,56 @@ export default function ActivityDetails() {
                 </span>
               </div>
               
-              <h1 className="text-4xl md:text-5xl lg:text-6xl  text-slate-800 mb-4 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-4 leading-tight">
                 {activity.title}
               </h1>
               
               <p className="text-xl text-slate-600 mb-6 leading-relaxed">{activity.description}</p>
               
-              <div className="flex items-center space-x-6 text-slate-600">
-                <div className="flex items-center space-x-2">
-                  <span className="text-amber-600">⏱️</span>
-                  <span>{activity.duration}</span>
+              {/* Updated Activity Info Section */}
+              <div className="flex flex-wrap items-center gap-4 text-slate-600">
+                <div className="flex items-center space-x-2 bg-gradient-to-r from-amber-50 to-amber-100/50 px-4 py-2.5 rounded-full border border-amber-200/50">
+                  <div className="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-sm">
+                    <span className="text-lg">⏱️</span>
+                  </div>
+                  <div>
+                    <p className="text-xs text-slate-500 font-medium">Duration</p>
+                    <p className="font-semibold text-slate-800">{activity.duration}</p>
+                  </div>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <span className="text-amber-600">👥</span>
-                  <span>{activity.groupSize}</span>
+                
+                <div className="flex items-center space-x-2 bg-gradient-to-r from-emerald-50 to-emerald-100/50 px-4 py-2.5 rounded-full border border-emerald-200/50">
+                  <div className="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-sm">
+                    <span className="text-lg">👥</span>
+                  </div>
+                  <div>
+                    <p className="text-xs text-slate-500 font-medium">Group Size</p>
+                    <p className="font-semibold text-slate-800">{activity.groupSize}</p>
+                  </div>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <span className="text-amber-600">⭐</span>
-                  <span>{activity.reviews} Reviews</span>
+                
+                <div className="flex items-center space-x-2 bg-gradient-to-r from-blue-50 to-blue-100/50 px-4 py-2.5 rounded-full border border-blue-200/50">
+                  <div className="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-sm">
+                    <span className="text-lg">⭐</span>
+                  </div>
+                  <div>
+                    <p className="text-xs text-slate-500 font-medium">Reviews</p>
+                    <p className="font-semibold text-slate-800">{activity.reviews}</p>
+                  </div>
                 </div>
               </div>
             </div>
 
             <div className="text-center lg:text-right">
-              <div className="flex items-center space-x-3 mb-3 justify-center lg:justify-end ">
+              <div className="flex items-center space-x-3 mb-3 justify-center lg:justify-end">
                 <span className="text-3xl font-light text-amber-600">€{activity.price}</span>
                 <span className="text-slate-400 line-through text-xl">€{activity.originalPrice}</span>
               </div>
-              <div className="text-green-600 text-sm mb-4">
+              <div className="text-green-600 text-sm mb-4 font-medium">
                 Save €{calculateSavings()} per person
               </div>
               {activity.bestSeller && (
-                <div className="bg-amber-100 text-amber-700 px-4 py-2 rounded-full text-sm font-medium inline-block">
+                <div className="bg-amber-100 text-amber-700 px-4 py-2 rounded-full text-sm font-medium inline-block shadow-sm">
                   🏆 Most Popular Experience
                 </div>
               )}
@@ -255,7 +294,7 @@ export default function ActivityDetails() {
             <div className="lg:col-span-2 space-y-6">
               {/* Main Large Image */}
               <div 
-                className="relative w-full h-96 lg:h-[500px] rounded-3xl overflow-hidden border border-amber-100 group cursor-zoom-in"
+                className="relative w-full h-96 lg:h-[500px] rounded-3xl overflow-hidden border border-amber-100 group cursor-zoom-in shadow-lg"
                 onClick={() => openGallery(0)}
               >
                 <Image
@@ -270,7 +309,7 @@ export default function ActivityDetails() {
                   blurDataURL={BLUR_DATA_URL}
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3">
+                <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
                   <p className="text-amber-800 font-medium">Featured Desert Adventure</p>
                 </div>
                 <div className="absolute top-4 right-4 bg-black/50 text-white rounded-full p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -285,7 +324,7 @@ export default function ActivityDetails() {
                 {activity.images.slice(1, 5).map((image, index) => (
                   <div 
                     key={index}
-                    className="relative aspect-square rounded-2xl overflow-hidden border border-amber-100 group cursor-zoom-in"
+                    className="relative aspect-square rounded-2xl overflow-hidden border border-amber-100 group cursor-zoom-in shadow-sm hover:shadow-md transition-shadow duration-300"
                     onClick={() => openGallery(index + 1)}
                   >
                     <Image
@@ -311,17 +350,17 @@ export default function ActivityDetails() {
 
             {/* Right Column - CTA Section */}
             <div className="lg:col-span-1">
-              <div className="bg-linear-to-r from-amber-500 to-amber-600 rounded-3xl p-6 text-white h-full">
+              <div className="bg-linear-to-r from-amber-500 to-amber-600 rounded-3xl p-6 text-white h-full shadow-xl">
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-2xl  mb-3">Ready for Your Desert Adventure?</h3>
+                    <h3 className="text-2xl font-bold mb-3">Ready for Your Desert Adventure?</h3>
                     <p className="text-amber-100 text-sm">Join {activity.reviews}+ satisfied adventurers</p>
                   </div>
                   
                   <div className="space-y-4">
                     <Link 
                       href="/contact-us"
-                      className="block w-full bg-white text-amber-600 hover:bg-amber-50 px-6 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 text-center"
+                      className="block w-full bg-white text-amber-600 hover:bg-amber-50 px-6 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 text-center shadow-lg hover:shadow-xl"
                     >
                       Reserve Now - €{activity.price}
                     </Link>
@@ -445,7 +484,7 @@ export default function ActivityDetails() {
                 { id: 'overview', label: 'Experience Overview' },
                 { id: 'itinerary', label: 'Detailed Itinerary' },
                 { id: 'includes', label: 'What\'s Included' },
-                { id: 'reviews', label: 'Guest Experiences' }
+                { id: 'tripadvisor', label: 'TripAdvisor Reviews' }
               ].map((tab) => (
                 <button
                   key={tab.id}
@@ -466,8 +505,8 @@ export default function ActivityDetails() {
           <div className="prose prose-lg max-w-none">
             {selectedTab === 'overview' && (
               <div className="space-y-8">
-                <div className="bg-amber-50/50 rounded-3xl p-8 border border-amber-100">
-                  <h3 className="text-2xl  text-slate-800 mb-6">Your Desert Adventure Awaits</h3>
+                <div className="bg-amber-50/50 rounded-3xl p-8 border border-amber-100 shadow-sm">
+                  <h3 className="text-2xl font-bold text-slate-800 mb-6">Your Desert Adventure Awaits</h3>
                   <p className="text-slate-700 leading-relaxed text-lg mb-6">
                     Experience the perfect combination of adrenaline-pumping excitement and authentic cultural immersion 
                     in the breathtaking Agafay Desert. This carefully crafted adventure showcases the very best of Morocco's 
@@ -477,7 +516,7 @@ export default function ActivityDetails() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-4">
                       <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center">
+                        <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center shadow-sm">
                           <span className="text-amber-700 text-xl">🏍️</span>
                         </div>
                         <div>
@@ -486,16 +525,28 @@ export default function ActivityDetails() {
                         </div>
                       </div>
                       <ul className="text-slate-600 space-y-2 text-sm ml-16">
-                        <li>• 2 hours of guided quad biking through stunning landscapes</li>
-                        <li>• Premium safety equipment and professional instruction</li>
-                        <li>• Scenic routes with panoramic photo opportunities</li>
-                        <li>• Suitable for all experience levels</li>
+                        <li className="flex items-start">
+                          <span className="text-amber-500 mr-2">•</span>
+                          <span>2 hours of guided quad biking through stunning landscapes</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-amber-500 mr-2">•</span>
+                          <span>Premium safety equipment and professional instruction</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-amber-500 mr-2">•</span>
+                          <span>Scenic routes with panoramic photo opportunities</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-amber-500 mr-2">•</span>
+                          <span>Suitable for all experience levels</span>
+                        </li>
                       </ul>
                     </div>
                     
                     <div className="space-y-4">
                       <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center">
+                        <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center shadow-sm">
                           <span className="text-amber-700 text-xl">🐫</span>
                         </div>
                         <div>
@@ -504,10 +555,22 @@ export default function ActivityDetails() {
                         </div>
                       </div>
                       <ul className="text-slate-600 space-y-2 text-sm ml-16">
-                        <li>• 20-minute authentic camel ride through golden dunes</li>
-                        <li>• Breathtaking sunset views over the Agafay Desert</li>
-                        <li>• Cultural immersion with local Berber guides</li>
-                        <li>• Peaceful, memorable desert travel experience</li>
+                        <li className="flex items-start">
+                          <span className="text-amber-500 mr-2">•</span>
+                          <span>20-minute authentic camel ride through golden dunes</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-amber-500 mr-2">•</span>
+                          <span>Breathtaking sunset views over the Agafay Desert</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-amber-500 mr-2">•</span>
+                          <span>Cultural immersion with local Berber guides</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-amber-500 mr-2">•</span>
+                          <span>Peaceful, memorable desert travel experience</span>
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -517,9 +580,9 @@ export default function ActivityDetails() {
 
             {selectedTab === 'itinerary' && (
               <div className="space-y-6">
-                <h3 className="text-2xl  text-slate-800 mb-6">Your Desert Adventure Timeline</h3>
+                <h3 className="text-2xl font-bold text-slate-800 mb-6">Your Desert Adventure Timeline</h3>
                 {activity.fullDescription.split('\n\n').map((section, index) => (
-                  <div key={index} className="bg-white rounded-2xl p-6 border border-amber-100">
+                  <div key={index} className="bg-white rounded-2xl p-6 border border-amber-100 shadow-sm">
                     <div className="text-slate-700 leading-relaxed whitespace-pre-line">
                       {section}
                     </div>
@@ -531,17 +594,19 @@ export default function ActivityDetails() {
             {selectedTab === 'includes' && (
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-2xl  text-slate-800 mb-6">Everything We Provide for Your Adventure</h3>
+                  <h3 className="text-2xl font-bold text-slate-800 mb-6">Everything We Provide for Your Adventure</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="space-y-4">
-                      <h4 className="font-semibold text-slate-800 text-lg flex items-center">
-                        <span className="text-amber-600 mr-3">✅</span>
-                        Included in Your Experience
-                      </h4>
+                      <div className="flex items-center space-x-3 mb-4">
+                        <div className="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center">
+                          <span className="text-green-600 text-xl">✅</span>
+                        </div>
+                        <h4 className="font-semibold text-slate-800 text-lg">Included in Your Experience</h4>
+                      </div>
                       <ul className="space-y-3">
                         {activity.includes.map((item, index) => (
-                          <li key={index} className="flex items-center space-x-3">
-                            <div className="w-2 h-2 bg-amber-500 rounded-full flex-shrink-0"></div>
+                          <li key={index} className="flex items-center space-x-3 p-3 bg-green-50/50 rounded-lg">
+                            <div className="w-2 h-2 bg-green-500 rounded-full flex-shrink-0"></div>
                             <span className="text-slate-700">{item}</span>
                           </li>
                         ))}
@@ -549,14 +614,16 @@ export default function ActivityDetails() {
                     </div>
                     
                     <div className="space-y-4">
-                      <h4 className="font-semibold text-slate-800 text-lg flex items-center">
-                        <span className="text-amber-600 mr-3">📝</span>
-                        What to Bring With You
-                      </h4>
+                      <div className="flex items-center space-x-3 mb-4">
+                        <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
+                          <span className="text-blue-600 text-xl">📝</span>
+                        </div>
+                        <h4 className="font-semibold text-slate-800 text-lg">What to Bring With You</h4>
+                      </div>
                       <ul className="space-y-3">
                         {activity.requirements.map((item, index) => (
-                          <li key={index} className="flex items-center space-x-3">
-                            <div className="w-2 h-2 bg-slate-400 rounded-full flex-shrink-0"></div>
+                          <li key={index} className="flex items-center space-x-3 p-3 bg-blue-50/50 rounded-lg">
+                            <div className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></div>
                             <span className="text-slate-700">{item}</span>
                           </li>
                         ))}
@@ -567,22 +634,97 @@ export default function ActivityDetails() {
               </div>
             )}
 
-            {selectedTab === 'reviews' && (
+
+
+            {selectedTab === 'tripadvisor' && (
               <div className="space-y-8">
-                <h3 className="text-2xl  text-slate-800 mb-6">What Our Adventurers Say</h3>
-                <div className="space-y-6">
-                  {reviews.map((review) => (
-                    <div key={review.id} className="bg-white rounded-2xl p-6 border border-amber-100">
-                      <div className="flex items-start justify-between mb-4">
-                        <div>
-                          <div className="font-semibold text-slate-800 text-lg">{review.name}</div>
-                          <div className="text-slate-500">{review.location}</div>
+                <div className="flex items-center justify-between mb-6">
+                  <h3 className="text-2xl font-bold text-slate-800">TripAdvisor Reviews</h3>
+                  <div className="flex items-center space-x-2">
+                    <div className="flex text-[#00AA6C] text-lg">
+                      {'★'.repeat(5)}
+                    </div>
+                    <span className="text-xl font-bold text-slate-800">5.0</span>
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                  {tripAdvisorReviews.map((review, index) => (
+                    <div key={index} className="bg-white rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-[1.02] border border-gray-200">
+                      {/* Review Header */}
+                      <div className="flex items-start justify-between mb-6">
+                        <div className="flex items-center space-x-4">
+                          <img 
+                            src={review.avatar} 
+                            alt={review.name}
+                            className="w-12 h-12 rounded-full object-cover"
+                          />
+                          <div>
+                            <h4 className="font-semibold text-slate-800 text-lg">{review.name}</h4>
+                            {review.contributions && (
+                              <p className="text-slate-500 text-xs">{review.contributions}</p>
+                            )}
+                          </div>
                         </div>
-                        <div className="text-slate-400 text-sm">{review.date}</div>
+                        <div className="text-right">
+                          <div className="flex text-[#00AA6C] text-lg mb-1">
+                            {'★'.repeat(review.rating)}
+                          </div>
+                          <span className="text-xs text-slate-500">{review.date}</span>
+                        </div>
                       </div>
-                      <p className="text-slate-700 leading-relaxed">{review.comment}</p>
+
+                      {/* Review Title */}
+                      <h3 className="font-bold text-xl text-slate-900 mb-4">{review.title}</h3>
+
+                      {/* Trip Type */}
+                      <div className="mb-4">
+                        <span className="text-sm text-slate-600 bg-slate-100 px-3 py-1 rounded-full">
+                          {review.tripType} Trip
+                        </span>
+                      </div>
+
+                      {/* Review Text */}
+                      <div className="mb-6">
+                        <p className="text-slate-700 leading-relaxed mb-3 text-base">
+                          {review.text}
+                        </p>
+                        {review.englishTranslation && (
+                          <div className="mt-3 pt-3 border-t border-slate-100">
+                            <p className="text-slate-600 text-sm italic">
+                              <span className="font-semibold">English:</span> {review.englishTranslation}
+                            </p>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Activity Badge */}
+                      <div className="inline-flex items-center space-x-2 bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs font-medium">
+                        <span>🏜️</span>
+                        <span>{review.activity}</span>
+                      </div>
                     </div>
                   ))}
+                </div>
+
+                {/* TripAdvisor CTA */}
+                <div className="text-center mt-12">
+                  <div className="bg-gradient-to-r from-[#00AA6C]/10 to-emerald-100/50 rounded-3xl p-8 border border-emerald-200/30 shadow-sm">
+                    <h4 className="text-xl font-bold text-slate-800 mb-4">
+                      See All Reviews on TripAdvisor
+                    </h4>
+                    <a
+                      href="https://www.tripadvisor.com/Attraction_Review-g293734-d34046054-Reviews-Quad_Camel_Marrakesh-Marrakech_Marrakech_Safi.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center space-x-3 bg-[#00AA6C] hover:bg-emerald-700 text-white px-8 py-4 rounded-full font-semibold tracking-wide transition-all duration-300 hover:scale-105 shadow-lg"
+                    >
+                      <svg className="w-6 h-6" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M12,0C5.372,0,0,5.373,0,12s5.372,12,12,12s12-5.373,12-12S18.628,0,12,0z M10.64,14.669 c-0.202,0.537-0.664,0.537-0.864,0L8.292,11.6H5.889c-0.564,0-0.816-0.405-0.564-0.905l2.872-4.196c0.2-0.537,0.664-0.537,0.864,0 l1.484,3.069h2.403c0.564,0,0.816,0.406,0.564,0.906L10.64,14.669z M18.675,14.669c-0.202,0.537-0.664,0.537-0.865,0l-1.484-3.069 h-2.403c-0.564,0-0.816-0.405-0.564-0.905l2.872-4.196c0.2-0.537,0.664-0.537,0.864,0l1.484,3.069h2.403 c0.564,0,0.816,0.406,0.564,0.906L18.675,14.669z"/>
+                      </svg>
+                      <span>Read All {activity.reviews}+ Reviews</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             )}
@@ -591,9 +733,9 @@ export default function ActivityDetails() {
           {/* Booking Form Modal */}
           {showBookingForm && (
             <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-              <div className="bg-white rounded-3xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+              <div className="bg-white rounded-3xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
                 <div className="flex justify-between items-center mb-6">
-                  <h3 className="text-3xl  text-slate-800">Reserve Your Desert Adventure</h3>
+                  <h3 className="text-3xl font-bold text-slate-800">Reserve Your Desert Adventure</h3>
                   <button 
                     onClick={() => setShowBookingForm(false)}
                     className="text-slate-400 hover:text-slate-600 text-2xl"
@@ -666,7 +808,7 @@ export default function ActivityDetails() {
                   </div>
 
                   <button 
-                    className="w-full bg-linear-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white py-4 rounded-xl font-bold text-xl transition-all duration-300 hover:scale-105 mt-4"
+                    className="w-full bg-linear-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white py-4 rounded-xl font-bold text-xl transition-all duration-300 hover:scale-105 mt-4 shadow-lg"
                     aria-label="Complete your reservation"
                   >
                     Complete Your Reservation
@@ -677,7 +819,7 @@ export default function ActivityDetails() {
           )}
         </div>
       </div>
-      <CTASection/>
+      <CTASection />
     </div>
   );
 }
