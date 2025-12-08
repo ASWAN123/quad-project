@@ -235,7 +235,7 @@ export default function ActivityDetails() {
               
               {/* Updated Activity Info Section */}
               <div className="flex flex-wrap items-center gap-4 text-slate-600">
-                <div className="flex items-center space-x-2 bg-gradient-to-r from-amber-50 to-amber-100/50 px-4 py-2.5 rounded-full border border-amber-200/50">
+                <div className="flex items-center space-x-2 bg-linear-to-r from-amber-50 to-amber-100/50 px-4 py-2.5 rounded-full border border-amber-200/50">
                   <div className="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-sm">
                     <span className="text-lg">⏱️</span>
                   </div>
@@ -245,7 +245,7 @@ export default function ActivityDetails() {
                   </div>
                 </div>
                 
-                <div className="flex items-center space-x-2 bg-gradient-to-r from-emerald-50 to-emerald-100/50 px-4 py-2.5 rounded-full border border-emerald-200/50">
+                <div className="flex items-center space-x-2 bg-linear-to-r from-emerald-50 to-emerald-100/50 px-4 py-2.5 rounded-full border border-emerald-200/50">
                   <div className="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-sm">
                     <span className="text-lg">👥</span>
                   </div>
@@ -255,7 +255,7 @@ export default function ActivityDetails() {
                   </div>
                 </div>
                 
-                <div className="flex items-center space-x-2 bg-gradient-to-r from-blue-50 to-blue-100/50 px-4 py-2.5 rounded-full border border-blue-200/50">
+                <div className="flex items-center space-x-2 bg-linear-to-r from-blue-50 to-blue-100/50 px-4 py-2.5 rounded-full border border-blue-200/50">
                   <div className="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow-sm">
                     <span className="text-lg">⭐</span>
                   </div>
@@ -689,13 +689,7 @@ export default function ActivityDetails() {
                         <p className="text-slate-700 leading-relaxed mb-3 text-base">
                           {review.text}
                         </p>
-                        {review.englishTranslation && (
-                          <div className="mt-3 pt-3 border-t border-slate-100">
-                            <p className="text-slate-600 text-sm italic">
-                              <span className="font-semibold">English:</span> {review.englishTranslation}
-                            </p>
-                          </div>
-                        )}
+                        
                       </div>
 
                       {/* Activity Badge */}
@@ -709,7 +703,7 @@ export default function ActivityDetails() {
 
                 {/* TripAdvisor CTA */}
                 <div className="text-center mt-12">
-                  <div className="bg-gradient-to-r from-[#00AA6C]/10 to-emerald-100/50 rounded-3xl p-8 border border-emerald-200/30 shadow-sm">
+                  <div className="bg-linear-to-r from-[#00AA6C]/10 to-emerald-100/50 rounded-3xl p-8 border border-emerald-200/30 shadow-sm">
                     <h4 className="text-xl font-bold text-slate-800 mb-4">
                       See All Reviews on TripAdvisor
                     </h4>

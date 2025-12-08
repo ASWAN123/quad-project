@@ -138,13 +138,7 @@ const TripAdvisorTestimonials = () => {
                   <p className="text-slate-700 leading-relaxed mb-3 text-base">
                     {review.text}
                   </p>
-                  {review.englishTranslation && (
-                    <div className="mt-3 pt-3 border-t border-slate-100">
-                      <p className="text-slate-600 text-sm italic">
-                        <span className="font-semibold">English:</span> {review.englishTranslation}
-                      </p>
-                    </div>
-                  )}
+                  
                 </div>
 
                 {/* Review Images */}
